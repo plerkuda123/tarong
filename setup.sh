@@ -130,8 +130,8 @@ sleep 3
 
 mkdir -p /etc/tarap
 mkdir -p /etc/tarap/theme
-mkdir -p /var/lib/tarap >/dev/null 2>&1
-echo "IP=" >> /var/lib/tarap/ipvps.conf
+mkdir -p /var/lib >/dev/null 2>&1
+echo "IP=" >> /var/lib/ipvps.conf
 
 if [ -f "/etc/xray/domain" ]; then
 echo ""
@@ -159,7 +159,7 @@ echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/xray/scdomain
-echo "IP=$pp" > /var/lib/tarap/ipvps.conf
+echo "IP=$pp" > /var/lib/ipvps.conf
 
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
