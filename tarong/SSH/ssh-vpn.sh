@@ -413,6 +413,7 @@ echo "unset HISTFILE" >> /etc/profile
 rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
+rm -f /root/bbr.sh
 
 # finihsing
 clear
