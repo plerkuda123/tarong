@@ -305,70 +305,6 @@ asu=`cat<<EOF
       "tls": "tls"
 }
 EOF`
-maxis=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "www.speedtest.net",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "wss://www.speedtest.net/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls",
-      "sni": "www.speedtest.net"
-}
-EOF`
-sooka=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "support.sooka.my",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "wss://support.sooka.my/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls",
-      "sni": "support.sooka.my"
-}
-EOF`
-celcom=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "onlinepayment.celcom.com.my",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "wss://onlinepayment.celcom.com.my/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls",
-      "sni": "onlinepayment.celcom.com.my"
-}
-EOF`
-umobile=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "who.int",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "wss://who.int/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls",
-      "sni": "who.int"
-}
-EOF`
 ask=`cat<<EOF
       {
       "v": "2",
@@ -381,51 +317,6 @@ ask=`cat<<EOF
       "path": "/vmess",
       "type": "none",
       "host": "",
-      "tls": "none"
-}
-EOF`
-umobile1=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vmess",
-      "type": "none",
-      "host": "pay-dcb.u.com.my",
-      "tls": "none"
-}
-EOF`
-digi=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "162.159.134.61",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "none"
-}
-EOF`
-yess=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "cdn.who.int",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "wss://cdn.who.int/vmess",
-      "type": "none",
-      "host": "${domain}",
       "tls": "none"
 }
 EOF`
@@ -447,24 +338,9 @@ EOF`
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmess_base642=$( base64 -w 0 <<< $vmess_json2)
 vmess_base643=$( base64 -w 0 <<< $vmess_json3)
-vmess_base644=$( base64 -w 0 <<< $vmess_json4)
-vmess_base645=$( base64 -w 0 <<< $vmess_json5)
-vmess_base646=$( base64 -w 0 <<< $vmess_json6)
-vmess_base647=$( base64 -w 0 <<< $vmess_json7)
-vmess_base648=$( base64 -w 0 <<< $vmess_json8)
-vmess_base649=$( base64 -w 0 <<< $vmess_json9)
-vmess_base650=$( base64 -w 0 <<< $vmess_json10)
 vmesslink1="vmess://$(echo $asu | base64 -w 0)"
 vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
-vmesslink4="vmess://$(echo $maxis | base64 -w 0)"
-vmesslink5="vmess://$(echo $sooka | base64 -w 0)"
-vmesslink6="vmess://$(echo $celcom | base64 -w 0)"
-vmesslink7="vmess://$(echo $umobile | base64 -w 0)"
-vmesslink8="vmess://$(echo $umobile1 | base64 -w 0)"
-vmesslink9="vmess://$(echo $digi | base64 -w 0)"
-vmesslink10="vmess://$(echo $yess | base64 -w 0)"
-
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
@@ -494,27 +370,6 @@ echo -e "$COLOR1 ${NC} ${WH}${vmesslink2}${NC}"  | tee -a /etc/log-create-user.l
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Maxis Booster Langganan ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink4}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Maxis Langganan Sooka   ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink5}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Celcom Tiada Langganan  ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink6}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Umobile Freeze Basic    ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink7}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Umobile Deduct Basic    ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink8}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Digi Booster Langganan  ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink9}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Yes4G Tiada Langganan / Expired ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink10}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
