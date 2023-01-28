@@ -2,25 +2,78 @@
 
 cd
 
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/dropbear-ws.py
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ws-stunnel
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/OPENVPN/ws-ovpn.py
-
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ws-dropbear
 chmod +x /usr/local/bin/ws-dropbear
-chmod +x /usr/local/bin/ws-stunnel
-chmod +x /usr/local/bin/ws-ovpn
 
-wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
-wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ws-stunnel.service && chmod +x /etc/systemd/system/ws-stunnel.service
-wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/OPENVPN/ws-ovpn.service && chmod +x /etc/systemd/system/ws-ovpn.service
+# Installing Service
+cat > /etc/systemd/system/ws-nontls.service << END
+[Unit]
+Description=Python Proxy Mod By TARAP KUHING
+Documentation=https://t.me/Hendra2012
+After=network.target nss-lookup.target
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+END
 
 systemctl daemon-reload
 systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
+
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ws-ovpn.py
+chmod +x /usr/local/bin/ws-ovpn
+
+# Installing Service
+cat > /etc/systemd/system/ws-ovpn.service << END
+[Unit]
+Description=Python Proxy Mod By TARAP KUHING
+Documentation=https://t.me/Hendra2012
+After=network.target nss-lookup.target
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn 2086
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-ovpn
+systemctl restart ws-ovpn
+
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ws-stunnel
+chmod +x /usr/local/bin/ws-stunnel
+
+# Installing Service
+cat > /etc/systemd/system/ws-stunnel.service << END
+[Unit]
+Description=Python Proxy Mod By TARAP KUHING
+Documentation=https://t.me/Hendra2012
+After=network.target nss-lookup.target
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+END
+
 systemctl enable ws-stunnel.service
 systemctl start ws-stunnel.service
 systemctl restart ws-stunnel.service
-systemctl enable ws-ovpn.service
-systemctl start ws-ovpn.service
-systemctl restart ws-ovpn.service
