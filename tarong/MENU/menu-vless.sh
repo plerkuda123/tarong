@@ -284,13 +284,6 @@ sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 vlesslink1="vless://${uuid}@${domain}:$tls?path=/vlessws&security=tls&encryption=none&type=ws#${user}"
 vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws#${user}"
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
-maxis="vless://${uuid}@www.speedtest.net:$tls?path=wss://www.speedtest.net/vlessws&security=tls&encryption=none&type=ws&sni=www.speedtest.net&host=${domain}#${user}"
-maxis1="vless://${uuid}@support.sooka.my:$tls?path=wss://support.sooka.my/vlessws&security=tls&encryption=none&type=ws&sni=support.sooka.my&host=${domain}#${user}"
-celcom="vless://${uuid}@onlinepayment.celcom.com.my:$tls?path=wss://onlinepayment.celcom.com.my/vlessws&security=tls&encryption=none&type=ws&sni=onlinepayment.celcom.com.my&host=${domain}#${user}"
-umobile="vless://${uuid}@who.int:$tls?path=wss://who.int/vlessws&security=tls&encryption=none&type=ws&sni=who.int&host=${domain}#${user}"
-umobile1="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws&host=pay-dcb.u.com.my#${user}"
-digi="vless://${uuid}@162.159.134.61:$none?path=/vlessws&encryption=none&type=ws&host=${domain}#${user}"
-yess="vless://${uuid}@cdn.who.int:$none?path=wss://cdn.who.int/vlessws&encryption=none&type=ws&host=${domain}#${user}"
 systemctl restart xray
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -317,27 +310,6 @@ echo -e "$COLOR1 ${NC} ${WH}${vlesslink2}${NC}"  | tee -a /etc/log-create-user.l
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}${vlesslink3}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Maxis Booster Langganan ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${maxis}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Maxis Langganan Sooka   ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${maxis1}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Celcom Tiada Langganan  ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${celcom}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Umobile Freeze Basic    ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${umobile}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Umobile Deduct Basic    ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${umobile1}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Digi Booster Langganan  ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${digi}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Yes4G Tiada Langganan / Expired ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${yess}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
@@ -354,6 +326,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}             • VLESS PANEL MENU •           
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD VLESS${NC}      ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}DELETE VLESS${NC}   $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RENEW VLESS${NC}    ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}    $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
