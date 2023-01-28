@@ -635,7 +635,7 @@ echo -e " $COLOR1└────────────────────
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}•     CHAT     •${NC}                 $COLOR1 $NC"
-echo -e "$COLOR1 ${NC}  ${WH}• https://wa.me/085754292950 •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• https://wa.me/085754292950 •${NC}   $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
