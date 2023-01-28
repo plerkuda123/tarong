@@ -223,7 +223,7 @@ echo -e "${tyblue}|          PROCESS INSTALLED OHP           |${NC}"
 echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #Download Extra Menu
 echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
 echo -e "${tyblue}|           DOWNLOAD EXTRA MENU            |${NC}"
@@ -335,5 +335,24 @@ rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh
 rm /root/update.sh
-sleep 10
+secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
+echo "${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
+echo  ""
+sleep 3
+echo "R"
+echo  ""
+sleep 3
+echo "E"
+echo  ""
+sleep 3
+echo "B"
+echo ""
+sleep 3
+echo "O"
+echo ""
+sleep 3
+echo "O"
+echo  ""
+echo "T"
+sleep 1
 reboot
