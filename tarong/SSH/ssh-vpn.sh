@@ -12,12 +12,12 @@ ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
-state=INDONESIA
-locality=JAWATENGAH
-organization=Blogger
-organizationalunit=Blogger
+state=Indonesia
+locality=Jakarta
+organization=none
+organizationalunit=none
 commonname=none
-email=admin@sedang.my.id
+email=none
 
 # simple password minimal
 curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
@@ -49,7 +49,6 @@ cat > /etc/rc.local <<-END
 # By default this script does nothing.
 exit 0
 END
-
 
 # Ubah izin akses
 chmod +x /etc/rc.local
@@ -83,7 +82,7 @@ apt-get install figlet -y
 apt-get install ruby -y
 gem install lolcat
 
-# set time GMT +8
+# set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
@@ -125,27 +124,21 @@ install_ssl(){
 }
 
 # install webserver
-apt -y install nginx
-cd
+apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/nginx.conf"
-rm /etc/nginx/conf.d/vps.conf
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/vps.conf"
+curl https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/vps.conf > /etc/nginx/conf.d/vps.conf
+sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
+useradd -m vps;
+mkdir -p /home/vps/public_html
+echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
+chown -R www-data:www-data /home/vps/public_html
+chmod -R g+rw /home/vps/public_html
+cd /home/vps/public_html
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/ssh/index.html1"
 /etc/init.d/nginx restart
 
-mkdir /etc/systemd/system/nginx.service.d
-printf "[Service]\nExecStartPost=/bin/sleep 0.1\n" > /etc/systemd/system/nginx.service.d/override.conf
-rm /etc/nginx/conf.d/default.conf
-systemctl daemon-reload
-service nginx restart
-cd
-mkdir /home/vps
-mkdir /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/multiport"
-wget -O /home/vps/public_html/.htaccess "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/.htaccess"
-mkdir /home/vps/public_html/ss-ws
-mkdir /home/vps/public_html/clash-ws
 # install badvpn
 cd
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/newudpgw"
@@ -153,6 +146,12 @@ chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500' /etc/rc.local
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
@@ -165,19 +164,18 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
 # setting port ssh
 cd
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g'
-# /etc/ssh/sshd_config
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 echo "=== Install Dropbear ==="
 # install dropbear
-#apt -y install dropbear
+apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"/g' /etc/default/dropbear
@@ -186,36 +184,72 @@ echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 
-# install squid
+# Install SSLH
+apt -y install sslh
+rm -f /etc/default/sslh
+
+# Settings SSLH
+cat > /etc/default/sslh <<-END
+ Default options for sslh initscript
+ sourced by /etc/init.d/sslh
+ Disabled by default, to force yourself
+ to read the configuration:
+ - /usr/share/doc/sslh/README.Debian (quick start)
+- /usr/share/doc/sslh/README, at "Configuration" section
+ - sslh(8) via "man sslh" for more configuration details.
+ Once configuration ready, you *must* set RUN to yes here
+ and try to start sslh (standalone mode only)
+RUN=yes
+#binary to use: forked (sslh) or single-thread (sslh-select) version
+ systemd users: don't forget to modify /lib/systemd/system/sslh.service
+DAEMON=/usr/sbin/sslh
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:700 --ssl 127.0.0.1:69 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194--pidfile /var/run/sslh/sslh.pid -n"
+END
+
+# Restart Service SSLH
+service sslh restart
+systemctl restart sslh
+/etc/init.d/sslh restart
+/etc/init.d/sslh status
+/etc/init.d/sslh restart
+
+# setting vnstat
+apt -y install vnstat
+/etc/init.d/vnstat restart
+apt -y install libsqlite3-dev
+wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
+tar zxvf vnstat-2.6.tar.gz
+cd vnstat-2.6
+./configure --prefix=/usr --sysconfdir=/etc && make && make install
 cd
-apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/OPENVPN/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf
+vnstat -u -i $NET
+sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
+chown vnstat:vnstat /var/lib/vnstat -R
+systemctl enable vnstat
+/etc/init.d/vnstat restart
+rm -f /root/vnstat-2.6.tar.gz
+rm -rf /root/vnstat-2.6
 
 cd
 # install stunnel
-#apt install stunnel4 -y
+apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
-
 [dropbear]
-accept = 222
+accept = 8880
 connect = 127.0.0.1:22
-
 [dropbear]
-accept = 777
+accept = 8443
 connect = 127.0.0.1:109
-
 [ws-stunnel]
-accept = 2096
+accept = 444
 connect = 700
-
 [openvpn]
-accept = 442
+accept = 990
 connect = 127.0.0.1:1194
 
 END
@@ -271,6 +305,23 @@ chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
+# blokir torrent
+iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
+iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
+iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
+iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
+iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
+
 # download script
 cd /usr/bin
 wget -O speedtest "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/speedtest_cli.py"
@@ -310,11 +361,11 @@ if dpkg -s unscd >/dev/null 2>&1; then
 apt -y remove --purge unscd >/dev/null 2>&1
 fi
 
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
+apt-get -y --purge remove samba* >/dev/null 2>&1
+apt-get -y --purge remove apache2* >/dev/null 2>&1
+apt-get -y --purge remove bind9* >/dev/null 2>&1
+apt-get -y remove sendmail* >/dev/null 2>&1
+apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
@@ -335,6 +386,9 @@ echo -e "[ ${green}ok${NC} ] Restarting dropbear "
 /etc/init.d/fail2ban restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting fail2ban "
+/etc/init.d/sslh restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting sslh "
 /etc/init.d/stunnel4 restart >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting stunnel4 "
@@ -359,7 +413,6 @@ echo "unset HISTFILE" >> /etc/profile
 rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
-rm -f /root/bbr.sh
 
 # finihsing
 clear
