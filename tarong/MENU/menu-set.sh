@@ -175,6 +175,13 @@ ressq="${WH}ONLINE${NC}"
 else
 ressq="${red}OFFLINE${NC}"
 fi
+
+sslh=$(service sslh status | grep active | cut -d ' ' $stat)
+if [ "$sslh" = "active" ]; then
+sslh="${WH}ONLINE${NC}"
+else
+sslh="${red}OFFLINE${NC}"
+fi
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• SERVER STATUS •               ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -193,6 +200,7 @@ echo -e " $COLOR1 ${NC}  ${COLOR1}• ${WH}XRAY-SS                          ${CO
 echo -e " $COLOR1 ${NC}  ${COLOR1}• ${WH}XRAY                             ${COLOR1}• $resv2r"
 echo -e " $COLOR1 ${NC}  ${COLOR1}• ${WH}VLESS                            ${COLOR1}• $resvles"
 echo -e " $COLOR1 ${NC}  ${COLOR1}• ${WH}TROJAN                           ${COLOR1}• $restr"
+echo -e " $COLOR1 ${NC}  ${COLOR1}• ${WH}SSLH                             ${COLOR1}• $sslh"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -215,6 +223,9 @@ echo -e " $COLOR1 ${NC}  ${WH}[${COLOR1}INFO${WH}] ${COLOR1}• ${WH}Restarting 
 sleep 1
 systemctl restart squid
 echo -e " $COLOR1 ${NC}  ${WH}[${COLOR1}INFO${WH}] ${COLOR1}• ${WH}Restarting Squid Services           $COLOR1 ${NC}"
+sleep 1
+systemctl restart sslh
+echo -e " $COLOR1 ${NC}  ${WH}[${COLOR1}INFO${WH}] ${COLOR1}• ${WH}Restarting sslh Services           $COLOR1 ${NC}"
 sleep 1
 systemctl restart openvpn
 systemctl restart --now openvpn-server@server-tcp-1194
