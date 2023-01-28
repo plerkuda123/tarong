@@ -152,7 +152,14 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/depend
 rm dependencies.sh
 clear
 
-yellow "Add Domain for vmess/vless/trojan dll"
+echo -e  "|\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m|"
+echo -e  "|\033[0;33m    TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   \033[0;33m|"
+echo -e  "|\033[0;33m         DARI SAYA BY TARAP KUHING          \033[0;33m|"
+echo -e  "|\033[0;33m        TAMBAHKAN DOMAIN KAMU  DISINI       \033[0;33m|"
+echo -e  "|\033[0;33m          KALAU TIDAK PUNYA DOMAIN          \033[0;33m|"
+echo -e  "|\033[0;33m          CHAT DI WA SAYA DULU OK....       \033[0;33m|"
+echo -e  "|\033[0;33m          https://wa.me/085754292950        \033[0;33m|"
+echo -e  "|\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m|"
 echo " "
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
