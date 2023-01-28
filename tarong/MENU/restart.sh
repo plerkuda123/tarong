@@ -83,6 +83,9 @@ sleep 1
 systemctl restart squid
 echo -e " $COLOR1 ${NC}  ${WH}[${COLOR1}INFO${WH}] ${COLOR1}• ${WH}Restarting Squid Services           $COLOR1 ${NC}"
 sleep 1
+systemctl restart sslh
+echo -e " $COLOR1 ${NC}  ${WH}[${COLOR1}INFO${WH}] ${COLOR1}• ${WH}Restarting sslh Services             $COLOR1 ${NC}"
+sleep 1
 systemctl restart openvpn
 systemctl restart --now openvpn-server@server-tcp-1194
 systemctl restart --now openvpn-server@server-udp-2200
