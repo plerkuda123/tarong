@@ -333,10 +333,12 @@ echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 10 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/insshws.sh
-rm /root/update.sh
+rm /root/insshws.sh >/dev/null 2>&1
+rm /root/ohp.sh >/dev/null 2>&1
+rm /root/update.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
-echo "${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
+echo-e ""
+echo -e "${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
 echo  ""
 sleep 3
 echo "R"
