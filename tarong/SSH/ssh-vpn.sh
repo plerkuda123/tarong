@@ -298,12 +298,11 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-sleep 1
-echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/issue.net"
-chmod +x /etc/issue.net
-echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
+echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
+
+# Ganti Banner
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/issue.net"
 
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
