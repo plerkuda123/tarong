@@ -203,13 +203,13 @@ echo -e "$COLOR1 $NC  ${WH}OVPN UDP   ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
 echo -e "$COLOR1 $NC  ${WH}OVPN SSL   ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
 echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                ${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌──────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                     ${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└──────────────────────────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                 ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
@@ -578,9 +578,14 @@ echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}:${WH}$ssl"
 echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  ${WH}CF-RAY http://bug.com HTTP/1.1[crlf]Host: $domen [crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]Connection: Keep-Alive[crlf][crlf]${NC}"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                     ${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└──────────────────────────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                 ${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -605,9 +610,14 @@ echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}:${WH}$ssl"
 echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}  ${WH}CF-RAY http://bug.com HTTP/1.1[crlf]Host: $domen [crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]Connection: Keep-Alive[crlf][crlf]${NC}"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                     ${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└──────────────────────────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                 ${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
