@@ -341,9 +341,8 @@ echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/insshws.sh >/dev/null 2>&1
-rm /root/ohp.sh >/dev/null 2>&1
-rm /root/update.sh >/dev/null 2>&1
+rm /root/insshws.sh
+rm /root/update.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo  ""
 echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
