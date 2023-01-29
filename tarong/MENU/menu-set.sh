@@ -316,7 +316,7 @@ echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SET BANNE
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}BANDWITH USAGE    ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE       ${WH}
 echo -e " $COLOR1 $NC"
