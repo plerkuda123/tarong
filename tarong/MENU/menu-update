@@ -75,10 +75,12 @@ rm -rf mspeed
 rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
+rm -rf update
 # download menu
 cd /usr/bin
 rm -rf menu
 rm -rf menu-update
+rm -rf update
 
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -101,6 +103,7 @@ wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -q -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 
 chmod +x menu
 chmod +x menu-ss
@@ -124,4 +127,5 @@ chmod +x mspeed
 chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
+chmod +x update
 cd
