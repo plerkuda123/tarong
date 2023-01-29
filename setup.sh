@@ -284,6 +284,7 @@ echo "   >>> Service & Port"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "              [INFORMASI SSH ]" | tee -a log-install.txt
 echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
+echo "   - OpenVPN                 : 2086"  | tee -a log-install.txt
 echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo "   - Stunnel4                : 8443, 8880"  | tee -a log-install.txt
 echo "   - Dropbear                : 109, 143"  | tee -a log-install.txt
@@ -341,7 +342,8 @@ echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 10 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
-rm /root/update.sh
+rm /root/ohp.sh >/dev/null 2>&1
+rm /root/update.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo-e ""
 echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
