@@ -338,33 +338,34 @@ echo -e "                   ${tyblue}┌─────────────�
 echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     |${NC}"
 echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
-echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 10 seconds${NC}"
+echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
-echo-e ""
+echo  ""
 echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
 echo -e "                   ${tyblue}|Install Script VPS By TARAP KUHING SELESAI...|${NC}"
 echo -e "                   ${tyblue}└─────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tyred}[ R ]${NC}"
+echo -e "                   ${tyblue}[ R ]${NC}"
 echo  ""
 sleep 3
 echo -e "                   ${tyblue}[ E ]${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tygreen}[ B ]${NC}"
+echo -e "                   ${tyblue}[ B ]${NC}"
 echo ""
 sleep 3
-echo -e "                   ${tyyellow}[ O ]${NC}"
+echo -e "                   ${tyblue}[ O ]${NC}"
 echo ""
 sleep 3
-echo -e "                   ${tymagenta}[ O ]${NC}"
+echo -e "                   ${tyblue}[ O ]${NC}"
 echo  ""
-echo -e "                   ${tycyan}[ T ]${NC}"
-sleep 1
+sleep 3
+echo -e "                   ${tyblue}[ T ]${NC}"
+sleep 2
 reboot
