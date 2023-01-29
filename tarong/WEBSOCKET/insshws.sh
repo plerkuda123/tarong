@@ -1,6 +1,18 @@
 #!/bin/bash
-
-cd
+# Proxy For Edukasi & Imclass
+# Mod By TARAP KUHING
+# ==========================================
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+# Getting
 
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ws-dropbear
 chmod +x /usr/local/bin/ws-dropbear
