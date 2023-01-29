@@ -153,12 +153,12 @@ rm dependencies.sh
 clear
 
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "               ${tyblue}|   TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT  |${NC}"
+echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
 echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
-echo -e  "               ${tyblue}|       TAMBAHKAN DOMAIN KAMU  DISINI      |${NC}"
-echo -e  "               ${tyblue}|         KALAU TIDAK PUNYA DOMAIN         |${NC}"
-echo -e  "               ${tyblue}|         CHAT DI WA SAYA DULU OK....      |${NC}"
-echo -e  "               ${tyblue}|         https://wa.me/085754292950       |${NC}"
+echo -e  "               ${tyblue}|        TAMBAHKAN DOMAIN KAMU             |${NC}"
+echo -e  "               ${tyblue}|        KALAU TIDAK PUNYA DOMAIN          |${NC}"
+echo -e  "               ${tyblue}|        CHAT DI WA SAYA DULU OK....       |${NC}"
+echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
 read -rp "Masukan Domain Kamu OK Brooo : " -e pp
@@ -204,37 +204,37 @@ blue
 EOF
 clear
 #install ssh ovpn
-echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
-echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Install Xray
-echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}|          PROCESS INSTALLED XRAY          |${NC}"
-echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|          PROCESS INSTALLED XRAY          |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 #Install SSH Websocket
-echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}|      PROCESS INSTALLED WEBSOCKET SSH     |${NC}"
-echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|      PROCESS INSTALLED WEBSOCKET SSH     |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 #Install OHP Websocket
-echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}|          PROCESS INSTALLED OHP           |${NC}"
-echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|          PROCESS INSTALLED OHP           |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #Download Extra Menu
-echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}|           DOWNLOAD EXTRA MENU            |${NC}"
-echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|           DOWNLOAD EXTRA MENU            |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh && chmod +x update.sh && ./update.sh
 clear
@@ -333,35 +333,36 @@ echo ""  | tee -a log-install.txt
 echo "━━━━━━━━━━━━━━━━━━━━━━━━[SCRIPT PREMIUM]━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 sleep 3
-echo -e "    ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "    ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     |${NC}"
-echo -e "    ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                   ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     |${NC}"
+echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 10 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
-rm /root/ohp.sh
 rm /root/update.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo-e ""
-echo -e "          ${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
+echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
+echo -e "                   ${tyblue}|Install Script VPS By TARAP KUHING SELESAI...|${NC}"
+echo -e "                   ${tyblue}└─────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 3
-echo "             ${tyred}[ R ]${NC}"
+echo -e "                   ${tyred}[ R ]${NC}"
 echo  ""
 sleep 3
-echo "             ${tyblue}[ E ]${NC}"
+echo -e "                   ${tyblue}[ E ]${NC}"
 echo  ""
 sleep 3
-echo "             ${tygreen}[ B ]${NC}"
+echo -e "                   ${tygreen}[ B ]${NC}"
 echo ""
 sleep 3
-echo "             ${tyyellow}[ O ]${NC}"
+echo -e "                   ${tyyellow}[ O ]${NC}"
 echo ""
 sleep 3
-echo "             ${tymagenta}[ O ]${NC}"
+echo -e "                   ${tymagenta}[ O ]${NC}"
 echo  ""
-echo "             ${tycyan}[ T ]${NC}"
+echo -e "                   ${tycyan}[ T ]${NC}"
 sleep 1
 reboot
