@@ -28,7 +28,6 @@ cat > /etc/systemd/system/ssh-ohp.service << END
 Description=SSH OHP Redirection Service
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
-
 [Service]
 Type=simple
 User=root
@@ -38,7 +37,6 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/ohpserver -port 8181 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:22
 Restart=on-failure
 LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
 END
@@ -49,7 +47,6 @@ cat > /etc/systemd/system/dropbear-ohp.service << END
 Description=Dropbear OHP Redirection Service
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
-
 [Service]
 Type=simple
 User=root
@@ -59,7 +56,6 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/ohpserver -port 8282 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:109
 Restart=on-failure
 LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
 END
@@ -70,7 +66,6 @@ cat > /etc/systemd/system/openvpn-ohp.service << END
 Description=OpenVPN OHP Redirection Service
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
-
 [Service]
 Type=simple
 User=root
@@ -80,7 +75,6 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/ohpserver -port 8383 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:1194
 Restart=on-failure
 LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
 END
