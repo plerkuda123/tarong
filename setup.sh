@@ -152,14 +152,14 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/depend
 rm dependencies.sh
 clear
 
-echo -e  "|\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m|"
-echo -e  "|\033[0;33m    TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   \033[0;33m|"
-echo -e  "|\033[0;33m         DARI SAYA BY TARAP KUHING          \033[0;33m|"
-echo -e  "|\033[0;33m        TAMBAHKAN DOMAIN KAMU  DISINI       \033[0;33m|"
-echo -e  "|\033[0;33m          KALAU TIDAK PUNYA DOMAIN          \033[0;33m|"
-echo -e  "|\033[0;33m          CHAT DI WA SAYA DULU OK....       \033[0;33m|"
-echo -e  "|\033[0;33m          https://wa.me/085754292950        \033[0;33m|"
-echo -e  "|\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m|"
+echo -e  "          ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e  "          ${tyblue}|   TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT  |${NC}"
+echo -e  "          ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
+echo -e  "          ${tyblue}|       TAMBAHKAN DOMAIN KAMU  DISINI      |${NC}"
+echo -e  "          ${tyblue}|         KALAU TIDAK PUNYA DOMAIN         |${NC}"
+echo -e  "          ${tyblue}|         CHAT DI WA SAYA DULU OK....      |${NC}"
+echo -e  "          ${tyblue}|         https://wa.me/085754292950       |${NC}"
+echo -e  "          ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
@@ -202,39 +202,39 @@ EOF
 cat <<EOF>> /etc/tarap/theme/color.conf
 blue
 EOF
-
+clear
 #install ssh ovpn
-echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
-echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Install Xray
-echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}|          PROCESS INSTALLED XRAY          |${NC}"
-echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 #Install SSH Websocket
-echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}|      PROCESS INSTALLED WEBSOCKET SSH     |${NC}"
-echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 #Install OHP Websocket
-echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}|          PROCESS INSTALLED OHP           |${NC}"
-echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #Download Extra Menu
-echo -e "${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}|           DOWNLOAD EXTRA MENU            |${NC}"
-echo -e "${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh && chmod +x update.sh && ./update.sh
 clear
@@ -282,33 +282,33 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━[S
 echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "    [INFORMASI SSH ]" | tee -a log-install.txt
-echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
+echo "              [INFORMASI SSH ]" | tee -a log-install.txt
+echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
 echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo "   - Stunnel4                : 8443, 8880"  | tee -a log-install.txt
 echo "   - Dropbear                : 109, 143"  | tee -a log-install.txt
 echo "   - SSH Websocket           : 80 [ON]"  | tee -a log-install.txt
 echo "   - SSH SSL Websocket       : 443 444,"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "    [INFORMASI  Bdvp, Ngnx]" | tee -a log-install.txt
-echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
+echo "              [INFORMASI  Bdvp, Ngnx]" | tee -a log-install.txt
+echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
 echo "   - Badvpn                  : 7100-7900"  | tee -a log-install.txt
 echo "   - Nginx                   : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "    [INFORMASI Shadowsocks-R & Shadowsocks]"  | tee -a log-install.txt
+echo "              [INFORMASI Shadowsocks-R & Shadowsocks]"  | tee -a log-install.txt
 echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
 echo "   - Websocket Shadowsocks   : 443"  | tee -a log-install.txt
 echo "   - Shadowsocks GRPC        : 443"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "    [INFORMASI XRAY]"  | tee -a log-install.txt
-echo "    ━━━━━━━━━━━━━━━━" | tee -a log-install.txt
+echo "              [INFORMASI XRAY]"  | tee -a log-install.txt
+echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
 echo "   - Xray Vmess Ws Tls       : 443"  | tee -a log-install.txt
 echo "   - Xray Vless Ws Tls       : 443"  | tee -a log-install.txt
 echo "   - Xray Vmess Ws None Tls  : 80"  | tee -a log-install.txt
 echo "   - Xray Vless Ws None Tls  : 80"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "    [INFORMASI TROJAN]"  | tee -a log-install.txt
-echo "    ━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
+echo "             [INFORMASI TROJAN]"  | tee -a log-install.txt
+echo "    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
 echo "   - Websocket Trojan        : 443"  | tee -a log-install.txt
 echo "   - Trojan GRPC             : 443"  | tee -a log-install.txt
 echo "   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a log-install.txt
@@ -333,9 +333,9 @@ echo ""  | tee -a log-install.txt
 echo "━━━━━━━━━━━━━━━━━━━━━━━━[SCRIPT PREMIUM]━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 sleep 3
-echo -e "    ${tyblue}.━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━.${NC}"
+echo -e "    ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "    ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     |${NC}"
-echo -e "    ${tyblue}'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'${NC}"
+echo -e "    ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 10 seconds${NC}"
 rm /root/cf.sh >/dev/null 2>&1
@@ -345,23 +345,23 @@ rm /root/ohp.sh
 rm /root/update.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo-e ""
-echo -e "${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
+echo -e "          ${tyblue}Install Script VPS By TARAP KUHING SELESAI........${NC}"
 echo  ""
 sleep 3
-echo "R"
+echo "             ${tyred}[ R ]${NC}"
 echo  ""
 sleep 3
-echo "E"
+echo "             ${tyblue}[ E ]${NC}"
 echo  ""
 sleep 3
-echo "B"
+echo "             ${tygreen}[ B ]${NC}"
 echo ""
 sleep 3
-echo "O"
+echo "             ${tyyellow}[ O ]${NC}"
 echo ""
 sleep 3
-echo "O"
+echo "             ${tymagenta}[ O ]${NC}"
 echo  ""
-echo "T"
+echo "             ${tycyan}[ T ]${NC}"
 sleep 1
 reboot
