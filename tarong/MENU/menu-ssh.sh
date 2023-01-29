@@ -632,16 +632,16 @@ echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• MENU SSH & OVPN •       
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}•     PREMIUM     •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}
- $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD SSH         ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}DELETE SSH${NC}    $COLOR1 $NC
- $COLOR1 $NC                                              ${NC} $COLOR1 $NC
- $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL SSH       ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}RENEW SSH${NC}     $COLOR1 $NC
-  $COLOR1 $NC                                              ${NC} $COLOR1 $NC
- $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE     ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}USERS LIST${NC}    $COLOR1 $NC
-  $COLOR1 $NC                                              ${NC} $COLOR1 $NC
- $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ENABLE WS                            $COLOR1 $NC
- $COLOR1 $NC                                              ${NC} $COLOR1 $NC
- $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
-echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD SSH         ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}DELETE SSH${NC}    $COLOR1 $NC"
+echo -e "$COLOR1 $NC                                              ${NC} $COLOR1 $NC
+echo -e "$COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL SSH       ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}RENEW SSH${NC}     $COLOR1 $NC"
+echo -e "$COLOR1 $NC                                              ${NC} $COLOR1 $NC
+echo -e "$COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE     ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}USERS LIST${NC}    $COLOR1 $NC"
+echo -e "$COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ENABLE WS                            $COLOR1 $NC"
+echo -e "$COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
+echo -e "$COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}•     CHAT     •${NC}                 $COLOR1 $NC"
