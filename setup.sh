@@ -148,8 +148,8 @@ fi
 fi
 
 echo ""
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
-rm dependencies.sh
+#wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+#rm dependencies.sh
 clear
 
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
@@ -230,7 +230,7 @@ echo -e "                 ${tyblue}|          PROCESS INSTALLED OHP           |$
 echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/WEBSOCKET/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #Download Extra Menu
 echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "                 ${tyblue}|           DOWNLOAD EXTRA MENU            |${NC}"
@@ -339,10 +339,10 @@ echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     
 echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
-rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/insshws.sh
-rm /root/update.sh
+rm /root/insshws.sh >/dev/null 2>&1
+rm /root/ohp.sh >/dev/null 2>&1
+rm /root/update.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo  ""
 echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
