@@ -350,21 +350,21 @@ echo -e "                   ${tyblue}|Install Script VPS By TARAP KUHING SELESAI
 echo -e "                   ${tyblue}└─────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tyblue}[ R ]${NC}"
+echo -e "                                       ${tyblue}[ R ]${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tyblue}[ E ]${NC}"
+echo -e "                                       ${tyblue}[ E ]${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tyblue}[ B ]${NC}"
+echo -e "                                       ${tyblue}[ B ]${NC}"
 echo ""
 sleep 3
-echo -e "                   ${tyblue}[ O ]${NC}"
+echo -e "                                       ${tyblue}[ O ]${NC}"
 echo ""
 sleep 3
-echo -e "                   ${tyblue}[ O ]${NC}"
+echo -e "                                       ${tyblue}[ O ]${NC}"
 echo  ""
 sleep 3
-echo -e "                   ${tyblue}[ T ]${NC}"
+echo -e "                                       ${tyblue}[ T ]${NC}"
 sleep 2
 reboot
