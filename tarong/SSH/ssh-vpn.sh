@@ -2,6 +2,12 @@
 #
 # ==================================================
 
+# etc
+apt dist-upgrade -y
+apt install netfilter-persistent -y
+apt-get remove --purge ufw firewalld -y
+apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
+
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -239,23 +245,18 @@ client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
-
 [dropbear]
 accept = 8880
 connect = 127.0.0.1:22
-
 [dropbear]
 accept = 8443
 connect = 127.0.0.1:109
-
 [ws-stunnel]
 accept = 444
 connect = 700
-
 [openvpn]
 accept = 990
 connect = 127.0.0.1:1194
-
 END
 
 # make a certificate
@@ -307,6 +308,9 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 
 # Ganti Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/issue.net"
+
+#install bbr dan optimasi kernel
+#wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
