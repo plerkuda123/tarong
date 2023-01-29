@@ -161,7 +161,7 @@ echo -e  "               ${tyblue}|         CHAT DI WA SAYA DULU OK....      |${
 echo -e  "               ${tyblue}|         https://wa.me/085754292950       |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
-read -rp "Input your domain : " -e pp
+read -rp "Masukan Domain Kamu OK Brooo : " -e pp
 echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
