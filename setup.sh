@@ -152,14 +152,14 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/depend
 rm dependencies.sh
 clear
 
-echo -e  "          ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "          ${tyblue}|   TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT  |${NC}"
-echo -e  "          ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
-echo -e  "          ${tyblue}|       TAMBAHKAN DOMAIN KAMU  DISINI      |${NC}"
-echo -e  "          ${tyblue}|         KALAU TIDAK PUNYA DOMAIN         |${NC}"
-echo -e  "          ${tyblue}|         CHAT DI WA SAYA DULU OK....      |${NC}"
-echo -e  "          ${tyblue}|         https://wa.me/085754292950       |${NC}"
-echo -e  "          ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e  "               ${tyblue}|   TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT  |${NC}"
+echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
+echo -e  "               ${tyblue}|       TAMBAHKAN DOMAIN KAMU  DISINI      |${NC}"
+echo -e  "               ${tyblue}|         KALAU TIDAK PUNYA DOMAIN         |${NC}"
+echo -e  "               ${tyblue}|         CHAT DI WA SAYA DULU OK....      |${NC}"
+echo -e  "               ${tyblue}|         https://wa.me/085754292950       |${NC}"
+echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
