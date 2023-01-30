@@ -150,6 +150,9 @@ fi
 echo ""
 echo -ne "[ ${yell}INFO${NC} ] Apa Kamu Punya Domain ? ( y ) PUNYA ( n ) TIDAK? "
 read -rp "Tekan y/n Lalu Inter : -e answer
+if [ "$answer" == "${answer#[n]}" ] ;then
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
+echo ""
 if [ "$answer" == "${answer#[y]}" ] ;then
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e  "               ${tyblue}|              TERIMA KASIH                |${NC}"
@@ -159,15 +162,13 @@ echo -e  "               ${tyblue}|            BY TARAP KUHING               |${
 echo -e  "               ${tyblue}|         ADA PERTANYAAN CHAT WA           |${NC}"
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
-echo " "
+echo ""
 read -rp "Masukan Domain Kamu OK Brooo : " -e dns
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/xray/scdomain
 echo "IP=$dns" > /var/lib/ipvps.conf
-clear
-if [ "$answer" == "${answer#[n]}" ] ;wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
