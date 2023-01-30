@@ -340,7 +340,6 @@ echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     
 echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
-rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
