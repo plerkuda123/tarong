@@ -147,13 +147,26 @@ clear
 fi
 fi
 echo ""
-#install domain
-echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                 ${tyblue}|     PROCESS MENDAPATKAN DOMAIN           |${NC}"
-echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
-sleep 2
+#wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+#rm dependencies.sh
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
+echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
+echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
+echo -e  "               ${tyblue}|        TAMBAHKAN DOMAIN KAMU             |${NC}"
+echo -e  "               ${tyblue}|        KALAU TIDAK PUNYA DOMAIN          |${NC}"
+echo -e  "               ${tyblue}|        CHAT DI WA SAYA DULU OK....       |${NC}"
+echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
+echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo " "
+read -rp "Masukan Domain Kamu OK Brooo : " -e dns
+echo "$dns" > /root/domain
+echo "$dns" > /root/scdomain
+echo "$dns" > /etc/xray/domain
+echo "$dns" > /etc/v2ray/domain
+echo "$dns" > /etc/v2ray/scdomain
+echo "$dns" > /etc/xray/scdomain
+echo "IP=$dns" > /var/lib/ipvps.conf
 clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
