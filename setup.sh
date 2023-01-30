@@ -133,21 +133,13 @@ mkdir -p /etc/tarap/theme
 mkdir -p /var/lib >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 
-#install domain
-echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                 ${tyblue}|     PROCESS MENDAPATKAN DOMAIN           |${NC}"
-echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
-sleep 2
-clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
-clear
 if [ -f "/etc/xray/domain" ]; then
 echo ""
 echo -e "[ ${green}INFO${NC} ] Script Already Installed"
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to install again ? (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
-rm setup.sh
+rm -f setup.sh
 sleep 10
 exit 0
 else
@@ -155,6 +147,13 @@ clear
 fi
 fi
 echo ""
+#install domain
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|     PROCESS MENDAPATKAN DOMAIN           |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
 clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
