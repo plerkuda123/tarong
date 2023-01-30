@@ -146,30 +146,9 @@ else
 clear
 fi
 fi
-
 echo ""
-echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "               ${tyblue}|              TERIMA KASIH                |${NC}"
-echo -e  "               ${tyblue}|         SUDAH MENGGUNAKAN SCRIPT         |${NC}"
-echo -e  "               ${tyblue}|                DARI SAYA                 |${NC}"
-echo -e  "               ${tyblue}|            BY TARAP KUHING               |${NC}"
-echo -e  "               ${tyblue}|         ADA PERTANYAAN CHAT WA           |${NC}"
-echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
-echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
-echo ""
-read -rp "Masukan domain kamu Disini : " -e dns
-    if [ -z $dns ]; then
-        echo -e "
-        Nothing input for domain!
-        Then a random domain will be created"
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
-    else
-echo "$dns" > /root/domain
-echo "$dns" > /root/scdomain
-echo "$dns" > /etc/xray/domain
-echo "$dns" > /etc/xray/scdomain
-echo "IP=$dns" > /var/lib/ipvps.conf
-
+clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
 BG : \E[40;1;41m
