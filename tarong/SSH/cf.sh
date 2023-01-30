@@ -52,4 +52,5 @@ echo  " $dns "  > /etc/v2ray/domain
 echo  $dns  > /root/domain
 echo  " IP= $dns "  > /var/lib/ipvps.conf
 rm /root/cf.sh >/dev/null 2>&1
+clear
 exit
