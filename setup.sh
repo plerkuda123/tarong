@@ -148,25 +148,26 @@ fi
 fi
 
 echo ""
-#wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
-#rm dependencies.sh
-clear
-
+echo -ne "[ ${yell}INFO${NC} ] Apa Kamu Punya Domain ? ( y ) PUNYA ( n ) TIDAK? "
+read -rp "Tekan y/n Lalu Inter : -e answer
+if [ "$answer" == "${answer#[y]}" ] ;then
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
-echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
-echo -e  "               ${tyblue}|        TAMBAHKAN DOMAIN KAMU             |${NC}"
-echo -e  "               ${tyblue}|        KALAU TIDAK PUNYA DOMAIN          |${NC}"
-echo -e  "               ${tyblue}|        CHAT DI WA SAYA DULU OK....       |${NC}"
+echo -e  "               ${tyblue}|              TERIMA KASIH                |${NC}"
+echo -e  "               ${tyblue}|         SUDAH MENGGUNAKAN SCRIPT         |${NC}"
+echo -e  "               ${tyblue}|                DARI SAYA                 |${NC}"
+echo -e  "               ${tyblue}|            BY TARAP KUHING               |${NC}"
+echo -e  "               ${tyblue}|         ADA PERTANYAAN CHAT WA           |${NC}"
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
-read -rp "Masukan Domain Kamu OK Brooo : " -e pp
-echo "$pp" > /root/domain
-echo "$pp" > /root/scdomain
-echo "$pp" > /etc/xray/domain
-echo "$pp" > /etc/xray/scdomain
-echo "IP=$pp" > /var/lib/ipvps.conf
+read -rp "Masukan Domain Kamu OK Brooo : " -e dns
+echo "$dns" > /root/domain
+echo "$dns" > /root/scdomain
+echo "$dns" > /etc/xray/domain
+echo "$dns" > /etc/xray/scdomain
+echo "IP=$dns" > /var/lib/ipvps.conf
+clear
+if [ "$answer" == "${answer#[n]}" ] ;wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
@@ -339,6 +340,7 @@ echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     
 echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
+rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
