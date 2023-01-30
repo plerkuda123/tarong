@@ -147,7 +147,6 @@ clear
 fi
 fi
 echo ""
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
 clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
@@ -183,7 +182,13 @@ EOF
 cat <<EOF>> /etc/tarap/theme/color.conf
 blue
 EOF
+#install domain
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|     PROCESS MENDAPATKAN DOMAIN           |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
+sleep 2
 clear
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
 echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "                 ${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
