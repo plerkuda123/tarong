@@ -146,9 +146,7 @@ else
 clear
 fi
 fi
-
-echo ""
-echo -ne "[ ${yell}INFO${NC} ] Apa Kamu Punya Domain ? ( y ) PUNYA ( n ) TIDAK? "
+echo -e "[ ${yell}INFO${NC} ] Apa Kamu Punya Domain ? ( y ) PUNYA ( n ) TIDAK? "
 read -rp "Tekan y/n Lalu Inter : -e answer
 if [ "$answer" == "${answer#[n]}" ] ;then
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
