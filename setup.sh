@@ -146,12 +146,8 @@ else
 clear
 fi
 fi
-echo -e "[ ${yell}INFO${NC} ] Apa Kamu Punya Domain ? ( y ) PUNYA ( n ) TIDAK? "
-read -rp "Tekan y/n Lalu Inter : -e answer
-if [ "$answer" == "${answer#[n]}" ] ;then
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
+
 echo ""
-if [ "$answer" == "${answer#[y]}" ] ;then
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e  "               ${tyblue}|              TERIMA KASIH                |${NC}"
 echo -e  "               ${tyblue}|         SUDAH MENGGUNAKAN SCRIPT         |${NC}"
@@ -161,7 +157,13 @@ echo -e  "               ${tyblue}|         ADA PERTANYAAN CHAT WA           |${
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo ""
-read -rp "Masukan Domain Kamu OK Brooo : " -e dns
+read -rp "Masukan domain kamu Disini : " -e dns
+    if [ -z $dns ]; then
+        echo -e "
+        Nothing input for domain!
+        Then a random domain will be created"
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/cf.sh && chmod +x cf.sh && ./cf.sh
+    else
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
