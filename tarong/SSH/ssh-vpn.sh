@@ -314,8 +314,8 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 # Ganti Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/issue.net"
 
-#install bbr dan optimasi kernel
-#wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+install bbr dan optimasi kernel
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
