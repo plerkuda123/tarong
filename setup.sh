@@ -147,8 +147,8 @@ clear
 fi
 fi
 echo ""
-#wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
-#rm dependencies.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+rm dependencies.sh
 clear
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
