@@ -19,7 +19,7 @@ ipes=$(curl -sS ipv4.icanhazip.com)
 }
 
 dircreate() {
-    [[ ! -d /root/multi ]] && mkdir -p /root/multi && touch /root/multi/voucher && touch /root/multi/claimed && touch /root/multi/reseller && touch /root/multi/public && touch /root/multi/hist && echo "off" >/root/multi/public
+    [[ ! -d /root/tarap ]] && mkdir -p /root/tarap && touch /root/tarap/voucher && touch /root/tarap/claimed && touch /root/tarap/reseller && touch /root/tarap/public && touch /root/tarap/hist && echo "off" >/root/tarap/public
     [[ ! -d /etc/.maAsiss ]] && mkdir -p /etc/.maAsiss
 }
 
