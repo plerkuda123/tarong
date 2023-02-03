@@ -18,7 +18,7 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhin
 chmod +x /usr/local/bin/ws-dropbear.service
 
 # Installing Service
-cat > /etc/systemd/system/ws-dropbear << END
+cat > /etc/systemd/system/ws-dropbear.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
 Documentation=https://t.me/Hendra2012
