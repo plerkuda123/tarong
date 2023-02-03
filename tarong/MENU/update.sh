@@ -25,6 +25,7 @@ wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
+wget -q -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 echo -e " [INFO] Update Successfully"
 sleep 2
 exit
