@@ -5,10 +5,10 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/tarap/theme/color.conf)
 NC="\e[0m"
 export GREEN='\033[0;32m';
-RED="\033[0;31m"
+RED="\033[0;31m" 
 COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
-WH='\033[1;37m'
+COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"  
+WH='\033[1;37m'                  
 ###########- END COLOR CODE -##########
 
 ipes=$(curl -sS ipv4.icanhazip.com)
@@ -87,7 +87,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 dircreate
-[[ ! -f /root/multi/bot.conf ]] && {
+[[ ! -f /root/tarap/bot.conf ]] && {
 echo -e "
 • Status ${GREEN}Installer${NC} And ${GREEN}Running!${NC}
 "
@@ -101,13 +101,13 @@ echo "Admin_ID: $adm_ids" >>/root/ResBotAuth
 }
 echo -ne " NAMA BOT : "
 read bot_user
-[[ -z $bot_user ]] && bot_user="DyanZ_Bot"
+[[ -z $bot_user ]] && bot_user="TARAP-KUHING_Bot"
 echo ""
 echo -ne " LIMIT     : "
 read limit_pnl
 [[ -z $limit_pnl ]] && limit_pnl="1"
 echo ""
-cat <<-EOF >/root/multi/bot.conf
+cat <<-EOF >/root/tarap/bot.conf
 Botname: $bot_user
 Limit: $limit_pnl
 EOF
@@ -115,7 +115,7 @@ EOF
 fun_bot1() {
 clear
 [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
-wget -qO- https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/menu%20bot >/etc/.maAsiss/.Shellbtsss
+wget -qO- https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/bot-api.sh >/etc/.maAsiss/.Shellbtsss
 }
 [[ "$(grep -wc "sam_bot" "/etc/rc.local")" = '0' ]] && {
 sed -i '$ i\screen -dmS sam_bot bbt' /etc/rc.local >/dev/null 2>&1
@@ -128,7 +128,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 echo -e ""
-echo -e " [INFO]  Bot successfully activated !"
+echo -e " [INFO]  Bot successfully activated !" 
 echo -e ""
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 echo -e ""
@@ -153,7 +153,7 @@ screen -r -S "sam_bot" -X quit >/dev/null 2>&1
 [[ $(grep -wc "sam_bot" /etc/rc.local) != '0' ]] && {
 sed -i '/sam_bot/d' /etc/rc.local
 }
-rm -f /root/multi/bot.conf
+rm -f /root/tarap/bot.conf
 sleep 1
 }
 fun_bot2
