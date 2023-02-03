@@ -27,26 +27,6 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading Update File⇲        \E[0m"
 sleep 5
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e "\E[44;1;39m               ⇱ 5 ⇲                      \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-sleep 4
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e "\E[44;1;39m               ⇱ 4 ⇲                      \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-sleep 3
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e "\E[44;1;39m               ⇱ 3 ⇲                      \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-sleep 2
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e "\E[44;1;39m               ⇱ 2 ⇲                      \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-sleep 1
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e "\E[44;1;39m               ⇱ 1 ⇲                      \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•"
-echo -e""
 echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\E[44;1;39m              ⇱ UPDATE ⇲                      \E[0m"
 echo -e "\E[44;1;39m              ⇱ DIMULAI ⇲                     \E[0m"
@@ -79,6 +59,26 @@ rm -rf update
 # download menu
 cd /usr/bin
 rm -rf menu
+rm -rf menu-ss
+rm -rf menu-vmess
+rm -rf menu-vless
+rm -rf menu-trojan
+rm -rf menu-bot
+rm -rf menu-ssh
+rm -rf menu-set
+rm -rf menu-theme
+rm -rf menu-backup
+rm -rf menu-ip
+rm -rf menu-tor
+rm -rf menu-tcp
+rm -rf autoboot
+rm -rf menu-tcp
+rm -rf rebootvps
+rm -rf menu-dns
+rm -rf info
+rm -rf mspeed
+rm -rf mbandwith
+rm -rf restart
 rm -rf menu-update
 rm -rf update
 
