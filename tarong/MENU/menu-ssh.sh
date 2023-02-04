@@ -72,6 +72,8 @@ fi
 function addssh(){
 clear
 domen=`cat /etc/xray/domain`
+sldomain=$(cat /root/nsdomain)
+slkey=$(cat /etc/slowdns/server.pub)
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
@@ -165,21 +167,26 @@ echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-c
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}IP         ${COLOR1}: ${WH}$IP"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}$portsshws"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
-echo -e "$COLOR1 $NC  ${WH}Port TCP   ${COLOR1}: ${WH}$ovpn"
-echo -e "$COLOR1 $NC  ${WH}Port UDP   ${COLOR1}: ${WH}$ovpn2"
-echo -e "$COLOR1 $NC  ${WH}Port SSL   ${COLOR1}: ${WH}990"
-echo -e "$COLOR1 $NC  ${WH}OVPN TCP   ${COLOR1}: ${WH}http://$IP:81/tcp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN UDP   ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN SSL   ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
-echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}IP            ${COLOR1}: ${WH}$IP"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Host          ${COLOR1}: ${WH}$domen"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}OpenSSH       ${COLOR1}: ${WH}$opensh" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Dropbear      ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSH-WS        ${COLOR1}: ${WH}$portsshws"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS    ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSL/TLS       ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}OVPN WS       ${COLOR1}: ${WH}2086"
+echo -e "$COLOR1 $NC  ${WH}Port TCP      ${COLOR1}: ${WH}$ovpn"
+echo -e "$COLOR1 $NC  ${WH}Port UDP      ${COLOR1}: ${WH}$ovpn2"
+echo -e "$COLOR1 $NC  ${WH}Port SSL      ${COLOR1}: ${WH}990"
+echo -e "$COLOR1 $NC  ${WH}OVPN TCP      ${COLOR1}: ${WH}http://$IP:81/tcp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN UDP      ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN SSL      ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
+echo -e "$COLOR1 $NC  ${WH}UDPGW         ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Host SLOWDNS  ${COLOR1}: ${WH}$sldomain"
+echo -e "$COLOR1 $NC  ${WH}DNS PUBLIC KEY${COLOR1}: ${WH}$slkey"
+echo -e "$COLOR1 $NC  ${WH}SlowDNS       ${COLOR1}: ${WH}ALL SSH Port"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
