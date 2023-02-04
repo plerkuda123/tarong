@@ -318,9 +318,9 @@ echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}BANDWITH 
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE       ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}IP ${WH}[${COLOR1}MENU${WH}]${NC}"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE       ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}IP"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK$NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK           ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BOT"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -338,6 +338,7 @@ case $opt in
 08 | 8) clear ; autoboot ;;
 09 | 9) clear ; mspeed ;;
 10 | 10) clear ; menu-ip ;;
+11 | 11) clear ; menu-bot ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac
