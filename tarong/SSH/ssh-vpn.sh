@@ -340,10 +340,13 @@ wget -O speedtest "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ta
 wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/xp.sh"
 wget -O auto-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/auto-set.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update"
+wget -O slhost "https://raw.githubusercontent.com/Tarap-Kuhing/SLDNS/main/slowdns/install-sldns"
+
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
-chmod +x menu-update 
+chmod +x menu-update
+chmod +x slhost
 cd
 
 
