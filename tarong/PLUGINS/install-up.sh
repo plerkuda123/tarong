@@ -11,11 +11,11 @@ export COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed
 ###########- END COLOR CODE -##########
 
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Remove Old Script"
-rm /usr/bin/menu-bot
+rm /usr/bin/menu-update
 
 sleep 2
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script"
-wget -q -O /usr/bin/menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-bot
+wget -q -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 
 sleep 2
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Download Changelog File"
