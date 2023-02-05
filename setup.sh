@@ -150,7 +150,7 @@ echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/slhost.sh && chmod +x slhost.sh && ./slhost.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
 sleep 20
 clear
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
@@ -207,7 +207,9 @@ blue
 EOF
 clear
 #Install Tarap_Kuhing
-https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
+sleep 5
+clear
 #install ssh ovpn
 echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "                 ${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
