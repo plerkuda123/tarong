@@ -206,6 +206,8 @@ cat <<EOF>> /etc/tarap/theme/color.conf
 blue
 EOF
 clear
+#Install Tarap_Kuhing
+https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
 #install ssh ovpn
 echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "                 ${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
@@ -343,7 +345,7 @@ echo -e "                   ${tyblue}└─────────────�
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/cf.sh >/dev/null 2>&1
+rm /root/Tarap_Kuhing.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
