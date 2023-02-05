@@ -151,7 +151,6 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/depend
 rm dependencies.sh
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/slhost.sh && chmod +x slhost.sh && ./slhost.sh
-rm slhost.sh
 sleep 20
 clear
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
