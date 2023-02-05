@@ -6,7 +6,7 @@ DOMAIN=tarong.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-x0-9 | head -c5)
 SUB_DOMAIN=${sub}.tarong.my.id
-NS_DOMAIN=${sub}.tarong.my.id
+NS_DOMAIN=${subsl}.tarong.my.id
 echo "IP=""$SUB_DOMAIN" >> /var/lib/ipvps.conf
 echo "$NS_DOMAIN" >> /root/nsdomain
 CF_ID=merahjambo@gmail.com
