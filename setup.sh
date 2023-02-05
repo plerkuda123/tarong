@@ -130,7 +130,6 @@ sleep 3
 
 mkdir -p /etc/tarap
 mkdir -p /etc/tarap/theme
-mkdir -p /etc/xray/domain
 mkdir -p /var/lib >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 
