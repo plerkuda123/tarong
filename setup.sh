@@ -207,7 +207,7 @@ blue
 EOF
 clear
 #Install Tarap_Kuhing
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
+#wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
 sleep 5
 clear
 #install ssh ovpn
@@ -347,7 +347,7 @@ echo -e "                   ${tyblue}└─────────────�
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/Tarap_Kuhing.sh >/dev/null 2>&1
+#rm /root/Tarap_Kuhing.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
