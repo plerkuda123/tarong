@@ -150,6 +150,9 @@ echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/slhost.sh && chmod +x slhost.sh && ./slhost.sh
+rm slhost.sh
+clear
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
 echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
