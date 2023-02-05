@@ -26,7 +26,7 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading Update File⇲        \E[0m"
-sleep 5
+sleep 2
 echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\E[44;1;39m              ⇱ UPDATE ⇲                      \E[0m"
 echo -e "\E[44;1;39m              ⇱ DIMULAI ⇲                     \E[0m"
@@ -56,6 +56,7 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf menu-slowdns
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script"
 cd /usr/bin
 rm -rf menu
@@ -81,6 +82,7 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf menu-slowdns
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -104,6 +106,7 @@ wget -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
+wget -O /usr/bin/menu-slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-slowdns.sh" && chmod +x /usr/bin/menu-slowdns
 
 chmod +x menu
 chmod +x menu-ss
@@ -129,5 +132,5 @@ chmod +x restart
 chmod +x menu-update
 chmod +x update
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script Selesai"
-sleep 5
+sleep 3
 cd
