@@ -163,14 +163,14 @@ echo -e  "               ${tyblue}|        CHAT DI WA SAYA DULU OK....       |${
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
-read -rp "Masukan Domain Kamu OK Brooo : " -e dns
-echo "$dns" > /root/domain
-echo "$dns" > /root/scdomain
-echo "$dns" > /etc/xray/domain
-echo "$dns" > /etc/v2ray/domain
-echo "$dns" > /etc/v2ray/scdomain
-echo "$dns" > /etc/xray/scdomain
-echo "IP=$dns" > /var/lib/ipvps.conf
+#read -rp "Masukan Domain Kamu OK Brooo : " -e dns
+#echo "$dns" > /root/domain
+#echo "$dns" > /root/scdomain
+#echo "$dns" > /etc/xray/domain
+#echo "$dns" > /etc/v2ray/domain
+#echo "$dns" > /etc/v2ray/scdomain
+#echo "$dns" > /etc/xray/scdomain
+#echo "IP=$dns" > /var/lib/ipvps.conf
 clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
