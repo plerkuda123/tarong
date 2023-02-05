@@ -1,20 +1,7 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-rm -f /root/domain
-rm -f /etc/v2ray/domain
-rm -f /etc/xray/domain
-rm -rf /etc/xray/domain
-rm -rf /root/nsdomain
-rm -rf /var/lib/ipvps.conf
-rm nsdomain
-rm domain
-mkdir -p /usr/bin/xray
-mkdir -p /usr/bin/v2ray
-mkdir -p /etc/xray
-mkdir -p /etc/v2ray
-echo "$SUB_DOMAIN" >> /etc/v2ray/domain
-#
+#============
 DOMAIN=tarong.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-x0-9 | head -c5)
