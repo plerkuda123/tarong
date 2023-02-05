@@ -67,6 +67,5 @@ echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/v2ray/scdomain
 echo "$dns" > /etc/xray/scdomain
 echo "$NS_dns" > /etc/xray/nsdomain
-echo "$NS_dns" > /etc/v2ray/nsdomain
 echo "IP=$dns" > /var/lib/ipvps.conf
 cd
