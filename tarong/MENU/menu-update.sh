@@ -131,6 +131,7 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
+chmod +x menu-slowdns
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script Selesai"
 sleep 3
 cd
