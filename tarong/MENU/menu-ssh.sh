@@ -72,8 +72,6 @@ fi
 function addssh(){
 clear
 domen=`cat /etc/xray/domain`
-sldomain=`cat /etc/xray/nsdomain`
-slkey=`cat /etc/slowdns/server.pub`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
@@ -183,14 +181,9 @@ echo -e "$COLOR1 $NC  ${WH}OVPN UDP      ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
 echo -e "$COLOR1 $NC  ${WH}OVPN SSL      ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
 echo -e "$COLOR1 $NC  ${WH}UDPGW         ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}Host SLOWDNS  ${COLOR1}: ${WH}$sldomain"
-echo -e "$COLOR1 $NC  ${WH}DNS PUBLIC KEY${COLOR1}: ${WH}$slkey"
-echo -e "$COLOR1 $NC  ${WH}SlowDNS       ${COLOR1}: ${WH}ALL SSH Port"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET wss://bug.com HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└────────────────────────────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | tee -a /etc/log-create-user.log
@@ -227,7 +220,7 @@ echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}  ${WH}GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}  ${WH}GET wss://bug.com HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└────────────────────────────────────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | tee -a /etc/log-create-user.log
