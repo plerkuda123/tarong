@@ -184,8 +184,6 @@ sleep 2
 sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
-by_name=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/name)
-rm /opt/.name
 version_up=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
@@ -207,7 +205,7 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
-serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
+serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/name)
 if [ "$Isadmin" = "ON" ]; then
 uis="${COLOR1}Premium User$NC"
 else
@@ -248,17 +246,11 @@ echo -e " $COLOR1 $NC                                              ${NC} $COLOR1
 echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}SET DNS ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}INFO     ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-by="$(cat /opt/.ver)"
-
-if [[ $by_name > $by ]]; then
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}• ${WH} $by_name${NC}"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 myver="$(cat /opt/.ver)"
 
 if [[ $serverV > $myver ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[${COLOR1}100${WH}]${NC} ${COLOR1}• ${WH}UPDATE TO V$serverV${NC}"
+echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}• ${WH}UPDATE TO V$serverV${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 up2u="updatews"
 else
