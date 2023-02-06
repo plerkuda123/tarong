@@ -26,7 +26,8 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 clear
-echo -e "\E[44;1;39m ⇱ [INFO] Hapus File Lama⇲        \E[0m"
+echo -e "\E[44;1;39m ⇱ [INFO] Remove File Script ⇲        \E[0m"
+sleep 2
 rm -rf menu
 rm -rf menu-ss
 rm -rf menu-vmess
@@ -51,7 +52,7 @@ rm -rf restart
 rm -rf menu-update
 rm -rf update
 #rm -rf menu-slowdns
-echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File⇲        \E[0m"
+echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
 rm -rf menu-ss
@@ -126,6 +127,6 @@ chmod +x restart
 chmod +x menu-update
 chmod +x update
 #chmod +x menu-slowdns
-echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Selesai⇲        \E[0m"
+echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
