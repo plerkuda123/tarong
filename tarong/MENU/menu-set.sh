@@ -310,19 +310,17 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1  $NC$COLBG1               ${WH}• VPS SETTING •                 $COLOR1  $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}RUNNING           ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}TCP TWEAK"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}RUNNING           ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TCP TWEAK"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SET BANNER        ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}RESTART ALL"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SET BANNER        ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}RESTART ALL"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}BANDWITH USAGE    ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}BANDWITH USAGE    ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE       ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}IP"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE${NC}"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}MENU SLOWDNS      ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}BOT"
-echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK TO MENU${NC}"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -335,14 +333,10 @@ case $opt in
 03 | 3) clear ; mbandwith ;;
 04 | 4) clear ; enabletorrent ;;
 05 | 5) clear ; menu-update ;;
-06 | 6) clear ; menu-slowdns ;;
-07 | 7) clear ; menu-tcp ;;
-08 | 8) clear ; restart ;;
-09 | 9) clear ; autoboot ;;
-10 | 10) clear ; mspeed ;;
-11 | 11) clear ; menu-ip ;;
-12 | 12) clear ; menu-bot ;;
-
+06 | 6) clear ; menu-tcp ;;
+07 | 7) clear ; restart ;;
+08 | 8) clear ; autoboot ;;
+09 | 9) clear ; mspeed ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac
