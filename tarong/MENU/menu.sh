@@ -205,7 +205,7 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
-serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/name)
+serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
 if [ "$Isadmin" = "ON" ]; then
 uis="${COLOR1}Premium User$NC"
 else
