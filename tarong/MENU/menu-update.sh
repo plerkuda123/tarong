@@ -25,25 +25,19 @@ clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-echo -e "\E[44;1;39m ⇱ [INFO] Downloading Update File⇲        \E[0m"
-sleep 2
-echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
-echo -e "\E[44;1;39m              ⇱ UPDATE ⇲                      \E[0m"
-echo -e "\E[44;1;39m              ⇱ DIMULAI ⇲                     \E[0m"
-echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 clear
-# hapus menu
+echo -e "\E[44;1;39m ⇱ [INFO] Hapus File Lama⇲        \E[0m"
 rm -rf menu
 rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-rm -rf menu-bot
+#rm -rf menu-bot
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
 rm -rf menu-backup
-rm -rf menu-ip
+#rm -rf menu-ip
 rm -rf menu-tor
 rm -rf menu-tcp
 rm -rf autoboot
@@ -56,20 +50,20 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-rm -rf menu-slowdns
-echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script"
+#rm -rf menu-slowdns
+echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
 rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-rm -rf menu-bot
+#rm -rf menu-bot
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
 rm -rf menu-backup
-rm -rf menu-ip
+#rm -rf menu-ip
 rm -rf menu-tor
 rm -rf menu-tcp
 rm -rf autoboot
@@ -82,19 +76,19 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-rm -rf menu-slowdns
+$rm -rf menu-slowdns
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
 wget -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-vmess.sh" && chmod +x /usr/bin/menu-vmess
 wget -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-vless.sh" && chmod +x /usr/bin/menu-vless
 wget -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-trojan.sh" && chmod +x /usr/bin/menu-trojan
-wget -O /usr/bin/menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-bot.sh" && chmod +x /usr/bin/menu-bot
+#wget -O /usr/bin/menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-bot.sh" && chmod +x /usr/bin/menu-bot
 wget -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ssh.sh" && chmod +x /usr/bin/menu-ssh
 wget -O /usr/bin/menu-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-set.sh" && chmod +x /usr/bin/menu-set
 wget -O /usr/bin/menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-theme.sh" && chmod +x /usr/bin/menu-theme
 wget -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-backup.sh" && chmod +x /usr/bin/menu-backup
-wget -O /usr/bin/menu-ip "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ip.sh" && chmod +x /usr/bin/menu-ip
+#wget -O /usr/bin/menu-ip "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ip.sh" && chmod +x /usr/bin/menu-ip
 wget -O /usr/bin/menu-tor "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-tor.sh" && chmod +x /usr/bin/menu-tor
 wget -O /usr/bin/autoboot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/autoboot.sh" && chmod +x /usr/bin/autoboot
 wget -O /usr/bin/menu-tcp "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-tcp.sh" && chmod +x /usr/bin/menu-tcp
@@ -106,19 +100,19 @@ wget -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
-wget -O /usr/bin/menu-slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-slowdns.sh" && chmod +x /usr/bin/menu-slowdns
+#wget -O /usr/bin/menu-slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-slowdns.sh" && chmod +x /usr/bin/menu-slowdns
 
 chmod +x menu
 chmod +x menu-ss
 chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x menu-trojan
-chmod +x menu-bot
+#chmod +x menu-bot
 chmod +x menu-ssh
 chmod +x menu-set
 chmod +x menu-theme
 chmod +x menu-backup
-chmod +x menu-ip
+#chmod +x menu-ip
 chmod +x menu-tor
 chmod +x menu-tcp
 chmod +x autoboot
@@ -131,7 +125,7 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
-chmod +x menu-slowdns
-echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Downloading New Script Selesai"
-sleep 3
+#chmod +x menu-slowdns
+echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Selesai⇲        \E[0m"
+sleep 1
 cd
