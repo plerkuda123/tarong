@@ -184,6 +184,8 @@ sleep 2
 sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
+by_name=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/name)
+echo "$by_name" > /opt/.ver
 version_up=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
@@ -227,7 +229,7 @@ echo -e "$COLOR1 $NC ${WH}[ SSH WS : ${status_ws} ${WH}]  ${WH}[ XRAY : ${status
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${COLOR1}Traffic${NC}      ${COLOR1}Today      Yesterday        Month   ${NC}"
-echo -e "$COLOR1 ${WH}Download${NC}   ${WH}$today_tx $today_txv   $yesterday_tx $yesterday_txv      $month_tx $month_txv   ${NC}"
+echo -e "$COLOR1 ${WH}Download${NC}   ${WH}$today_tx $today_txv   $yesterday_tx $yesterday_txv       $month_tx $month_txv   ${NC}"
 echo -e "$COLOR1 ${WH}Upload${NC}     ${WH}$today_rx $today_rxv     $yesterday_rx $yesterday_rxv      $month_rx $month_rxv   ${NC}"
 echo -e "$COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yesterday $yesterday_v      $month $month_v  ${NC} "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -247,10 +249,7 @@ echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}SET DNS ${WH}[${COLOR1
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• BOT ADMIN MENU •              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-
+echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}:${WH} $(cat /opt/.ver) ${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 myver="$(cat /opt/.ver)"
 
