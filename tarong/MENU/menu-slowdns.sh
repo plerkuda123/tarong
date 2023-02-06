@@ -70,7 +70,6 @@ red "Permission Denied!"
 exit 0
 fi
 clear
-slowdns () {
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER" ; tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
