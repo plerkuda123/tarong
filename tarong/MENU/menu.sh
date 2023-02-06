@@ -185,7 +185,7 @@ sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
 by_name=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/name)
-echo "$by_name" > /opt/.ver
+echo "$by_name" > /opt/.name
 version_up=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
@@ -249,7 +249,7 @@ echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}SET DNS ${WH}[${COLOR1
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}:${WH} $(cat /opt/.ver) ${NC}"
+echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}:${WH} $(cat /opt/.name) ${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 myver="$(cat /opt/.ver)"
 
