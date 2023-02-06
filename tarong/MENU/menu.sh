@@ -250,7 +250,7 @@ myver="$(cat /opt/.ver)"
 
 if [[ $serverV > $myver ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}• ${WH}UPDATE TO V$serverV${NC}"
+echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}• ${WH}$serverV${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 up2u="updatews"
 else
