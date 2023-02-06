@@ -247,9 +247,9 @@ echo -e " $COLOR1 $NC                                              ${NC} $COLOR1
 echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}SET DNS ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}INFO     ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-by_name="$(cat /opt/.ver)"
+by="$(cat /opt/.ver)"
 
-if [[ $by_name > $by_name ]]; then
+if [[ $by_name > $by ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 $NC ${WH}[${COLOR1}INFO${WH}]${NC} ${COLOR1}• ${WH} $by_name${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
