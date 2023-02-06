@@ -94,6 +94,7 @@ echo -e "\033[0;36m[08]\033[m | hentikan SlowDNS"
 echo -e "\033[0;36m[09]\033[m | Hapus SlowDNS"
 echo -e "\033[0;36m[10]\033[m | Perbarui/Instal Ulang"
 echo -e "\033[0;36m[11]\033[m | Hapus Script"
+echo -e "\033[0;36m[12]\033[m | Install"
 echo -e "\033[0;36m[00]\033[m | KELUAR"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
@@ -110,6 +111,7 @@ case $opt in
 10) clear ; wget https://raw.githubusercontent.com/HendraWahyut/HTCloud/main/Slowdns/update
     chmod +x update ; clear ; bash update ;;
 11) clear ; bash /etc/Slowdns/remove-slow ; clear ; rm /bin/slowdns ;;
+12) clear ; wget https://raw.githubusercontent.com/HendraWahyut/HTCloud/main/Slowdns/install chmod +x install ; clear ; bash install ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
 esac
