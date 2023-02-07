@@ -1,9 +1,6 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-rm -rf /root/nsdomain
-rm -rf /var/lib/ipvps.conf
-rm nsdomain
 #============
 DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
@@ -40,11 +37,11 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
-echo "$NS_dns" > /root/nsdomain
+#echo "$NS_dns" > /root/nsdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/v2ray/scdomain
 echo "$dns" > /etc/xray/scdomain
-echo "$NS_dns" > /etc/xray/nsdomain
+#echo "$NS_dns" > /etc/xray/nsdomain
 echo "IP=$dns" > /var/lib/ipvps.conf
 cd
