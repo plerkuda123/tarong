@@ -4,9 +4,9 @@ apt install jq curl -y
 #============
 DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+#subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 dns=${sub}.kuhing.my.id
-NS_dns=${subsl}.kuhing.my.id
+#NS_dns=${subsl}.kuhing.my.id
 CF_ID=merahjambo@gmail.com
 CF_KEY=86431de017f7bf317c3960061da2f87c8effb
 set -euo pipefail
@@ -37,6 +37,7 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
+echo "$dns" > /root/v2ray
 #echo "$NS_dns" > /root/nsdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
