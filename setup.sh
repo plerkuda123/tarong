@@ -77,6 +77,7 @@ if [[ "$hst" != "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
 fi
 mkdir -p /etc/xray
+mkdir -p /etc/v2ray
 
 echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
 sleep 1
