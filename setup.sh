@@ -108,11 +108,11 @@ clear
 END
 chmod 644 /root/.profile
 
-echo -e "[ ${green}INFO${NC} ] Preparing the install file"
+echo -e "[ ${tyblue}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] Alright good ... installation file is ready"
+echo -e "[ ${tyblue}INFO${NC} ] Alright good ... installation file is ready"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check permission : "
+echo -ne "[ ${tyblue}INFO${NC} ] Check permission : "
 
 PERMISSION
 if [ -f /home/needupdate ]; then
@@ -135,7 +135,7 @@ echo "IP=" >> /var/lib/ipvps.conf
 
 if [ -f "/etc/xray/domain" ]; then
 echo ""
-echo -e "[ ${green}INFO${NC} ] Script Already Installed"
+echo -e "[ ${tyblue}INFO${NC} ] Script Already Installed"
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to install again ? (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
@@ -144,6 +144,7 @@ sleep 5
 exit 0
 else
 clear
+fi
 fi
 echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
@@ -180,7 +181,6 @@ echo "IP=$dns" > /var/lib/ipvps.conf
 echo ""
 elif [[ $dns == "2" ]]; then
 #install domain
-
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
 clear
 else
