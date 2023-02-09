@@ -151,26 +151,39 @@ echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
-sleep 20
-clear
+echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
+echo ""
+echo -e "   .----------------------------------."
+echo -e "   |\e[1;32mPlease select a domain type below \e[0m|"
+echo -e "   '----------------------------------'"
+echo -e "     \e[1;32m1)\e[0m Enter your Subdomain"
+echo -e "     \e[1;32m2)\e[0m Use a random Subdomain"
+echo -e "   ------------------------------------"
+read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
+echo ""
+if [[ $dns == "1" ]]; then
 echo -e  "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e  "               ${tyblue}|  TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |${NC}"
 echo -e  "               ${tyblue}|        DARI SAYA BY TARAP KUHING         |${NC}"
-echo -e  "               ${tyblue}|        TAMBAHKAN DOMAIN KAMU             |${NC}"
-echo -e  "               ${tyblue}|        KALAU TIDAK PUNYA DOMAIN          |${NC}"
-echo -e  "               ${tyblue}|        CHAT DI WA SAYA DULU OK....       |${NC}"
+echo -e  "               ${tyblue}|        TAMBAHKAN DOMAIN KAMU..           |${NC}"
+echo -e  "               ${tyblue}|        KALAU ADA PERTANYAAN SILAHKAN     |${NC}"
+echo -e  "               ${tyblue}|        CHAT DI WA OK BROOOO....          |${NC}"
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
-#read -rp "Masukan Domain Kamu OK Brooo : " -e dns
-#echo "$dns" > /root/domain
-#echo "$dns" > /root/scdomain
-#echo "$dns" > /etc/xray/domain
-#echo "$dns" > /etc/v2ray/domain
-#echo "$dns" > /etc/v2ray/scdomain
-#echo "$dns" > /etc/xray/scdomain
-#echo "IP=$dns" > /var/lib/ipvps.conf
+read -rp "Masukan Domain Kamu OK Brooo : " -e dns
+echo "$dns" > /root/domain
+echo "$dns" > /root/scdomain
+echo "$dns" > /etc/xray/domain
+echo "$dns" > /etc/v2ray/domain
+echo "$dns" > /etc/v2ray/scdomain
+echo "$dns" > /etc/xray/scdomain
+echo "IP=$dns" > /var/lib/ipvps.conf
+echo ""
+elif [[ $dns == "2" ]]; then
+#install domain
+echo -e "Random Subdomain/Domain is used"
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
 clear
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
@@ -348,7 +361,7 @@ echo -e "                   ${tyblue}└─────────────�
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/setup.sh >/dev/null 2>&1
-#rm /root/Tarap_Kuhing.sh >/dev/null 2>&1
+rm /root/Tarap-Kuhing.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
