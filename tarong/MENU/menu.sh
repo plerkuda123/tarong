@@ -206,6 +206,9 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
+cname=$(awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo)
+cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
+freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
 serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/PLUGINS/versi)
 if [ "$Isadmin" = "ON" ]; then
 uis="${COLOR1}Premium User$NC"
@@ -222,7 +225,10 @@ echo -e "$COLOR1 $NC ${WH}Memory Usage   ${COLOR1}: ${WH}$uram / $tram"
 echo -e "$COLOR1 $NC ${WH}ISP & City     ${COLOR1}: ${WH}$ISP & $CITY"
 echo -e "$COLOR1 $NC ${WH}Current Domain ${COLOR1}: ${WH}$(cat /etc/xray/domain)"
 echo -e "$COLOR1 $NC ${WH}IP-VPS         ${COLOR1}: ${WH}$IPVPS${NC}"
-echo -e "$COLOR1 $NC ${WH}WAKTU/JAM      ${COLOR1}: ${WH}$WKT${NC}"
+echo -e "$COLOR1 $NC ${WH}CPU MODEL      ${COLOR1}: ${WH}$cname${NC}"
+echo -e "$COLOR1 $NC ${WH}NUMBER OF CORE ${COLOR1}: ${WH}$cores${NC}"
+echo -e "$COLOR1 $NC ${WH}CPU FREQUENCY  ${COLOR1}: ${WH}$freq MHz${NC}"
+echo -e "$COLOR1 $NC ${WH}OPERTING SYSTEM${COLOR1}: ${WH}$(hostnamectl | grep "Operating System ${NC}" | cut -d ' ' -f5-)
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 $NC ${WH}[ SSH WS : ${status_ws} ${WH}]  ${WH}[ XRAY : ${status_xray} ${WH}]   ${WH}[ NGINX : ${status_nginx} ${WH}] $COLOR1 $NC"
