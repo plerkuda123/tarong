@@ -145,20 +145,18 @@ exit 0
 else
 clear
 fi
-fi
 echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
-echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
 echo ""
-echo -e "   ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "   ${tyblue}         Please select a domain type below                 ${NC}"
-echo -e "   ${tyblue}└──────────────────────────────────────────┘${NC}"
-echo -e "   ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "   ${tyblue}        [ 1 ]  Enter your Subdomain                        ${NC}"
-echo -e "   ${tyblue}        [ 2 ]  Use a random Subdomain                      ${NC}"
-echo -e "   ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                ${tyblue}         Please select a domain type below                 ${NC}"
+echo -e "                ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "                ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                ${tyblue}        [ 1 ]  Enter your Subdomain                        ${NC}"
+echo -e "                ${tyblue}        [ 2 ]  Use a random Subdomain                      ${NC}"
+echo -e "                ${tyblue}└──────────────────────────────────────────┘${NC}"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
 echo ""
 if [[ $dns == "1" ]]; then
@@ -359,11 +357,6 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "━━━━━━━━━━━━━━━━━━━━━━━━[SCRIPT PREMIUM]━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-sleep 3
-echo -e "                   ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                   ${tyblue}|     SUCCESFULLY INSTALLED THE SCRIPT     |${NC}"
-echo -e "                   ${tyblue}└──────────────────────────────────────────┘${NC}"
-echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/setup.sh >/dev/null 2>&1
 #rm /root/Tarap-Kuhing.sh >/dev/null 2>&1
@@ -372,9 +365,9 @@ rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo  ""
-echo -e "                   ${tyblue}┌─────────────────────────────────────────────┐${NC}"
-echo -e "                   ${tyblue}|Install Script VPS By TARAP KUHING SELESAI...|${NC}"
-echo -e "                   ${tyblue}└─────────────────────────────────────────────┘${NC}"
+echo -e "                   ${tyblue}┌───────────────────────────────────────────┐${NC}"
+echo -e "                   ${tyblue}|Install Script VPS By TARAP KUHING SELESAI|${NC}"
+echo -e "                   ${tyblue}└───────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 3
 echo -e "                                       ${tyblue}[ R ]${NC}"
