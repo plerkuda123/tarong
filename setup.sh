@@ -153,12 +153,13 @@ rm dependencies.sh
 clear
 echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
 echo ""
-echo -e "   .----------------------------------."
-echo -e "   |\e[1;32mPlease select a domain type below \e[0m|"
-echo -e "   '----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m Enter your Subdomain"
-echo -e "     \e[1;32m2)\e[0m Use a random Subdomain"
-echo -e "   ------------------------------------"
+echo -e "   ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "   ${tyblue}            Please select a domain type below              ${NC}"
+echo -e "   ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "   ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "   ${tyblue}               Enter your Subdomain                        ${NC}"
+echo -e "   ${tyblue}               Use a random Subdomain                      ${NC}"
+echo -e "   ${tyblue}└──────────────────────────────────────────┘${NC}"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
 echo ""
 if [[ $dns == "1" ]]; then
@@ -182,9 +183,14 @@ echo "IP=$dns" > /var/lib/ipvps.conf
 echo ""
 elif [[ $dns == "2" ]]; then
 #install domain
+
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
+clear
+else
 echo -e "Random Subdomain/Domain is used"
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/Tarap-Kuhing.sh && chmod +x Tarap-Kuhing.sh && ./Tarap-Kuhing.sh
 clear
+fi
 #THEME RED
 cat <<EOF>> /etc/tarap/theme/red
 BG : \E[40;1;41m
@@ -361,7 +367,7 @@ echo -e "                   ${tyblue}└─────────────�
 echo ""
 echo -e "   ${tyblue}Your VPS Will Be Automatical Reboot In 20 seconds${NC}"
 rm /root/setup.sh >/dev/null 2>&1
-rm /root/Tarap-Kuhing.sh >/dev/null 2>&1
+#rm /root/Tarap-Kuhing.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
