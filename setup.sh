@@ -130,8 +130,10 @@ green "Permission Accepted!"
 else
 red "Permission Denied!"
 elif [[ $sewa == "2" ]]; then
-#TRIAL
-curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Trial > /root/tmp
+else
+echo "trial"
+fi
+clear
 rm setup.sh > /dev/null 2>&1
 sleep 5
 exit 0
