@@ -52,6 +52,7 @@ rm -rf restart
 rm -rf menu-update
 rm -rf update
 rm -rf backup
+rm -rf restore
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -78,6 +79,7 @@ rm -rf restart
 rm -rf menu-update
 rm -rf update
 rm -rf backup
+rm -rf restore
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -102,6 +104,7 @@ wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
+wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
 
 chmod +x menu
 chmod +x menu-ss
@@ -126,6 +129,7 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
+chmod +x backup
 chmod +x backup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
