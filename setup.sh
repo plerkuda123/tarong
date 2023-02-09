@@ -2,13 +2,6 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-echo -e "   ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "   ${tyblue}          [ 1 ]  Enter SEWA                        ${NC}"
-echo -e "   ${tyblue}          [ 2 ]  Enter TRIAL                       ${NC}"
-echo -e "   ${tyblue}└──────────────────────────────────────────┘${NC}"
-read -p "   Please select numbers 1-2  : " sewa
-echo ""
-if [[ $sewa == "1" ]]; then
 BURIQ () { 
     curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -129,11 +122,6 @@ elif [ "$res" = "Permission Accepted..." ]; then
 green "Permission Accepted!"
 else
 red "Permission Denied!"
-elif [[ $sewa == "2" ]]; then
-else
-echo "trial"
-fi
-clear
 rm setup.sh > /dev/null 2>&1
 sleep 5
 exit 0
