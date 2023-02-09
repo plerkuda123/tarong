@@ -82,7 +82,7 @@ echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
 sleep 1
 echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
 sleep 2
-echo -e "[ ${green}INFO${NC} ] Checking headers"
+echo -e "[ ${tyblue}INFO${NC} ] Checking headers"
 sleep 1
 
 secs_to_human() {
