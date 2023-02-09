@@ -341,11 +341,13 @@ wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SS
 wget -O auto-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/auto-set.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh"
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh"
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
 chmod +x menu-update
 chmod +x backup
+chmod +x restore
 cd
 
 
@@ -430,8 +432,6 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 rm -f /root/bbr.sh
-rm -f /root/menu-update
-rm -f /root/backup
 
 
 # finihsing
