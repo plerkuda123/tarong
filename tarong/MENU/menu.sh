@@ -144,7 +144,18 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
-
+# TOTAL ACC CREATE VMESS WS
+vmess=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
+# TOTAL ACC CREATE  VLESS WS
+vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
+# TOTAL ACC CREATE  VLESS TCP XTLS
+xtls=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
+# TOTAL ACC CREATE  TROJAN
+trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/tcp.json")
+# TOTAL ACC CREATE  TROJAN WS TLS
+trws=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
+# TOTAL ACC CREATE OVPN SSH
+total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 function add-host(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -240,6 +251,10 @@ echo -e "$COLOR1 ${WH}Upload${NC}     ${WH}$today_rx $today_rxv     $yesterday_r
 echo -e "$COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yesterday $yesterday_v      $month $month_v  ${NC} "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${COLOR1}Ssh/Ovpn${NC} ${COLOR1}Vmess  Vless  VlessXtls  Trojan-Ws  Trojan-Tls  ${NC}"    
+echo -e "$COLOR1 ${WH}        $total_ssh${NC}        $vmess      $vless       $xtls          $trws          $trtls ${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSHWS   ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}THEME    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
