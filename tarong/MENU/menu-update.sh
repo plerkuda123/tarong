@@ -51,7 +51,7 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-#rm -rf menu-slowdns
+rm -rf backup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -77,7 +77,7 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-$rm -rf menu-slowdns
+rm -rf backup
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -101,7 +101,7 @@ wget -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
-#wget -O /usr/bin/menu-slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-slowdns.sh" && chmod +x /usr/bin/menu-slowdns
+wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
 
 chmod +x menu
 chmod +x menu-ss
@@ -126,7 +126,7 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
-#chmod +x menu-slowdns
+chmod +x backup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
