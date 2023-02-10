@@ -159,15 +159,13 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # TOTAL ACC CREATE VMESS WS
-vmess=$(grep -c -E "^#vmss " "/usr/local/etc/xray/config.json")
+vmess=$(grep -c -E "^#vmss " "/usr/local/etc/xray/vmess.json")
 # TOTAL ACC CREATE  VLESS WS
 vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 # TOTAL ACC CREATE  VLESS TCP XTLS
 xtls=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE  TROJAN
-trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/tcp.json")
-# TOTAL ACC CREATE  TROJAN WS TLS
-trws=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
+trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/trojan.json")
 # TOTAL ACC CREATE OVPN SSH
 total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 function add-host(){
@@ -309,7 +307,7 @@ d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐$NC"
-echo -e "$COLOR1 $NC ${WH}Version     ${COLOR1}: ${WH}$(cat /opt/.ver) Latest Version${NC}"
+echo -e "$COLOR1 $NC ${WH}Version     ${COLOR1}:${WH}$(cat /opt/.ver) Latest Version${NC}"
 echo -e "$COLOR1 $NC ${WH}Client Name ${COLOR1}: ${WH}$Name${NC}"
 echo -e "$COLOR1 $NC ${WH}License     ${COLOR1}: ${WH}$certificate days${NC}"
 echo -e "$COLOR1 $NC ${WH}Exp Status  ${COLOR1}: ${WH}$exp $sts${NC}"
