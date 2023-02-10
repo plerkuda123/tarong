@@ -151,13 +151,13 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/depend
 rm dependencies.sh
 clear
 echo ""
-echo -e "                ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                ${tyblue}         Please select a domain type below                 ${NC}"
-echo -e "                ${tyblue}└──────────────────────────────────────────┘${NC}"
-echo -e "                ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                ${tyblue}        [ 1 ]  Enter your Subdomain                        ${NC}"
-echo -e "                ${tyblue}        [ 2 ]  Use a random Subdomain                      ${NC}"
-echo -e "                ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "               ${tyblue}         Please select a domain type below                 ${NC}"
+echo -e "               ${tyblue}└──────────────────────────────────────────┘${NC}"
+echo -e "               ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "               ${tyblue}        [ 1 ]  Enter your Subdomain                        ${NC}"
+echo -e "               ${tyblue}        [ 2 ]  Use a random Subdomain                      ${NC}"
+echo -e "               ${tyblue}└──────────────────────────────────────────┘${NC}"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
 echo ""
 if [[ $dns == "1" ]]; then
