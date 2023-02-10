@@ -63,12 +63,12 @@ red "Permission Denied!"
 exit 0
 fi
 
+lear
 IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 NameUser=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $2}')
-
 
 clear
 echo -e "[ ${green}INFO${NC} ] Create password for database"
@@ -105,7 +105,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/bokir-tampan/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -124,15 +124,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "merahjambo@gmail.com" &> /dev/null
-    git config --global user.name "Tarap-Kuhing" &> /dev/null
+    git config --global user.email "moving.headers@gmail.com" &> /dev/null
+    git config --global user.name "bokir-tampan" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Tarap-Kuhing/userbackup
-    git push -u origin main &> /dev/null
+    git remote add origin https://github.com/bokir-tampan/userbackup
+    git push -f https://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@github.com/bokir-tampan/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -147,7 +147,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/bokir-tampan/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1
@@ -158,10 +158,8 @@ echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 Your VPS IP $IP
-
 $link
 save the link pliss!
-
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
 
