@@ -170,4 +170,4 @@ rm -rf /root/user-backup &> /dev/null
 rm -f /root/$NameUser.zip &> /dev/null
 echo
 read -n 1 -s -r -p "Press any key to back on menu"
-system-menu
+menu
