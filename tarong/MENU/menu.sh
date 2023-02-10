@@ -144,6 +144,20 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
+# STATUS EXPIRED ACTIVE
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[4$below" && Font_color_suffix="\033[0m"
+Info="${Green_font_prefix}(Registered)${Font_color_suffix}"
+Error="${Green_font_prefix}${Font_color_suffix}${Red_font_prefix}[EXPIRED]${Font_color_suffix}"
+
+today=$(date -d "0 days" +"%Y-%m-%d")
+Exp1=$(curl https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $4}')
+if [[ $today < $Exp1 ]]; then
+    sts="${Info}"
+else
+    sts="${Error}"
+fi
+echo -e "\e[32mloading...\e[0m"
+clear
 # TOTAL ACC CREATE VMESS WS
 vmess=$(grep -c -E "^#vmss " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE  VLESS WS
@@ -295,9 +309,10 @@ d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐$NC"
-echo -e "$COLOR1 $NC ${WH}Version     ${COLOR1}:${WH} $(cat /opt/.ver) Latest Version${NC}"
+echo -e "$COLOR1 $NC ${WH}Version     ${COLOR1}: ${WH} $(cat /opt/.ver) Latest Version${NC}"
 echo -e "$COLOR1 $NC ${WH}Client Name ${COLOR1}: ${WH}$Name${NC}"
 echo -e "$COLOR1 $NC ${WH}License     ${COLOR1}: ${WH}$certificate days${NC}"
+echo -e "$COLOR1 $NC ${WH}Exp Status  ${COLOR1}: ${WH}$exp $sts${NC}"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘$NC"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
