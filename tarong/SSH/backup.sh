@@ -90,7 +90,7 @@ cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
 cp /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
 cp /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
-cp -r /var/lib/scrz-prem/ /root/backup/scrz-prem &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
 cp -r /home/sstp /root/backup/sstp &> /dev/null
 cp -r /etc/v2ray /root/backup/v2ray &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
