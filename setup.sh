@@ -38,8 +38,7 @@ else
 res="PASSWORD DI TERIMA..."
 fi
 }
-fi
-fi
+else
 # https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $2}')
