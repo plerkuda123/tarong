@@ -1,5 +1,6 @@
-Silahkan Chat saya Kalau Berminat Sewa/Trial SC VPS MULTIPORT
+Silahkan Chat saya Kalau mau coba SC VPS MULTIPORT
 
-```link
-https://wa.me/085754292950
-```
+link WA
+
+https://api.whatsapp.com/send/?phone=6285754292950&text&type=phone_number&app_absent=0
+
