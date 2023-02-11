@@ -1,24 +1,4 @@
 #!/bin/bash
-echo -e "[ ${green}INFO${NC} ] Input password "
-read -rp "Enter password : " -e InputPass
-sleep 1
-if [[ -z $InputPass ]]; then
-MYIP=$(curl -sS ipv4.icanhazip.com)
-pw=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap_Kuhing | grep $MYIP | awk '{print $2}')
-echo $pw > /usr/local/etc/.$pw.ini
-CekOne=$(cat /usr/local/etc/.$pw.ini)
-
-Bloman () {
-if [ -f "/etc/.$pw.ini" ]; then
-CekTwo=$(cat /etc/.$pw.ini)
-    if [ "$CekOne" = "$CekTwo" ]; then
-        res="PASSWORD SALAH"
-    fi
-else
-res="PASSWORD DI TERIMA..."
-fi
-}
-clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
