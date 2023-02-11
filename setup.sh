@@ -24,7 +24,7 @@ read -rp "Enter password : " -e InputPass
 sleep 1
 if [[ -z $InputPass ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
-pw=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $2}')
+pw=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap_Kuhing | grep $MYIP | awk '{print $2}')
 echo $pw > /usr/local/etc/.$pw.ini
 CekOne=$(cat /usr/local/etc/.$pw.ini)
 
@@ -38,7 +38,8 @@ else
 res="PASSWORD DI TERIMA..."
 fi
 }
-
+fi
+fi
 # https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $2}')
