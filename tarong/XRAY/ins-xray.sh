@@ -147,6 +147,18 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 
 mkdir -p /home/vps/public_html
 
+cat >/etc/xray/config.json <<-EOF
+@ws_path {
+path /worryfree
+path /xray
+path /vmess
+path /*
+}
+handle @ws_path {
+    uri path_regexp /.* /
+    reverse_proxy localhost:/run/xray/vmess_ws.sock
+}
+EOF
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
 # xray config
