@@ -105,6 +105,7 @@ wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tar
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
 wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
+wget -O /usr/bin/clone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
 
 chmod +x menu
 chmod +x menu-ss
@@ -131,6 +132,7 @@ chmod +x menu-update
 chmod +x update
 chmod +x backup
 chmod +x backup
+chmod +x rclone
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
