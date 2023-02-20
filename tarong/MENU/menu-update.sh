@@ -33,7 +33,7 @@ rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-#rm -rf menu-bot
+rm -rf autobackup
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
@@ -60,7 +60,7 @@ rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-#rm -rf menu-bot
+rm -rf autobackup
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
@@ -106,6 +106,7 @@ wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/m
 wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
 wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
 wget -O /usr/bin/clone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
+wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh" && chmod +x /usr/bin/autobackup
 
 chmod +x menu
 chmod +x menu-ss
@@ -133,6 +134,7 @@ chmod +x update
 chmod +x backup
 chmod +x backup
 chmod +x rclone
+chmod +x autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
