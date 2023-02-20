@@ -172,7 +172,7 @@ echo -e "$COLOR1└────────────────────�
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-vmess
-fi
+
 }
 function renewvmess(){
 clear
