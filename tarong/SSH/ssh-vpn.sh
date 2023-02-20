@@ -342,12 +342,14 @@ wget -O auto-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tar
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh"
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh"
+wget -O rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf"
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
 chmod +x menu-update
 chmod +x backup
 chmod +x restore
+chmod +x rclone
 cd
 
 
