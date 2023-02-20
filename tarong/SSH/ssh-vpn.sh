@@ -343,6 +343,7 @@ wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh"
 wget -O rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf"
+wget -O autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh"
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
@@ -350,6 +351,7 @@ chmod +x menu-update
 chmod +x backup
 chmod +x restore
 chmod +x rclone
+chmod +x autobackup
 cd
 
 
