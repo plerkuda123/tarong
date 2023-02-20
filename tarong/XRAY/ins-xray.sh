@@ -207,13 +207,13 @@ cat > /etc/xray/config.json << END
      },
      {
      "listen": "/run/xray/worryfree_ws.sock",
-     "protocol": "worryfree",
+     "protocol": "vmess",
       "settings": {
             "clients": [
                {
                  "id": "${uuid}",
                  "alterId": 0
-#worryfree
+#vmess
              }
           ]
        },
