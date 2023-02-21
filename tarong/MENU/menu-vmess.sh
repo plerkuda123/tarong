@@ -294,6 +294,7 @@ menu-vmess
 function trialvmess(){
 clear
 domain=$(cat /etc/xray/domain)
+read -p "   Bug SNI/Host : " sni
 tls="$(cat ~/log-install.txt | grep -w "Xray Vmess Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Xray Vmess Ws None Tls" | cut -d: -f2|sed 's/ //g')"
 user=♡TARAP-KUHING♡`</dev/urandom tr -dc X-Z0-9 | head -c4`
@@ -316,7 +317,7 @@ asu=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "tls"
 }
 EOF`
@@ -331,7 +332,7 @@ ask=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "none"
 }
 EOF`
@@ -348,21 +349,6 @@ grpc=`cat<<EOF
       "type": "none",
       "host": "",
       "tls": "tls"
-}
-EOF`
-worry=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/worryfree",
-      "type": "none",
-      "host": "",
-      "tls": "none"
 }
 EOF`
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
@@ -452,7 +438,7 @@ echo -e "$COLOR1└────────────────────�
 menu
 		fi
 	done
-
+read -p "   Bug SNI/Host : " sni
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -472,7 +458,7 @@ asu=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "tls"
 }
 EOF`
@@ -487,7 +473,7 @@ ask=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "none"
 }
 EOF`
@@ -504,21 +490,6 @@ grpc=`cat<<EOF
       "type": "none",
       "host": "",
       "tls": "tls"
-}
-EOF`
-worry=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/worryfree",
-      "type": "none",
-      "host": "",
-      "tls": "none"
 }
 EOF`
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
