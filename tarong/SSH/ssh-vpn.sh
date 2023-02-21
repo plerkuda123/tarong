@@ -439,6 +439,8 @@ rm -f /root/bbr.sh
 rm -f /root/menu-update.sh
 rm -f /root/backup.sh
 rm -f /root/restore.sh
+rm -f /root/rclone.sh
+rm -f /root/autobackup.sh
 
 # finihsing
 clear
