@@ -545,8 +545,10 @@ echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• VMESS PANEL MENU •      
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD VMESS${NC}      ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}DELETE VMESS${NC}   $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RENEW VMESS${NC}    ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}    $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}TRIAL VMESS${NC}                              $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL VMESS${NC}    ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}    $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW VMESS${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
@@ -557,8 +559,8 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 | 1) clear ; addvmess ;;
-02 | 2) clear ; renewvmess ;;
-03 | 3) clear ; trialvmess ;;
+02 | 2) clear ; trialvmess ;;
+03 | 3) clear ; renewvmess ;;
 04 | 4) clear ; delvmess ;;
 05 | 5) clear ; cekvmess ;;
 00 | 0) clear ; menu ;;
