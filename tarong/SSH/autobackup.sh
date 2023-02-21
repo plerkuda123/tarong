@@ -138,10 +138,10 @@ tsl_trust_file /etc/ssl/certs/ca-certificates.crt
 account default
 host smtp.gmail.com
 port 587
-auth on
-user $email
-from $email
-password $pwdd
+auth Auto
+user merahjambo@gmail.com
+from merahjambo@gmail.com
+password rispefnxqyphakqu
 logfile ~/.smtp.log
 EOF
 }
