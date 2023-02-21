@@ -279,6 +279,7 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 trojan-menu
 fi
 done
+read -p "   Bug SNI/Host : " sni
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -287,8 +288,8 @@ sed -i '/#trojanws$/a\#! '"$user $exp"'\
 sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 systemctl restart xray
-trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
-trojanlink="trojan://${uuid}@${domain}:${tr}?path=%2Ftrojan-ws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
+trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${sni}#${user}"
+trojanlink="trojan://${uuid}@${domain}:${tr}?path=wss://${sni}/trojan-ws&security=tls&host=${sni}&type=ws&sni=${sni}#${user}"
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• CREATE TROJAN USER •              ${NC} $COLOR1 $NC"
@@ -300,7 +301,7 @@ echo -e "$COLOR1 ${NC} ${WH}Host/IP     ${COLOR1}: ${WH}${domain}"
 echo -e "$COLOR1 ${NC} ${WH}Port        ${COLOR1}: ${WH}${tr}"
 echo -e "$COLOR1 ${NC} ${WH}Key         ${COLOR1}: ${WH}${uuid}"
 echo -e "$COLOR1 ${NC} ${WH}Path        ${COLOR1}: ${WH}/trojan-ws"
-echo -e "$COLOR1 ${NC} ${WH}Path WSS    ${COLOR1}: ${WH}wss://bug.com/trojan-ws"
+echo -e "$COLOR1 ${NC} ${WH}Path WSS    ${COLOR1}: ${WH}wss://${sni}/trojan-ws"
 echo -e "$COLOR1 ${NC} ${WH}ServiceName ${COLOR1}: ${WH}trojan-grpc"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -327,6 +328,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• TROJAN PANEL MENU •    
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD TROJAN${NC}    ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}DELETE TROJAN${NC}   $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RENEW TROJAN${NC}  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}     $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
