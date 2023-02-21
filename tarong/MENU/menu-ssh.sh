@@ -171,14 +171,14 @@ echo -e "$COLOR1 $NC  ${WH}OpenSSH       ${COLOR1}: ${WH}$opensh" | tee -a /etc/
 echo -e "$COLOR1 $NC  ${WH}Dropbear      ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-WS        ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS    ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSL/TLS       ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSL/TLS       ${COLOR1}: ${WH}8443,8880"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OVPN WS       ${COLOR1}: ${WH}2086"
 echo -e "$COLOR1 $NC  ${WH}Port TCP      ${COLOR1}: ${WH}$ovpn"
 echo -e "$COLOR1 $NC  ${WH}Port UDP      ${COLOR1}: ${WH}$ovpn2"
 echo -e "$COLOR1 $NC  ${WH}Port SSL      ${COLOR1}: ${WH}990"
-echo -e "$COLOR1 $NC  ${WH}OVPN TCP      ${COLOR1}: ${WH}http://$IP:81/tcp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN UDP      ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN SSL      ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN TCP      ${COLOR1}: ${WH}http://$IP:89/tcp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN UDP      ${COLOR1}: ${WH}http://$IP:89/udp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN SSL      ${COLOR1}: ${WH}http://$IP:89/ssl.ovpn"
 echo -e "$COLOR1 $NC  ${WH}UDPGW         ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -208,14 +208,14 @@ echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh" | tee -a /etc/log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}8443,8880"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
 echo -e "$COLOR1 $NC  ${WH}Port TCP   ${COLOR1}: ${WH}$ovpn"
 echo -e "$COLOR1 $NC  ${WH}Port UDP   ${COLOR1}: ${WH}$ovpn2"
 echo -e "$COLOR1 $NC  ${WH}Port SSL   ${COLOR1}: ${WH}990"
-echo -e "$COLOR1 $NC  ${WH}OVPN TCP   ${COLOR1}: ${WH}http://$IP:81/tcp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN UDP   ${COLOR1}: ${WH}http://$IP:81/udp.ovpn"
-echo -e "$COLOR1 $NC  ${WH}OVPN SSL   ${COLOR1}: ${WH}http://$IP:81/ssl.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN TCP   ${COLOR1}: ${WH}http://$IP:89/tcp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN UDP   ${COLOR1}: ${WH}http://$IP:89/udp.ovpn"
+echo -e "$COLOR1 $NC  ${WH}OVPN SSL   ${COLOR1}: ${WH}http://$IP:89/ssl.ovpn"
 echo -e "$COLOR1 $NC  ${WH}UDPGW      ${COLOR1}: ${WH}7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -590,7 +590,7 @@ echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh"
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"
 echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
-echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"
+echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}8443,8880"
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
 echo -e "$COLOR1 $NC  ${WH}Port TCP   ${COLOR1}: ${WH}$ovpn"
 echo -e "$COLOR1 $NC  ${WH}Port UDP   ${COLOR1}: ${WH}$ovpn2"
@@ -629,7 +629,7 @@ echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh"
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"
 echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
-echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"
+echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}8443,8880"
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
 echo -e "$COLOR1 $NC  ${WH}Port TCP   ${COLOR1}: ${WH}$ovpn"
 echo -e "$COLOR1 $NC  ${WH}Port UDP   ${COLOR1}: ${WH}$ovpn2"
