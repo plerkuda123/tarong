@@ -315,7 +315,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "wss://${sni}/vmess",
       "type": "none",
       "host": "${sni}",
       "tls": "tls"
@@ -365,7 +365,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• CREATE VMESS USER •      
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Expired Trial ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Expired On    ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}${tls}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
@@ -375,7 +375,8 @@ echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0"  | tee -a /etc/log-
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Network       ${COLOR1}: ${WH}ws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Path          ${COLOR1}: ${WH}/vmess" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Path Support  ${COLOR1}: ${WH}/worryfree" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Path TLS      ${COLOR1}: ${WH}wss://${sni}/vmess" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Path Support  ${COLOR1}: ${WH}http://tsel.me/worryfree" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}ServiceName   ${COLOR1}: ${WH}vmess-grpc"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -456,7 +457,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "wss://${sni}/vmess",
       "type": "none",
       "host": "${sni}",
       "tls": "tls"
@@ -516,6 +517,7 @@ echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0"  | tee -a /etc/log-
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Network       ${COLOR1}: ${WH}ws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Path          ${COLOR1}: ${WH}/vmess" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Path TLS      ${COLOR1}: ${WH}wss://${sni}/vmess" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Path Support  ${COLOR1}: ${WH}/worryfree" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}ServiceName   ${COLOR1}: ${WH}vmess-grpc"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
