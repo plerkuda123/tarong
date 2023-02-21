@@ -141,7 +141,7 @@ port 587
 auth on
 user merahjambo@gmail.com
 from merahjambo@gmail.com
-password rispefnxqyphakqu
+password $pwdd
 logfile ~/.smtp.log
 EOF
 }
