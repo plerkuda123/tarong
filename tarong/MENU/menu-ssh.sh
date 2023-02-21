@@ -169,7 +169,7 @@ echo -e "$COLOR1 $NC  ${WH}IP            ${COLOR1}: ${WH}$IP"  | tee -a /etc/log
 echo -e "$COLOR1 $NC  ${WH}Host          ${COLOR1}: ${WH}$domen"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH       ${COLOR1}: ${WH}$opensh" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear      ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSH-WS        ${COLOR1}: ${WH}$portsshws"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSH-WS        ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS    ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS       ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OVPN WS       ${COLOR1}: ${WH}2086"
@@ -206,7 +206,7 @@ echo -e "$COLOR1 $NC  ${WH}IP         ${COLOR1}: ${WH}$IP"  | tee -a /etc/log-cr
 echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}$portsshws"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
@@ -588,7 +588,7 @@ echo -e "$COLOR1 $NC  ${WH}IP         ${COLOR1}: ${WH}$IP"
 echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen"
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh"
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}$portsshws"
+echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
@@ -627,7 +627,7 @@ echo -e "$COLOR1 $NC  ${WH}IP         ${COLOR1}: ${WH}$IP"
 echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen"
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}$opensh"
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}$db"
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}$portsshws"
+echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080"
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}$wsssl"
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}$ssl"
 echo -e "$COLOR1 $NC  ${WH}OVPN WS    ${COLOR1}: ${WH}2086"
