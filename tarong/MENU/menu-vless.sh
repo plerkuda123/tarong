@@ -241,6 +241,7 @@ fi
 }
 function trialvless(){
 domain=$(cat /etc/xray/domain)
+read -p "   Bug SNI/Host : " sni
 tls="$(cat ~/log-install.txt | grep -w "Xray Vless Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Xray Vless Ws None Tls" | cut -d: -f2|sed 's/ //g')"
 user=♤TARAP-KUHING♤`</dev/urandom tr -dc X-Z0-9 | head -c4`
@@ -251,9 +252,9 @@ sed -i '/#vless$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-vlesslink1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:$none?path=/vless&encryption=none&type=ws#${user}"
-vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+vlesslink1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&host=${sni}&type=ws&sni=${sni}#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&security=none&encryption=none&host=${sni}&type=ws#${user}"
+vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${sni}#${user}"
 systemctl restart xray
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -322,7 +323,7 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu
 fi
 done
-
+read -p "   Bug SNI/Host : " sni
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "  Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -330,9 +331,9 @@ sed -i '/#vless$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-vlesslink1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:$none?path=/vless&encryption=none&type=ws#${user}"
-vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+vlesslink1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&host=${sni}&type=ws&sni=${sni}#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&security=none&encryption=none&host=${sni}&type=ws#${user}"
+vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${sni}#${user}"
 systemctl restart xray
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
