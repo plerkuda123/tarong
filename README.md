@@ -13,7 +13,7 @@ https://api.whatsapp.com/send/?phone=6285754292950&text&type=phone_number&app_ab
 
 ♦️ Installation Link
 
-<pre><code>apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/setup.sh && chmod +x setup.sh && screen -S setup ./setup.sh
+<pre><code>sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/setup.sh && chmod +x setup.sh && ./setup.sh
 
 </code></pre>
 
