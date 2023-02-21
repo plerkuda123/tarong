@@ -244,6 +244,7 @@ fi
 }
 function trialtrojan(){
 clear
+source /var/lib/ipvps.conf
 domain=$(cat /etc/xray/domain)
 read -p "   Bug SNI/Host : " sni
 tr="$(cat ~/log-install.txt | grep -w "Websocket Trojan" | cut -d: -f2|sed 's/ //g')"
