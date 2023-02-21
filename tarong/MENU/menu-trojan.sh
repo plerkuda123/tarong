@@ -242,6 +242,50 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu-trojan
 fi
 }
+function trialtrojan(){
+clear
+domain=$(cat /etc/xray/domain)
+read -p "   Bug SNI/Host : " sni
+tr="$(cat ~/log-install.txt | grep -w "Websocket Trojan" | cut -d: -f2|sed 's/ //g')"
+uuid=$(cat /proc/sys/kernel/random/uuid)
+masaaktif=1
+exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+sed -i '/#trojanws$/a\#! '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+systemctl restart xray
+trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${sni}#${user}"
+trojanlink="trojan://${uuid}@${domain}:${tr}?path=/trojan-ws&security=tls&host=${sni}&type=ws&sni=${sni}#${user}"
+clear
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• CREATE TROJAN USER •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${WH}Remarks      ${COLOR1}: ${WH}${user}"
+echo -e "$COLOR1 ${NC} ${WH}Expired Trial${COLOR1}: ${WH}$exp"
+echo -e "$COLOR1 ${NC} ${WH}Host/IP      ${COLOR1}: ${WH}${domain}"
+echo -e "$COLOR1 ${NC} ${WH}Port         ${COLOR1}: ${WH}${tr}"
+echo -e "$COLOR1 ${NC} ${WH}Key          ${COLOR1}: ${WH}${uuid}"
+echo -e "$COLOR1 ${NC} ${WH}Path         ${COLOR1}: ${WH}/trojan-ws"
+echo -e "$COLOR1 ${NC} ${WH}ServiceName  ${COLOR1}: ${WH}trojan-grpc"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}     ${WH}Link WS ${COLOR1}: ${NC}"
+echo -e "$COLOR1 ${NC}     ${WH}${trojanlink}${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}    ${WH}Link GRPC ${COLOR1}: ${NC}"
+echo -e "$COLOR1 ${NC}    ${WH}${trojanlink1}${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu-trojan
+}
 
 function addtrojan(){
 source /var/lib/ipvps.conf
@@ -289,7 +333,7 @@ sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${sni}#${user}"
-trojanlink="trojan://${uuid}@${domain}:${tr}?path=wss://${sni}/trojan-ws&security=tls&host=${sni}&type=ws&sni=${sni}#${user}"
+trojanlink="trojan://${uuid}@${domain}:${tr}?path=/trojan-ws&security=tls&host=${sni}&type=ws&sni=${sni}#${user}"
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• CREATE TROJAN USER •              ${NC} $COLOR1 $NC"
@@ -301,7 +345,6 @@ echo -e "$COLOR1 ${NC} ${WH}Host/IP     ${COLOR1}: ${WH}${domain}"
 echo -e "$COLOR1 ${NC} ${WH}Port        ${COLOR1}: ${WH}${tr}"
 echo -e "$COLOR1 ${NC} ${WH}Key         ${COLOR1}: ${WH}${uuid}"
 echo -e "$COLOR1 ${NC} ${WH}Path        ${COLOR1}: ${WH}/trojan-ws"
-echo -e "$COLOR1 ${NC} ${WH}Path WSS    ${COLOR1}: ${WH}wss://${sni}/trojan-ws"
 echo -e "$COLOR1 ${NC} ${WH}ServiceName ${COLOR1}: ${WH}trojan-grpc"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -327,9 +370,11 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• TROJAN PANEL MENU •            ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD TROJAN${NC}    ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}DELETE TROJAN${NC}   $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD TROJAN${NC}    ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}DELETE TROJAN${NC}   $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RENEW TROJAN${NC}  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}     $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL TROJAN${NC}  ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}USER ONLINE${NC}     $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW TROJAN${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
@@ -340,9 +385,10 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 | 1) clear ; addtrojan ;;
-02 | 2) clear ; renewtrojan ;;
-03 | 3) clear ; deltrojan ;;
-04 | 4) clear ; cektrojan ;;
+02 | 2) clear ; trialtrojan ;;
+03 | 3) clear ; renewtrojan ;;
+04 | 4) clear ; deltrojan ;;
+05 | 5) clear ; cektrojan ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-trojan ;;
 esac
