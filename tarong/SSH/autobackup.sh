@@ -133,12 +133,12 @@ rm -rf /etc/smtp
 cat<<EOF>>/etc/smtp
 defaults
 tsl on
-tsl_starttls on
+starttls on
 tsl_trust_file /etc/ssl/certs/ca-certificates.crt
 account default
 host smtp.gmail.com
 port 587
-auth Auto
+auth on
 user merahjambo@gmail.com
 from merahjambo@gmail.com
 password rispefnxqyphakqu
@@ -155,7 +155,7 @@ echo -e "
 Ini adalah isi email percobaaan kirim email dari vps
 IP VPS : $IP
 Tanggal : $date
-" | mail -s "Percobaan Pengiriman Email" merahjambo17@gmail.com
+" | mail -s "Percobaan Pengiriman Email"merahjambo@gmail.com"
 }
 clear
 echo -e "=============================="
