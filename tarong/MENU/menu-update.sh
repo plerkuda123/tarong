@@ -53,6 +53,8 @@ rm -rf menu-update
 rm -rf update
 rm -rf backup
 rm -rf restore
+rm -rf rclone
+rm -rf autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -80,6 +82,8 @@ rm -rf menu-update
 rm -rf update
 rm -rf backup
 rm -rf restore
+rm -rf rclone
+rm -rf autobackup
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -105,7 +109,7 @@ wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tar
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
 wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
-wget -O /usr/bin/clone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
+wget -O /usr/bin/rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
 wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh" && chmod +x /usr/bin/autobackup
 
 chmod +x menu
@@ -132,7 +136,7 @@ chmod +x restart
 chmod +x menu-update
 chmod +x update
 chmod +x backup
-chmod +x backup
+chmod +x restore
 chmod +x rclone
 chmod +x autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
