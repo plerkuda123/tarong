@@ -408,7 +408,6 @@ vmess_base643=$( base64 -w 0 <<< $vmess_json3)
 vmesslink1="vmess://$(echo $asu | base64 -w 0)"
 vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
-vmesslink3="vmess://$(echo $worry | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
@@ -420,13 +419,14 @@ echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc
 echo -e "$COLOR1 ${NC} ${WH}Expired On    ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}${tls}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}${none}"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port  GRPC    ${COLOR1}: ${WH}${tls}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}id            ${COLOR1}: ${WH}${uuid}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Network       ${COLOR1}: ${WH}ws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Path          ${COLOR1}: ${WH}/vmess" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Path Support  ${COLOR1}: ${WH}/worryfree" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}ServiceName   ${COLOR1}: ${WH}vmess-grpc"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -438,10 +438,6 @@ echo -e "$COLOR1 ${NC} ${WH}${vmesslink2}${NC}"  | tee -a /etc/log-create-user.l
 echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1──────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket worryfree ${WH}: ${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}${vmesslink4}${NC}"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
