@@ -244,7 +244,7 @@ domain=$(cat /etc/xray/domain)
 read -p "   Bug SNI/Host : " sni
 tls="$(cat ~/log-install.txt | grep -w "Xray Vless Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Xray Vless Ws None Tls" | cut -d: -f2|sed 's/ //g')"
-user=♤TARAP-KUHING♤`</dev/urandom tr -dc X-Z0-9 | head -c4`
+user=♤TARAP-KUHING♤`</dev/urandom tr -dc X-Z-0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
