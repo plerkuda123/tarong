@@ -187,7 +187,7 @@ cat > /etc/xray/config.json << END
         }
      },
      {
-     "listen": "/run/xray/worryfree_wss.sock",
+     "listen": "/run/xray/worryfree.sock",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
@@ -201,7 +201,7 @@ cat > /etc/xray/config.json << END
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "http://tsel.me/worryfree"
+                "path": "/tsel.me/worryfree"
           }
         }
      },
@@ -500,10 +500,10 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = http://tsel.me/worryfree' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /tsel.me/worryfree' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://unix:/run/xray/worryfree_wss.sock;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://unix:/run/xray/worryfree.sock;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
