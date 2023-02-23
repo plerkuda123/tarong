@@ -154,7 +154,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/jambanbkn/BACKUP-DB/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1
