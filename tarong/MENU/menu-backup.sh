@@ -70,12 +70,190 @@ red "Permission Denied!"
 exit 0
 fi
 clear
+function backup(){
+clear
+IP=$(curl -sS ipv4.icanhazip.com);
+date=$(date +"%Y-%m-%d")
+
+clear
+echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
+#read -rp "Enter Token (Contact anggun) : " -e token
+read -rp "Enter Name File Your Backup  : " -e NameUser
+read -rp "Enter password : " -e InputPass
+sleep 1
+if [[ -z $InputPass ]]; then
+exit 0
+fi
+echo -e "[ ${GREEN}INFO${NC} ] Processing... "
+mkdir -p /root/backup
+sleep 1
+
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+cp -r /usr/local/etc/xray &> /dev/null
+cp -r /usr/local/etc/xray backup/xray &> /dev/null
+cp -r /usr/local/etc/trojan &> /dev/null
+cp -r /usr/local/etc/vless &> /dev/null
+cp -r /usr/local/etc/vmess &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
+cd /root
+zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
+
+##############++++++++++++++++++++++++#############
+LLatest=`date`
+Get_Data () {
+git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git  /root/user-backup/ &> /dev/null
+}
+
+Mkdir_Data () {
+mkdir -p /root/user-backup/$NameUser
+}
+
+Input_Data_Append () {
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
+touch /root/user-backup/$NameUser/$NameUser-last-backup
+fi
+echo -e "User         : $NameUser
+last-backup : $LLatest
+" >> /root/user-backup/$NameUser/$NameUser-last-backup
+mv /root/$NameUser.zip /root/user-backup/$NameUser/
+}
+
+Save_And_Exit () {
+    cd /root/user-backup
+    git config --global user.email "merahjambo@gmail.com" &> /dev/null
+    git config --global user.name "Tarap-Kuhing" &> /dev/null
+    rm -fr .git &> /dev/null
+    git init &> /dev/null
+    git add . &> /dev/null
+    git commit -m m &> /dev/null
+    git branch -M main &> /dev/null
+    git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB.git
+    git push -f https://SHA256:oOXgMG/zce6oWBv8wkD030jKd8YfyZ+4FlEHeGT0P6E@github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
+}
+
+if [ ! -d "/root/user-backup/" ]; then
+sleep 1
+echo -e "[ ${GREEN}INFO${NC} ] Getting database... "
+Get_Data
+Mkdir_Data
+sleep 1
+echo -e "[ ${GREEN}INFO${NC} ] Getting info server... "
+Input_Data_Append
+sleep 1
+echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
+Save_And_Exit
+fi
+link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
+sleep 1
+echo -e "[ ${GREEN}INFO${NC} ] Backup done "
+sleep 1
+echo
+sleep 1
+echo -e "[ ${GREEN}INFO${NC} ] Generete Link Backup "
+echo
+sleep 2
+echo -e "The following is a link to your vps data backup file.
+Your VPS Backup Name $NameUser
+$link
+save the link pliss!
+If you want to restore data, please enter the link above.
+Thank You For Using Our Services"
+
+rm -fr /root/backup &> /dev/null
+rm -fr /root/user-backup &> /dev/null
+rm -f /root/$NameUser.zip &> /dev/null
+cd
+echo
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+function restore(){
+cd
+read -rp "Enter Name File Your Backup  : " -e NameUser
+
+cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+
+[[ "$cekdata" = "404" ]] && {
+red "Data not found / you never backup"
+exit 0
+} || {
+GREEN "Data found for username $NameUser"
+}
+
+echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
+read -rp "Password File: " -e InputPass
+echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
+mkdir -p /root/backup
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip" &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
+unzip -P $InputPass /root/backup/backup.zip &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
+rm -f /root/backup/backup.zip &> /dev/null
+sleep 1
+cd /root/backup
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd data..."
+sleep 1
+cp -r /root/backup/passwd /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring group data..."
+sleep 1
+cp -r /root/backup/group /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring shadow data..."
+sleep 1
+cp -r /root/backup/shadow /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring gshadow data..."
+sleep 1
+cp -r /root/backup/gshadow /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring chap-secrets data..."
+sleep 1
+cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd1 data..."
+sleep 1
+cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
+sleep 1
+cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
+sleep 1
+cp -r /root/backup /var/lib/ &> /dev/null
+cp -r /root/backup/.acme.sh /root/ &> /dev/null
+cp -r /usr/local/etc/xray &> /dev/null
+cp -r /usr/local/etc/xray backup/xray &> /dev/null
+cp -r /usr/local/etc/trojan &> /dev/null
+cp -r /usr/local/etc/vless &> /dev/null
+cp -r /usr/local/etc/vmess &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
+cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
+cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/crontab /etc/ &> /dev/null
+cp -r /root/backup/cron.d /etc/ &> /dev/null
+rm -fr /root/backup &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Done..."
+sleep 1
+rm -f /root/backup/backup.zip &> /dev/null
+cd
+echo
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• BACKUP PANEL MENU •             ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}BACKUP VPS      ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}AUTOBACKUP    $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RESTORE VPS     ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}RESET API     $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}BACKUP VPS  $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RESTORE VPS  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
@@ -87,8 +265,8 @@ echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 | 1) clear ; backup ;;
 02 | 2) clear ; restore ;;
-03 | 3) clear ; autobackup ;;
-04 | 4) clear ; menu4 ;;
+#03 | 3) clear ; autobackup ;;
+#04 | 4) clear ; menu4 ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
 esac
