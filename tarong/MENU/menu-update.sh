@@ -51,7 +51,6 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-rm -rf backup
 rm -rf restore
 rm -rf rclone
 rm -rf autobackup
@@ -107,7 +106,6 @@ wget -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
-wget -O /usr/bin/backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh" && chmod +x /usr/bin/backup
 wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
 wget -O /usr/bin/rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
 wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh" && chmod +x /usr/bin/autobackup
@@ -135,7 +133,6 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
-chmod +x backup
 chmod +x restore
 chmod +x rclone
 chmod +x autobackup
