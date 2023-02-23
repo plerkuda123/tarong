@@ -139,7 +139,7 @@ Save_And_Exit () {
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/jambanbkn/BACKUP-DB.git
-    git push origin main
+    git push -u origin main
     https://github.com/jambanbkn/BACKUP-DB.git &> /dev/null
 }
 
