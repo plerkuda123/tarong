@@ -112,7 +112,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/jambanbkn/BACKUP-DB.git  /root/user-backup/ &> /dev/null
+git clone https://github.com/jambanbkn/BACKUP-DB.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -133,38 +133,38 @@ Save_And_Exit () {
     cd /root/user-backup
     git config --global user.email "jambanbkn@gmail.com" &> /dev/null
     git config --global user.name "jambanbkn" &> /dev/null
-    rm -fr .git &> /dev/null
+    rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/jambanbkn/BACKUP-DB.git
-    git push -f https://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@github.com/jambanbkn/BACKUP-DB.git &> /dev/null
+    git remote add origin https://github.com/jambanbkn/userbackup
+    git push -f https://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@github.com/jambanbkn/BACKUP-DB.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting database... "
+echo -e "[ ${green}INFO${NC} ] Getting database... "
 Get_Data
 Mkdir_Data
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting info server... "
+echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
+echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/jambanbkn/BACKUP-DB/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Backup done "
+echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1
 echo
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Generete Link Backup "
+echo -e "[ ${green}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
-Your VPS Backup Name $NameUser
+Your VPS IP $IP
 $link
 save the link pliss!
 If you want to restore data, please enter the link above.
