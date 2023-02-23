@@ -185,10 +185,10 @@ read -rp "Enter Name File Your Backup  : " -e NameUser
 cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
-red "Data not found / you never backup"
+[ ${red}INFO${NC} ] "Data not found / you never backup"
 exit 0
 } || {
-GREEN "Data found for username $NameUser"
+[ ${GREEN}INFO${NC} ] "Data found for username $NameUser"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
