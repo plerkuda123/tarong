@@ -3,7 +3,7 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 #============
 DOMAIN=kuhing.my.id
-sub=$(</dev/urandom tr -d-c a-z-0-9 | head -c5)
+sub=$(</dev/urandom tr -dc a-z-0-9 | head -c5)
 #subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 dns=${sub}.kuhing.my.id
 #NS_dns=${subsl}.kuhing.my.id
