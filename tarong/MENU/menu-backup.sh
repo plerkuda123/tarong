@@ -112,7 +112,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/jambanbkn/BACKUP-DB.git /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -131,15 +131,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "jambanbkn@gmail.com" &> /dev/null
-    git config --global user.name "jambanbkn" &> /dev/null
+    git config --global user.email "merahjambo@gmail.com" &> /dev/null
+    git config --global user.name "Tarap-Kuhing" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/jambanbkn/BACKUP-DB.git
-    git push -f https://github.com/jambanbkn/BACKUP-DB.git &> /dev/null
+    git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB.git
+    git push -f https://github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -154,7 +154,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/jambanbkn/BACKUP-DB/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1
