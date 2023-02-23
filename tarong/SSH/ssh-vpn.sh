@@ -340,18 +340,12 @@ wget -O speedtest "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ta
 wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/xp.sh"
 wget -O auto-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/auto-set.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh"
-wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh"
-wget -O rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf"
-wget -O autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-backup.sh"
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
 chmod +x menu-update
-chmod +x backup
-chmod +x restore
-chmod +x rclone
-chmod +x autobackup
+chmod +x menu-backup
 cd
 
 
@@ -436,11 +430,6 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 rm -f /root/bbr.sh
-rm -f /root/menu-update.sh
-rm -f /root/backup.sh
-rm -f /root/restore.sh
-rm -f /root/rclone.conf
-rm -f /root/autobackup.sh
 
 # finihsing
 clear
