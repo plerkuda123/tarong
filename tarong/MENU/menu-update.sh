@@ -33,7 +33,6 @@ rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-rm -rf autobackup
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
@@ -51,9 +50,6 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-rm -rf restore
-rm -rf rclone
-rm -rf autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -61,7 +57,6 @@ rm -rf menu-ss
 rm -rf menu-vmess
 rm -rf menu-vless
 rm -rf menu-trojan
-rm -rf autobackup
 rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
@@ -79,10 +74,6 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
-rm -rf backup
-rm -rf restore
-rm -rf rclone
-rm -rf autobackup
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -106,9 +97,6 @@ wget -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/taron
 wget -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
-wget -O /usr/bin/restore "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore.sh" && chmod +x /usr/bin/restore
-wget -O /usr/bin/rclone "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/rclone.conf" && chmod +x /usr/bin/rclone
-wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh" && chmod +x /usr/bin/autobackup
 
 chmod +x menu
 chmod +x menu-ss
@@ -133,9 +121,6 @@ chmod +x mbandwith
 chmod +x restart
 chmod +x menu-update
 chmod +x update
-chmod +x restore
-chmod +x rclone
-chmod +x autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
