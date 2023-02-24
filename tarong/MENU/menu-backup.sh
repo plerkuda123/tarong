@@ -165,12 +165,14 @@ echo -e "[ ${GREEN}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
+
 Your VPS Backup Name $NameUser
-$NamUser
 save the NameUser pliss!!!
-$InputPass
+
+Your VPS Backup Password $InputPass
 save the Password pliss!!!
-$link
+
+Your VPS Backup Link $link
 save the link pliss!!!!
 
 If you want to restore data, please enter the link above.
