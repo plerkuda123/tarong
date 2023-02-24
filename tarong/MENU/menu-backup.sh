@@ -121,8 +121,8 @@ mkdir -p /root/user-backup/$NameUser
 }
 
 Input_Data_Append () {
-if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup/Psswd-$InputPass" ]; then
-touch /root/user-backup/$NameUser/$NameUser-last-backup/Passwd-$InputPass
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
+touch /root/user-backup/$NameUser/$NameUser-last-backup
 fi
 echo -e "User         : $NameUser
 last-backup : $LLatest
@@ -157,7 +157,7 @@ Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Backup done "
+echo -e "[ ${yellow}INFO${NC} ] Backup done "
 sleep 1
 echo
 sleep 1
@@ -173,6 +173,7 @@ Your VPS Backup Password:👉👉:[  $InputPass  ]
 save the Password pliss!!!
 
 Your VPS Backup Link    :👉👉[  $link  ]
+
 save the link pliss!!!!
 
 If you want to restore data, please enter the link above.
