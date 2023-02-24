@@ -70,14 +70,7 @@ red "Permission Denied!"
 exit 0
 fi
 clear
-
-function backup(){
-clear
-IP=$(curl -sS ipv4.icanhazip.com);
-date=$(date +"%Y-%m-%d")
-
-clear
-echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
+echo -e "[ ${green}INFO${NC} ] Create password for database"
 #read -rp "Enter Token (Contact Tarap-Kuhing) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
@@ -85,7 +78,7 @@ sleep 1
 if [[ -z $InputPass ]]; then
 exit 0
 fi
-echo -e "[ ${GREEN}INFO${NC} ] Processing... "
+echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
@@ -94,16 +87,15 @@ cp -r /etc/passwd /root/backup/ &> /dev/null
 cp -r /etc/group /root/backup/ &> /dev/null
 cp -r /etc/shadow /root/backup/ &> /dev/null
 cp -r /etc/gshadow /root/backup/ &> /dev/null
-cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
-cp -r /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
-cp -r /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
-cp -r /home/vless /root/backup/vless &> /dev/null
-cp -r /etc/vmess /root/backup/vmess &> /dev/null
+cp -r /usr/local/etc/xray &> /dev/null
+cp -r /usr/local/etc/xray backup/xray &> /dev/null
+cp -r /usr/local/etc/trojan &> /dev/null
+cp -r /usr/local/etc/vless &> /dev/null
+cp -r /usr/local/etc/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
-cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
@@ -146,14 +138,14 @@ Save_And_Exit () {
 
 if [ ! -d "/root/user-backup/" ]; then
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting database... "
+echo -e "[ ${green}INFO${NC} ] Getting database... "
 Get_Data
 Mkdir_Data
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting info server... "
+echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
+echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
