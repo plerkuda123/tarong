@@ -114,7 +114,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git  /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -135,12 +135,12 @@ Save_And_Exit () {
     cd /root/user-backup
     git config --global user.email "merahjambo@gmail.com" &> /dev/null
     git config --global user.name "Tarap-Kuhing" &> /dev/null
-    rm -fr .git &> /dev/null
+    rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
-    git commit -m m &> /dev/null
+    git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB
+    git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB.git
     git push -f https://github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
 }
 
