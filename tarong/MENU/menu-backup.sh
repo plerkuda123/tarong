@@ -163,17 +163,17 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
-echo -e "$COLOR1 ${NC} ${COLOR1}IP VPS     ${WH}:${NC}"
-echo -e "$COLOR1 ${NC} ${WH}${IP}${NC}"
+echo -e "IP VPS"
+$IP
 echo -e ""
-echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Name User Kamu Untuk Restore     ${WH}:${NC}"
-echo -e "$COLOR1 ${NC} ${WH}$NameUser ${NC}"
+echo -e "Salin & Simpan Name User Kamu Untuk Restore"
+$NameUser
 echo -e ""
-echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Password Kamu Untuk Restore ${WH}: ${NC}"
-echo -e "$COLOR1 ${NC} ${WH}$InputPass ${NC}"
+echo -e "Salin & Simpan Password Kamu Untuk Restore"
+$InputPass
 echo -e ""
-echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Link Backup Kamu     ${WH}: ${NC}"
-echo -e "$COLOR1 ${NC} ${WH}$link ${NC}"
+echo -e "Salin & Simpan Link Backup Kamu"
+$link
 echo -e ""
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
@@ -278,4 +278,3 @@ case $opt in
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
 esac
-
