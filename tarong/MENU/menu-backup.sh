@@ -77,7 +77,7 @@ date=$(date +"%Y-%m-%d")
 
 clear
 echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
-#read -rp "Enter Token (Contact anggun) : " -e token
+#read -rp "Enter Token (Contact Tarap-Kuhing) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
 sleep 1
@@ -163,10 +163,26 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
-echo -e "The following is a link to your vps data backup file.
-Your VPS IP $IP
-$link
-save the link pliss!
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• DETILE BACKUP VPS •             ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLOR1}IP VPS     ${WH}:${NC}"
+echo -e "$COLOR1 ${NC} ${WH}${IP}${NC}"
+echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Name User Kamu Untuk Restore     ${WH}:${NC}"
+echo -e "$COLOR1 ${NC} ${WH}${NameUser}${NC}"
+echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
+echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Password Kamu Untuk Restore ${WH}: ${NC}"
+echo -e "$COLOR1 ${NC} ${WH}${InputPass}${NC}"
+echo -e "$COLOR1──────────────────────────────────────────────────${NC}"
+echo -e "$COLOR1 ${NC} ${COLOR1}Salin & Simpan Link Backup Kamu     ${WH}: ${NC}"
+echo -e "$COLOR1 ${NC} ${WH}${link}${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
 
@@ -180,7 +196,7 @@ menu
 }
 function restore(){
 cd
-read -rp "Enter Link File Your Backup  : " -e NameUser
+read -rp "Enter Name File Your Backup  : " -e NameUser
 
 cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
