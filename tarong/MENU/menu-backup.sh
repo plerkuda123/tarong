@@ -121,12 +121,12 @@ mkdir -p /root/user-backup/$NameUser
 }
 
 Input_Data_Append () {
-if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
-touch /root/user-backup/$NameUser/$NameUser-last-backup
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup/Psswd-$InputPass" ]; then
+touch /root/user-backup/$NameUser/$NameUser-last-backup/Passwd-$InputPass
 fi
 echo -e "User         : $NameUser
 last-backup : $LLatest
-" >> /root/user-backup/$NameUser/$NameUser-last-backup
+" >> /root/user-backup/$NameUser/$NameUser-last-backup/Passwd-$InputPass
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
@@ -196,7 +196,7 @@ cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/mai
 red "Data not found / you never backup"
 exit 0
 } || {
-echo -e "${GREEN}Data found for username $NameUser ${NC}"
+echo -e "${red}files available for restore $NameUser ${NC}"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
