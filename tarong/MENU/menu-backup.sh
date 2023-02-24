@@ -103,7 +103,7 @@ cp -r /home/vless /root/backup/vless &> /dev/null
 cp -r /etc/vmess /root/backup/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
-cp -r /etc/trojan-go /root/backup/trojan-go &> /dev/null
+cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
@@ -229,12 +229,12 @@ sleep 1
 cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
 sleep 1
-cp -r /root/backup/scrz-prem /var/lib/ &> /dev/null
+cp -r /root/backup /var/lib/ &> /dev/null
 cp -r /root/backup/wireguard /etc/ &> /dev/null
 cp -r /root/backup/.acme.sh /root/ &> /dev/null
-cp -r /root/backup/sstp /home/ &> /dev/null
-cp -r /root/backup/trojan-go /etc/ &> /dev/null
-cp -r /root/backup/v2ray /etc/ &> /dev/null
+cp -r /root/backup/vless /home/ &> /dev/null
+cp -r /root/backup/trojan /etc/ &> /dev/null
+cp -r /root/backup/vmess /etc/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
