@@ -121,12 +121,12 @@ mkdir -p /root/user-backup/$NameUser
 }
 
 Input_Data_Append () {
-if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
-touch /root/user-backup/$NameUser/$NameUser-last-backup
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-$InputPass-last-backup" ]; then
+touch /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
 fi
 echo -e "User         : $NameUser
 last-backup : $LLatest
-" >> /root/user-backup/$NameUser/$NameUser-last-backup/Passwd-$InputPass
+" >> /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
@@ -157,22 +157,22 @@ Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
-echo -e "[ ${yellow}INFO${NC} ] Backup done "
+echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
 echo
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Generete Link Backup "
+echo -e "[ ${red}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 
-Your VPS Backup Name    :👉👉[  $NameUser  ]
+Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈
 save the NameUser pliss!!!
 
-Your VPS Backup Password:👉👉:[  $InputPass  ]
+Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈
 save the Password pliss!!!
 
-Your VPS Backup Link    :👉👉[  $link  ]
+Your VPS Backup Link    :👉👉👉  $link  👈👈👈
 
 save the link pliss!!!!
 
