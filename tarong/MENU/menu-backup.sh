@@ -70,7 +70,14 @@ red "Permission Denied!"
 exit 0
 fi
 clear
-echo -e "[ ${green}INFO${NC} ] Create password for database"
+
+function backup(){
+clear
+IP=$(curl -sS ipv4.icanhazip.com);
+date=$(date +"%Y-%m-%d")
+
+clear
+echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
 #read -rp "Enter Token (Contact Tarap-Kuhing) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
@@ -78,35 +85,36 @@ sleep 1
 if [[ -z $InputPass ]]; then
 exit 0
 fi
-echo -e "[ ${green}INFO${NC} ] Processing... "
+echo -e "[ ${GREEN}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
 cp -r /root/.acme.sh /root/backup/ &> /dev/null
-cp /etc/passwd /root/backup/ &> /dev/null
-cp /etc/group /root/backup/ &> /dev/null
-cp /etc/shadow /root/backup/ &> /dev/null
-cp /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
 cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
-cp /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
-cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
-cp /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
-cp -r /var/lib/ /root/backup &> /dev/null
-cp -r /home/vless /root/backup/vless &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
+cp -r /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
+cp -r /var/lib /root/backup &> /dev/null
+cp -r /home/vles /root/backup/vless &> /dev/null
 cp -r /etc/vmess /root/backup/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
 cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
-cp /etc/crontab /root/backup/crontab &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
 zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git  /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -124,7 +132,6 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
 Save_And_Exit () {
-    cd /root/user-backup
     git config --global user.email "merahjambo@gmail.com" &> /dev/null
     git config --global user.name "Tarap-Kuhing" &> /dev/null
     rm -rf .git &> /dev/null
@@ -138,14 +145,14 @@ Save_And_Exit () {
 
 if [ ! -d "/root/user-backup/" ]; then
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Getting database... "
+echo -e "[ ${GREEN}INFO${NC} ] Getting database... "
 Get_Data
 Mkdir_Data
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Getting info server... "
+echo -e "[ ${GREEN}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
+echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
@@ -159,9 +166,13 @@ echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 Your VPS Backup Name $NameUser
-
+$NamUser
+save the NameUser pliss!!!
+$InputPass
+save the Password pliss!!!
 $link
-save the link pliss!
+save the link pliss!!!!
+
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
 
@@ -190,7 +201,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/arismaramar/BACKUP-DB/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
@@ -243,7 +254,7 @@ menu
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• BACKUP MENU •                   ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• BACKUP PANEL MENU •             ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}BACKUP VPS  $COLOR1 $NC"
@@ -256,11 +267,14 @@ echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}            
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
+echo -e ""
 case $opt in
-1) clear ; backup ;;
-#2) clear ; bckp ;;
-2) clear ; restore;;
-0) clear ; menu ;;
+01 | 1) clear ; backup ;;
+02 | 2) clear ; restore ;;
+#03 | 3) clear ; autobackup ;;
+#04 | 4) clear ; menu4 ;;
+00 | 0) clear ; menu ;;
+*) clear ; menu-backup ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
 esac
