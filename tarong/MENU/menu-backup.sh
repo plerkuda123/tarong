@@ -264,7 +264,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
-read -p " Select menu : " opt
+echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; opt
 echo -e ""
 case $opt in
 1) clear ; backup ;;
