@@ -141,7 +141,8 @@ Save_And_Exit () {
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB
-    git push -f https://Tarap-Kuhing@github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
+    git push -f
+    https://github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -251,16 +252,19 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
 clear
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}Backup / Restore ${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• BACKUP MENU •                   ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}BACKUP VPS  $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RESTORE VPS  $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
+echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Backup   "
-#echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Auto Backup   "
-echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Restore      "
-#echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Cek User XRAY     "
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
-echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
