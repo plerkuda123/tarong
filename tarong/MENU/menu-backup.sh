@@ -76,7 +76,7 @@ IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 clear
-echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
+echo -e "[ ${green}INFO${NC} ] Create password for database"
 #read -rp "Enter Token (Contact Tarap-Kuhing) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
@@ -84,7 +84,7 @@ sleep 1
 if [[ -z $InputPass ]]; then
 exit 0
 fi
-echo -e "[ ${GREEN}INFO${NC} ] Processing... "
+echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
@@ -193,10 +193,10 @@ read -rp "Enter Name File Your Backup  : " -e NameUser
 cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
-[ ${red}INFO${NC} ] "Data not found / you never backup"
+echo -e "[ ${red}INFO${NC} ]   Data not found / you never backup"
 exit 0
 } || {
-[ ${GREEN}INFO${NC} ] "Data found for username $NameUser"
+echo -e "[ ${green}INFO${NC} ] Data found for username $NameUser"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
