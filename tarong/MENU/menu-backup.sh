@@ -94,16 +94,15 @@ cp -r /etc/passwd /root/backup/ &> /dev/null
 cp -r /etc/group /root/backup/ &> /dev/null
 cp -r /etc/shadow /root/backup/ &> /dev/null
 cp -r /etc/gshadow /root/backup/ &> /dev/null
-cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
-cp -r /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
-cp -r /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
-cp -r /var/lib /root/backup &> /dev/null
-cp -r /home/vles /root/backup/vless &> /dev/null
-cp -r /etc/vmess /root/backup/vmess &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+cp -r /usr/local/etc/xray &> /dev/null
+cp -r /usr/local/etc/xray backup/xray &> /dev/null
+cp -r /usr/local/etc/trojan &> /dev/null
+cp -r /usr/local/etc/vless &> /dev/null
+cp -r /usr/local/etc/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
-cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
