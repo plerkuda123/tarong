@@ -165,13 +165,13 @@ echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 
-Your VPS Backup Name $NameUser
+Your VPS Backup Name    👉👉:[  $NameUser  ]
 save the NameUser pliss!!!
 
-Your VPS Backup Password $InputPass
+Your VPS Backup Password👉👉:[  $InputPass  ]
 save the Password pliss!!!
 
-Your VPS Backup Link $link
+Your VPS Backup Link    👉👉:[  $link  ]
 save the link pliss!!!!
 
 If you want to restore data, please enter the link above.
