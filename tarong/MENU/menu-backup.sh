@@ -83,23 +83,23 @@ mkdir -p /root/backup
 sleep 1
 
 cp -r /root/.acme.sh /root/backup/ &> /dev/null
-cp -r /etc/passwd /root/backup/ &> /dev/null
-cp -r /etc/group /root/backup/ &> /dev/null
-cp -r /etc/shadow /root/backup/ &> /dev/null
-cp -r /etc/gshadow /root/backup/ &> /dev/null
-cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp /etc/passwd /root/backup/ &> /dev/null
+cp /etc/group /root/backup/ &> /dev/null
+cp /etc/shadow /root/backup/ &> /dev/null
+cp /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
+cp /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
+cp /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
-cp -r /usr/local/etc/xray &> /dev/null
-cp -r /usr/local/etc/xray backup/xray &> /dev/null
-cp -r /usr/local/etc/trojan &> /dev/null
-cp -r /usr/local/etc/vless &> /dev/null
-cp -r /usr/local/etc/vmess &> /dev/null
+cp -r /home/vless /root/backup/vless &> /dev/null
+cp -r /etc/vmess /root/backup/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
-cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
-cp -r /etc/crontab /root/backup/crontab &> /dev/null
+cp /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
 zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 
@@ -162,7 +162,6 @@ Your VPS Backup Name $NameUser
 
 $link
 save the link pliss!
-
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
 
