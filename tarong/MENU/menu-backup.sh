@@ -150,25 +150,18 @@ Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Backup done "
+echo -e "[ ${GREEN}INFO${NC} ] Backup done "
 sleep 1
 echo
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Generete Link Backup "
+echo -e "[ ${GREEN}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
-echo -e "IP VPS"
-$IP
-echo -e ""
-echo -e "Salin & Simpan Name User Kamu Untuk Restore"
-$NameUser
-echo -e ""
-echo -e "Salin & Simpan Password Kamu Untuk Restore"
-$InputPass
-echo -e ""
-echo -e "Salin & Simpan Link Backup Kamu"
+echo -e "The following is a link to your vps data backup file.
+Your VPS Backup Name $NameUser
+
 $link
-echo -e "save the link pliss!"
+save the link pliss!
 
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
