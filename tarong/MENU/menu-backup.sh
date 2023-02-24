@@ -114,7 +114,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/BACKUP-DB.git  /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/userbackup.git  /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -139,8 +139,8 @@ Save_And_Exit () {
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Tarap-Kuhing/BACKUP-DB.git
-    git push -f https://github.com/Tarap-Kuhing/BACKUP-DB.git &> /dev/null
+    git remote add origin https://github.com/Tarap-Kuhing/userbackup.git
+    git push -f https://github.com/Tarap-Kuhing/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -155,7 +155,7 @@ sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Backup done "
 sleep 1
@@ -190,7 +190,7 @@ function restore(){
 cd
 read -rp "Enter Name File Your Backup  : " -e NameUser
 
-cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
@@ -203,7 +203,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/arismaramar/BACKUP-DB/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
