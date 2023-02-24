@@ -77,7 +77,7 @@ IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 clear
-echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
+echo -e "[ ${green}INFO${NC} ] Create password for database"
 #read -rp "Enter Token (Contact Tarap-Kuhing) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
@@ -85,7 +85,7 @@ sleep 1
 if [[ -z $InputPass ]]; then
 exit 0
 fi
-echo -e "[ ${GREEN}INFO${NC} ] Processing... "
+echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
@@ -113,7 +113,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/userbackup.git  /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -131,6 +131,7 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
 Save_And_Exit () {
+    cd /root/user-backup
     git config --global user.email "merahjambo@gmail.com" &> /dev/null
     git config --global user.name "Tarap-Kuhing" &> /dev/null
     rm -rf .git &> /dev/null
@@ -144,14 +145,14 @@ Save_And_Exit () {
 
 if [ ! -d "/root/user-backup/" ]; then
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting database... "
+echo -e "[ ${green}INFO${NC} ] Getting database... "
 Get_Data
 Mkdir_Data
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Getting info server... "
+echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
-echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
+echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
