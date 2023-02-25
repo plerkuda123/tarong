@@ -3,10 +3,11 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/tarap/theme/color.conf)
-NC="\e[0m"
-RED="\033[0;31m"
-COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+export NC="\e[0m"
+export YELLOW='\033[0;33m';
+export RED="\033[0;31m"
+export COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+export COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
@@ -166,15 +167,15 @@ echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 
-Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈
-save the NameUser pliss!!!
+echo -e "${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
+echo -e "${red}save the NameUser pliss!!!${NC}"
 
-Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈
-save the Password pliss!!!
+echo -e "${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
+echo -e "${red}save the Password pliss!!!${NC}"
 
-Your VPS Backup Link    :👉👉👉  $link  👈👈👈
+echo -e "${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
 
-save the link pliss!!!!
+echo -e "${red}save the link pliss!!!!${NC}"
 
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
@@ -197,7 +198,7 @@ cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/mai
 red "Data not found / you never backup"
 exit 0
 } || {
-echo -e "${red}files available for restore $NameUser ${NC}"
+echo -e "${yellow}files available for restore $NameUser ${NC}"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
