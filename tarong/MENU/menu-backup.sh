@@ -115,7 +115,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/jambanbkn/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -134,15 +134,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "merahjambo@gmail.com" &> /dev/null
-    git config --global user.name "Tarap-Kuhing" &> /dev/null
+    git config --global user.email "jambanbkn@gmail.com" &> /dev/null
+    git config --global user.name "jambanbkn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Tarap-Kuhing/userbackup.git
-    git push -f https://github.com/Tarap-Kuhing/userbackup.git &> /dev/null
+    git remote add origin https://github.com/jambanbkn/userbackup.git
+    git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -157,7 +157,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
@@ -169,14 +169,14 @@ sleep 2
 echo -e "The following is a link to your vps data backup file.
 
 "${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
-echo -e "${red}save the NameUser pliss!!!${NC}"
+"${red}save the NameUser pliss!!!${NC}"
 
 "${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
-echo -e "${red}save the Password pliss!!!${NC}"
+"${red}save the Password pliss!!!${NC}"
 
 "${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
 
-echo -e "${red}save the link pliss!!!!${NC}"
+"${red}save the link pliss!!!!${NC}"
 
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
@@ -199,7 +199,7 @@ cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/mai
 red "Data not found / you never backup"
 exit 0
 } || {
-echo -e "${yellow}files available for restore $NameUser ${NC}"
+"${yellow}files available for restore $NameUser ${NC}"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
