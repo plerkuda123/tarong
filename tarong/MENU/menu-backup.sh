@@ -133,13 +133,6 @@ last-backup : $LLatest
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
-Github () {
-echo -e "{$yellow}COPY Nameuser&Passwd GITHUB DI BAWAH INI{$NC}"
-echo -e "{$yellow}Nameuser :👉 jambanbkn 👈{$NC}"
-echo -e "{$yellow}Password :👉 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 👈{$NC}"
-echo -e "{$yellow}PASTE Nameuser&Passwd GITHUB DI BAWAH SAAT DIMINTA{$NC}"
-}
-
 Save_And_Exit () {
     cd /root/user-backup
     git config --global user.email "jambanbkn@gmail.com" &> /dev/null
@@ -163,6 +156,11 @@ echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
+echo -e ""
+echo -e "{$yellow}COPY Nameuser&Passwd GITHUB DI BAWAH INI{$NC}"
+echo -e "{$yellow}Nameuser :👉 jambanbkn 👈{$NC}"
+echo -e "{$yellow}Password :👉 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 👈{$NC}"
+echo -e "{$yellow}PASTE Nameuser&Passwd GITHUB DI BAWAH INI{$NC}"
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
