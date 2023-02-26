@@ -90,34 +90,20 @@ fi
 echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
-cp /etc/passwd backup/ &> /dev/null
-cp /etc/group backup/ &> /dev/null
-cp /etc/shadow backup/ &> /dev/null
-cp /etc/gshadow backup/ &> /dev/null
-cp /etc/ppp/chap-secrets backup/chap-secrets &> /dev/null
-cp -r /var/lib backup &> /dev/null
-cp -r /etc/xray backup/xray &> /dev/null
-cp -r /home/vps backup/vps &> /dev/null
-cp -r /root/domain backup/domain &> /dev/null
 
-#cp -r /root/.acme.sh /root/backup/ &> /dev/null
-#cp -r /etc/passwd /root/backup/ &> /dev/null
-#cp -r /etc/group /root/backup/ &> /dev/null
-#cp -r /etc/shadow /root/backup/ &> /dev/null
-#cp -r /etc/gshadow /root/backup/ &> /dev/null
-#cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
-#cp -r /var/lib/ /root/backup &> /dev/null
-#cp -r /usr/local/etc/xray &> /dev/null
-#cp -r /usr/local/etc/xray backup/xray &> /dev/null
-#cp -r /usr/local/etc/trojan &> /dev/null
-#cp -r /usr/local/etc/vless &> /dev/null
-#cp -r /usr/local/etc/vmess &> /dev/null
-#cp -r /etc/xray /root/backup/xray &> /dev/null
-#cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
-#cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
-#cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
-#cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
-#cp -r /etc/crontab /root/backup/crontab &> /dev/null
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
 zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 
@@ -255,25 +241,9 @@ sleep 1
 #cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
 #echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
 sleep 1
-cp passwd /etc/
-cp group /etc/
-cp shadow /etc/
-cp gshadow /etc/
-cp chap-secrets /etc/ppp/
-cp -r crot /var/lib/
-cp -r domain /root/
-cp -r xray /etc/
-cp -r vps /home/
-cp crontab /etc/
-
-systemctl restart xray
-
 #cp -r /root/backup /var/lib/ &> /dev/null
 #cp -r /root/backup/wireguard /etc/ &> /dev/null
 #cp -r /root/backup/.acme.sh /root/ &> /dev/null
-#cp -r /root/backup/vless /home/ &> /dev/null
-#cp -r /root/backup/trojan /etc/ &> /dev/null
-#cp -r /root/backup/vmess /etc/ &> /dev/null
 #cp -r /root/backup/xray /etc/ &> /dev/null
 #cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 #cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
@@ -281,6 +251,7 @@ systemctl restart xray
 #cp -r /root/backup/crontab /etc/ &> /dev/null
 #cp -r /root/backup/cron.d /etc/ &> /dev/null
 #rm -fr /root/backup &> /dev/null
+systemctl restart xray
 echo -e "[ ${GREEN}INFO${NC} ] • Done..."
 sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
