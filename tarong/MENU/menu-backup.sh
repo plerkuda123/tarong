@@ -147,23 +147,23 @@ Save_And_Exit () {
 }
 
 if [ ! -d "/root/user-backup/" ]; then
-sleep 1
+sleep 0,5
 echo -e "[ ${green}INFO${NC} ] Getting database... "
 Get_Data
 Mkdir_Data
-sleep 1
+sleep 0,5
 echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
-sleep 1
+sleep 0,5
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
-echo -e "  $yellowCOPY Username&Password GITHUB DI BAWAH INI$NC"
+echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
 echo -e""
-echo -e "  $yellowUsername :👉  jambanbkn  👈$NC"
+echo -e "$yellow Username :👉  jambanbkn  👈$NC"
 echo -e ""
-echo -e "  $yellowPassword :👉  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  👈$NC"
+echo -e "$yellow Password :👉  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  👈$NC"
 echo -e""
-echo -e "  $yellowPASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
+echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
