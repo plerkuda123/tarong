@@ -123,13 +123,13 @@ mkdir -p /root/user-backup/$NameUser
 }
 
 Input_Data_Append () {
-if [ ! -f "/root/user-backup/$NameUser/$NameUser-$InputPass-last-backup" ]; then
-touch /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
+if [ ! -f "/root/user-backup/$NameUser/$NameUser-last-backup" ]; then
+touch /root/user-backup/$NameUser/$NameUser-last-backup
 fi
 echo -e "User        : $NameUser
 Password    : $InputPass
 last-backup : $LLatest
-" >> /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
+" >> /root/user-backup/$NameUser/$NameUser-last-backup
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
