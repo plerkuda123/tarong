@@ -126,8 +126,8 @@ Input_Data_Append () {
 if [ ! -f "/root/user-backup/$NameUser/$NameUser-$InputPass-last-backup" ]; then
 touch /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
 fi
-echo -e "User        : $NameUser
-echo -e "Password    : $InputPass
+echo -e "User        : $NameUser/Password : $InputPass
+Password    : $InputPass
 last-backup : $LLatest
 " >> /root/user-backup/$NameUser/$NameUser-$InputPass-last-backup
 mv /root/$NameUser.zip /root/user-backup/$NameUser/
