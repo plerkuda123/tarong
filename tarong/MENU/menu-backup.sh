@@ -167,13 +167,13 @@ echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
 
-echo -e "${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
+"${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
 echo -e "${red}save the NameUser pliss!!!${NC}"
 
-echo -e "${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
+"${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
 echo -e "${red}save the Password pliss!!!${NC}"
 
-echo -e "${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
+"${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
 
 echo -e "${red}save the link pliss!!!!${NC}"
 
