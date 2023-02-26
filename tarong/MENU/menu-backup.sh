@@ -165,8 +165,6 @@ echo -e "$yellow Password :👉  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  👈$
 echo -e""
 echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
 echo -e ""
-jambanbkn
-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
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
@@ -211,7 +209,7 @@ cekdata=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/mai
 red "Data not found / you never backup"
 exit 0
 } || {
-"${yellow}files available for restore $NameUser ${NC}"
+"$yellow files available for restore $NameUser $NC"
 }
 
 echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
