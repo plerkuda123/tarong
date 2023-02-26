@@ -157,10 +157,14 @@ Input_Data_Append
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
-echo -e "$yellow[COPY Username&Password GITHUB DI BAWAH INI]$NC"
-echo -e "$yellow[Username :👉 jambanbkn 👈]$NC"
-echo -e "$yellow[Password :👉 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 👈]$NC"
-echo -e "$yellow[PASTE Username&Password GITHUB DI BAWAH INI]$NC"
+echo -e "  $yellowCOPY Username&Password GITHUB DI BAWAH INI$NC"
+echo -e""
+echo -e "  $yellowUsername :👉  jambanbkn  👈$NC"
+echo -e ""
+echo -e "  $yellowPassword :👉  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  👈$NC"
+echo -e""
+echo -e "  $yellowPASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
+echo -e ""
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
