@@ -110,7 +110,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/jambanbkn/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/Tarap-Kuhing/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -130,15 +130,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "jambanbkn@gmail.com" &> /dev/null
-    git config --global user.name "jambanbkn" &> /dev/null
+    git config --global user.email "merahjambo@gmail.com" &> /dev/null
+    git config --global user.name "Tarap-kuhing" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/jambanbkn/userbackup.git
-    git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
+    git remote add origin https://github.com/Tarap-Kuhing/userbackup.git
+    git push -f https://github.com/Tarap-Kuhing/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -154,15 +154,15 @@ echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
 echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
 echo -e""
-echo -e "$yellow Username :👉  jambanbkn  👈$NC"
+echo -e "$yellow Username :👉  Tarap-Kuhing  👈$NC"
 echo -e ""
-echo -e "$yellow Password :👉  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  👈$NC"
+echo -e "$yellow Password :👉  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  👈$NC"
 echo -e""
 echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
