@@ -165,8 +165,8 @@ echo -e "$yellow Password :👉  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  👈$
 echo -e""
 echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
 echo -e ""
-Username for 'https://github.com': jambanbkn
-Password for 'https://jambanbkn@github.com': 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
+jambanbkn
+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
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
