@@ -137,6 +137,7 @@ Github () {
 echo -e "{$yellow}COPY Nameuser&Passwd GITHUB DI BAWAH INI{$NC}"
 echo -e "{$yellow}Nameuser :👉 jambanbkn 👈{$NC}"
 echo -e "{$yellow}Password :👉 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 👈{$NC}"
+echo -e "{$yellow}PASTE Nameuser&Passwd GITHUB DI BAWAH SAAT DIMINTA{$NC}"
 }
 
 Save_And_Exit () {
