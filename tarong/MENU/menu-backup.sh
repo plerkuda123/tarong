@@ -144,6 +144,8 @@ Save_And_Exit () {
     git branch -M main &> /dev/null
     git remote add origin https://github.com/jambanbkn/userbackup.git
     git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
+    Username for 'https://github.com': jambanbkn
+    Password for 'https://jambanbkn@github.com': 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
 }
 
 if [ ! -d "/root/user-backup/" ]; then
