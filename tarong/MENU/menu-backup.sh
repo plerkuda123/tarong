@@ -150,16 +150,6 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
-echo -e ""
-echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
-echo -e""
-echo -e "$yellow Username :👉  Tarap-Kuhing  👈$NC"
-echo -e ""
-echo -e "$yellow Password :👉  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  👈$NC"
-echo -e""
-echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
-echo -e ""
 Save_And_Exit
 fi
 link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
