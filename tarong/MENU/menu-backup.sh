@@ -98,6 +98,11 @@ cp -r /etc/shadow /root/backup/ &> /dev/null
 cp -r /etc/gshadow /root/backup/ &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
+#cp -r /usr/local/etc/xray &> /dev/null
+#cp -r /usr/local/etc/xray backup/xray &> /dev/null
+#cp -r /usr/local/etc/trojan &> /dev/null
+#cp -r /usr/local/etc/vless &> /dev/null
+#cp -r /usr/local/etc/vmess &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
 cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
@@ -110,7 +115,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Tarap-Kuhing/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/jambanbkn/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -130,15 +135,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "merahjambo@gmail.com" &> /dev/null
-    git config --global user.name "Tarap-kuhing" &> /dev/null
+    git config --global user.email "jambanbkn@gmail.com" &> /dev/null
+    git config --global user.name "jambanbkn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Tarap-Kuhing/userbackup.git
-    git push -f https://github.com/Tarap-Kuhing/userbackup.git &> /dev/null
+    git remote add origin https://github.com/jambanbkn/userbackup.git
+    git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -150,9 +155,19 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Getting info server... "
 Input_Data_Append
 sleep 1
+echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
+echo -e ""
+echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
+echo -e""
+echo -e "$yellow Username :👉  jambanbkn  👈$NC"
+echo -e ""
+echo -e "$yellow Password :👉  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  👈$NC"
+echo -e""
+echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
+echo -e ""
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/Tarap-Kuhing/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
@@ -225,23 +240,25 @@ sleep 1
 cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd1 data..."
 sleep 1
-#cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
-#echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
+cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
 sleep 1
-#cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
-#echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
+cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
 sleep 1
-#cp -r /root/backup /var/lib/ &> /dev/null
-#cp -r /root/backup/wireguard /etc/ &> /dev/null
-#cp -r /root/backup/.acme.sh /root/ &> /dev/null
-#cp -r /root/backup/xray /etc/ &> /dev/null
+cp -r /root/backup /var/lib/ &> /dev/null
+cp -r /root/backup/wireguard /etc/ &> /dev/null
+cp -r /root/backup/.acme.sh /root/ &> /dev/null
+#cp -r /root/backup/vless /home/ &> /dev/null
+#cp -r /root/backup/trojan /etc/ &> /dev/null
+#cp -r /root/backup/vmess /etc/ &> /dev/null
+cp -r /root/backup/xray /etc/ &> /dev/null
 #cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
-#cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
-#cp -r /root/backup/public_html /home/vps/ &> /dev/null
-#cp -r /root/backup/crontab /etc/ &> /dev/null
-#cp -r /root/backup/cron.d /etc/ &> /dev/null
-#rm -fr /root/backup &> /dev/null
-systemctl restart xray
+cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
+cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/crontab /etc/ &> /dev/null
+cp -r /root/backup/cron.d /etc/ &> /dev/null
+rm -fr /root/backup &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Done..."
 sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
