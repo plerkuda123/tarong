@@ -4,6 +4,8 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/tarap/theme/color.conf)
 NC="\e[0m"
+YELLOW='\033[0;33m"
+GREEN='\e[1;32m"
 RED="\033[0;31m"
 COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
