@@ -268,8 +268,8 @@ sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
 cd
 echo
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
+read -n 1 -s -r -p "Press any key to renew crtxray"
+crtxray
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
