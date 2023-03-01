@@ -111,7 +111,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-rm -rf /root/permission
+rm -rf /root/Profile/permission/ip
 read -p "   NEW IPVPS : " daftar
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  [INFO] Checking the IPVPS!"
@@ -455,11 +455,11 @@ menu-ip
 }
 function resetipvps(){
 clear
-rm -f /etc/Profile/github/email
-rm -f /etc/Profile/github/username
-rm -f /etc/Profile/github/api
-rm -f /etc/Profile/github/gitstat
-echo "OFF" > /etc/Profile/github/gitstat
+rm -f /etc/Profile/permission/ip/github/email
+rm -f /etc/Profile/permission/ip/github/username
+rm -f /etc/Profile/permission/ip/github/api
+rm -f /etc/Profile/permission/ip/github/gitstat
+echo "OFF" > /etc/Profile/permission/ip/github/gitstat
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• RESET GITUB API •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -496,16 +496,16 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-GITREQ=/etc/Profile/github/gitstat
+GITREQ=/etc/Profile/permission/ip/github/gitstat
 if [ -f "$GITREQ" ]; then
     cekk="ok"
 else 
-    mkdir /etc/Profile/github
-    touch /etc/Profile/github/gitstat
-    echo "OFF" > /etc/Profile/github/gitstat
+    mkdir /etc/Profile/permission/ip/github
+    touch /etc/Profile/permission/ip/github/gitstat
+    echo "OFF" > /etc/Profile/permission/ip/github/gitstat
 fi
 
-stst1=$(cat /etc/Profile/github/gitstat)
+stst1=$(cat /etc/Profile/permission/ip/github/gitstat)
 if [ "$stst1" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -521,7 +521,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to Set API"
 setapi
 fi
-stst=$(cat /etc/Profile/github/gitstat)
+stst=$(cat /etc/Profile/permission/ip/github/gitstat)
 if [ "$stst" = "ON" ]; then
 APIOK="CEK API"
 rex="viewapi"
