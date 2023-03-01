@@ -7,9 +7,9 @@ COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ 
 COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
 
-APIGIT=$(cat /etc/tarap/github/api)
-EMAILGIT=$(cat /etc/tarap/github/email)
-USERGIT=$(cat /etc/tarap/github/username)
+APIGIT=$(cat /etc/Profile/permission/ip/github/api)
+EMAILGIT=$(cat /etc/Profile/permission/ip/github/email)
+USERGIT=$(cat /etc/Profile/permission/ip/github/username)
 
 
 function setapi(){
@@ -19,10 +19,10 @@ echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• IPVPS GITHUB API •     
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 
-if [[ -f /etc/tarap/github/api && -f /etc/tarap/github/email && /etc/tarap/github/username ]]; then
+if [[ -f /etc/Profile/permission/ip/github/api && -f /etc/Profile/permission/ip/github/email && /etc/Profile/permission/ip/github/username ]]; then
    rec="OK"
 else
-    mkdir /etc/tarap/github > /dev/null 2>&1
+    mkdir /etc/Profile/permission/ip/github > /dev/null 2>&1
 fi
 
 read -p " E-mail   : " EMAIL1
@@ -62,10 +62,10 @@ menu-ip
 fi
 
 sleep 2
-echo "$EMAIL1" > /etc/tarap/github/email
-echo "$USERNAME1" > /etc/tarap/github/username
-echo "$API1" > /etc/tarap/github/api
-echo "ON" > /etc/tarap/github/gitstat
+echo "$EMAIL1" > /etc/Profile/permission/ip/github/email
+echo "$USERNAME1" > /etc/Profile/permission/ip/github/username
+echo "$API1" > /etc/Profile/permission/ip/github/api
+echo "ON" > /etc/Profile/permission/ip/github/gitstat
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -116,7 +116,7 @@ read -p "   NEW IPVPS : " daftar
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  [INFO] Checking the IPVPS!"
 sleep 1
-REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/tarap/main/ipmini | awk '{print $4}' | grep $daftar)
+REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/Profile/main/Profile/permission/ip | awk '{print $4}' | grep $daftar)
 if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1 ${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -185,11 +185,11 @@ exp=$(date -d "$exp days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
-cd /root/tarap/ &> /dev/null
+git clone https://github.com/${USERGIT}/Profile.git &> /dev/null
+cd /root/Profile/permission/ip/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
-touch ipmini &> /dev/null
+touch Profile/permission/ip &> /dev/null
 touch newuser &> /dev/null
 TEXT="
 Name        : $client 
@@ -198,13 +198,13 @@ Exp         : $exp
 IPVPS       : $daftar 
 Reg Date    : $hariini
 " 
-echo "${TEXT}" >>/root/tarap/newuser 
-echo "### $client $exp $daftar $isadmin" >>/root/tarap/ipmini 
+echo "${TEXT}" >>/root/Profile/permission/ip/newuser 
+echo "### $client $exp $daftar $isadmin" >>/root/Profile/permission/ip
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/Profile.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/Profile.git &> /dev/null
 sleep 1
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -219,7 +219,7 @@ echo -e "$COLOR1 ${NC}  IP VPS        : $daftar"
 echo -e "$COLOR1 ${NC}  Register Date : $hariini"
 echo -e "$COLOR1 ${NC}  Expired Date  : $exp"
 cd
-rm -rf /root/tarap
+rm -rf /root/Profile/permission/ip
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -230,20 +230,20 @@ menu-ip
 }
 function delipvps(){
 clear
-rm -rf /root/tarap &> /dev/null
+rm -rf /root/Profile/permission/ip &> /dev/null
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
-cd /root/tarap/ &> /dev/null
+git clone https://github.com/${USERGIT}/Profile.git &> /dev/null
+cd /root/Profile/permission/ip/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
-touch ipmini &> /dev/null
+touch Profile/permission/ip &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}• DELETE IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 2-4 | nl -s '. '
+grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 2-4 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -266,23 +266,23 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
 
-name1=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
-exp=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 3 | sed -n "$nombor"p) #exp
-ivps1=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 4 | sed -n "$nombor"p) #ip
-sed -i "s/### $name1 $exp $ivps1//g" /root/tarap/ipmini &> /dev/null
+name1=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
+exp=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 3 | sed -n "$nombor"p) #exp
+ivps1=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 4 | sed -n "$nombor"p) #ip
+sed -i "s/### $name1 $exp $ivps1//g" /root/Profile/permission/ip &> /dev/null
 hariini2=$(date -d "0 days" +"%Y-%m-%d")
 TEXTD="
 Name     : $name1
 IPVPS    : $ivps1  
 Status   : Deleted on  $hariini2
 " 
-echo "${TEXTD}" >>/root/tarap/delete_log  &> /dev/null
+echo "${TEXTD}" >>/root/Profile/permission/ip/delete_log  &> /dev/null
 
 git add . &> /dev/null
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/Profile.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/Profile.git &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -294,7 +294,7 @@ echo -e "$COLOR1 ${NC}  Ip VPS       : $ivps1"
 echo -e "$COLOR1 ${NC}  Expired Date : $exp"
 echo -e "$COLOR1 ${NC}  Client Name  : $name1"
 cd
-rm -rf /root/tarap
+rm -rf /root/Profile/permission/ip
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -313,14 +313,14 @@ echo -e "$COLOR1┌────────────────────�
 rm -rf /root/tarap
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/tarap.git
-cd /root/tarap/
+git clone https://github.com/${USERGIT}/Profile.git
+cd /root/Profile/permission/ip/
 rm -rf .git
 git init
-touch ipmini
+touch Profile/permission/ip
 echo -e "   [ ${Lyellow}INFO${NC} ] Checking list.."
 
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/root/tarap/ipmini")
+NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/root/Profile/permission/ip")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
   clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -341,7 +341,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 2-4 | nl -s '. '
+grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 2-4 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -388,9 +388,9 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
-name1=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p) #name
-exp=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p) #exp
-ivps1=$(grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p) #ip
+name1=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p) #name
+exp=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p) #exp
+ivps1=$(grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p) #ip
 
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
@@ -398,12 +398,12 @@ d2=$(date -d "$now" +%s)
 exp2=$(((d1 - d2) / 86400))
 exp3=$(($exp2 + $masaaktif))
 exp4=$(date -d "$exp3 days" +"%Y-%m-%d")
-sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/tarap/ipmini
+sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/Profile/permission/ip
 git add .
 git commit -m renew
 git branch -M main
-git remote add origin https://github.com/${USERGIT}/tarap.git
-git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git
+git remote add origin https://github.com/${USERGIT}/Profile.git
+git push -f https://${APIGIT}@github.com/${USERGIT}/Profile.git
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -417,7 +417,7 @@ echo -e "$COLOR1 ${NC}  Days Added    : $masaaktif Days"
 echo -e "$COLOR1 ${NC}  Expired Date  : $exp4"
 echo -e "$COLOR1 ${NC}  Client Name   : $name1"
 cd
-rm -rf /root/tarap
+rm -rf /root/Profile/permission/ip
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
@@ -429,37 +429,37 @@ menu-ip
 
 function useripvps(){
 clear
-rm -rf /root/tarap
+rm -rf /root/Profile/permission/ip
 git config --global user.email "${EMAILGIT}"
 git config --global user.name "${USERGIT}"
-git clone https://github.com/${USERGIT}/tarap.git
-cd /root/tarap/
+git clone https://github.com/${USERGIT}/Profile.git
+cd /root/Profile/permission/ip/
 rm -rf .git
 git init
-touch ipmini
+touch Profile/permission/ip
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/tarap/ipmini" | cut -d ' ' -f 2 | nl -s '. '
+grep -E "^### " "/root/Profile/permission/ip" | cut -d ' ' -f 2 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 cd
-rm -rf /root/tarap
+rm -rf /root/Profile/permission/ip
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 }
 function resetipvps(){
 clear
-rm -f /etc/tarap/github/email
-rm -f /etc/tarap/github/username
-rm -f /etc/tarap/github/api
-rm -f /etc/tarap/github/gitstat
-echo "OFF" > /etc/tarap/github/gitstat
+rm -f /etc/Profile/github/email
+rm -f /etc/Profile/github/username
+rm -f /etc/Profile/github/api
+rm -f /etc/Profile/github/gitstat
+echo "OFF" > /etc/Profile/github/gitstat
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• RESET GITUB API •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -473,7 +473,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ipmini | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -496,16 +496,16 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-GITREQ=/etc/tarap/github/gitstat
+GITREQ=/etc/Profile/github/gitstat
 if [ -f "$GITREQ" ]; then
     cekk="ok"
 else 
-    mkdir /etc/tarap/github
-    touch /etc/tarap/github/gitstat
-    echo "OFF" > /etc/tarap/github/gitstat
+    mkdir /etc/Profile/github
+    touch /etc/Profile/github/gitstat
+    echo "OFF" > /etc/Profile/github/gitstat
 fi
 
-stst1=$(cat /etc/tarap/github/gitstat)
+stst1=$(cat /etc/Profile/github/gitstat)
 if [ "$stst1" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -521,7 +521,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to Set API"
 setapi
 fi
-stst=$(cat /etc/tarap/github/gitstat)
+stst=$(cat /etc/Profile/github/gitstat)
 if [ "$stst" = "ON" ]; then
 APIOK="CEK API"
 rex="viewapi"
