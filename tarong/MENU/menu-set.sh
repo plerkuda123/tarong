@@ -318,7 +318,7 @@ echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}BANDWITH 
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}ANTI TORRENT${NC} $sts  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST"
 echo -e " $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE${NC}"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}MENU UPDATE${NC}  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}MENU IP"
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK TO MENU${NC}"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
@@ -337,6 +337,7 @@ case $opt in
 07 | 7) clear ; restart ;;
 08 | 8) clear ; autoboot ;;
 09 | 9) clear ; mspeed ;;
+10 | 10) clear ; menu-ip ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac
