@@ -37,7 +37,7 @@ rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
 rm -rf menu-backup
-#rm -rf menu-ip
+rm -rf menu-ip
 rm -rf menu-tor
 rm -rf menu-tcp
 rm -rf autoboot
@@ -61,7 +61,7 @@ rm -rf menu-ssh
 rm -rf menu-set
 rm -rf menu-theme
 rm -rf menu-backup
-#rm -rf menu-ip
+rm -rf menu-ip
 rm -rf menu-tor
 rm -rf menu-tcp
 rm -rf autoboot
@@ -85,7 +85,7 @@ wget -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/tarong
 wget -O /usr/bin/menu-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-set.sh" && chmod +x /usr/bin/menu-set
 wget -O /usr/bin/menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-theme.sh" && chmod +x /usr/bin/menu-theme
 wget -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-backup.sh" && chmod +x /usr/bin/menu-backup
-#wget -O /usr/bin/menu-ip "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ip.sh" && chmod +x /usr/bin/menu-ip
+wget -O /usr/bin/menu-ip "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ip.sh" && chmod +x /usr/bin/menu-ip
 wget -O /usr/bin/menu-tor "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-tor.sh" && chmod +x /usr/bin/menu-tor
 wget -O /usr/bin/autoboot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/autoboot.sh" && chmod +x /usr/bin/autoboot
 wget -O /usr/bin/menu-tcp "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-tcp.sh" && chmod +x /usr/bin/menu-tcp
@@ -108,7 +108,7 @@ chmod +x menu-ssh
 chmod +x menu-set
 chmod +x menu-theme
 chmod +x menu-backup
-#chmod +x menu-ip
+chmod +x menu-ip
 chmod +x menu-tor
 chmod +x menu-tcp
 chmod +x autoboot
