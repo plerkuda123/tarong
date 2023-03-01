@@ -161,17 +161,14 @@ echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
 echo -e""
 echo -e "$yellow Username :👉  jambanbkn  👈$NC"
 echo -e ""
-echo -e "$yellow Password :👉  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  👈$NC"
+echo -e "$yellow Password :👉  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  👈$NC"
 echo -e""
 echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
-echo -e "👇 link cek cek file backup 👇 "
 link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
-echo -e "👇 link cek username & password 👇 "
-link="https://raw.githubusercontent.com/jambanbkn/userbackup/main/$NameUser/$NameUser-last-backup"
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
 echo
