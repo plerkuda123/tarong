@@ -116,7 +116,7 @@ read -p "   NEW IPVPS : " daftar
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  [INFO] Checking the IPVPS!"
 sleep 1
-REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/ip/main/ipvps | awk '{print $4}' | grep $daftar)
+REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/tarap/main/ipvps | awk '{print $4}' | grep $daftar)
 if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1 ${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -199,8 +199,8 @@ echo "### $client $exp $daftar $isadmin" >>/root/tarap/ipvps
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/ip.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
 sleep 1
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -229,7 +229,7 @@ clear
 rm -rf /root/tarap &> /dev/null
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/ip.git &> /dev/null
+git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
 cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
@@ -277,8 +277,8 @@ echo "${TEXTD}" >>/root/tarap/delete_log/$client  &> /dev/null
 git add . &> /dev/null
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/ip.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -309,7 +309,7 @@ echo -e "$COLOR1┌────────────────────�
 rm -rf /root/tarap
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/ip.git
+git clone https://github.com/${USERGIT}/tarap.git
 cd /root/tarap/
 rm -rf .git
 git init
@@ -398,8 +398,8 @@ sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/tarap/ipvps
 git add .
 git commit -m renew
 git branch -M main
-git remote add origin https://github.com/${USERGIT}/ip.git
-git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git
+git remote add origin https://github.com/${USERGIT}/tarap.git
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -469,7 +469,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/jambanbkn/ip/main/ipvps | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/jambanbkn/tarap/main/ipvps | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
