@@ -190,16 +190,12 @@ cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch ipmini &> /dev/null
-touch newuser &> /dev/null
+touch $client &> /dev/null
 TEXT="
-Name        : $client 
-Admin Panel : $isadmin
-Exp         : $exp 
-IPVPS       : $daftar 
-Reg Date    : $hariini
+### $client $daftar $exp
 " 
-echo "${TEXT}" >>/root/tarap/newuser 
-echo "### $client $exp $daftar $isadmin" >>/root/tarap/ipmini 
+echo "${TEXT}" >>/root/tarap/$client 
+echo "### $client $daftar $exp " >>/root/tarap/ipmini 
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
@@ -473,7 +469,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ipmini | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/jambanbkn/tarap/main/ipmini | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
