@@ -7,9 +7,9 @@ COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ 
 COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
 
-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=$(cat /etc/tarap/github/api)
-jambanbkn@gmail.com=$(cat /etc/tarap/github/email)
-jambanbkn=$(cat /etc/tarap/github/username)
+APIGIT=$(cat /etc/tarap/github/api)
+EMAILGIT=$(cat /etc/tarap/github/email)
+USERGIT=$(cat /etc/tarap/github/username)
 
 
 function setapi(){
@@ -25,8 +25,8 @@ else
     mkdir /etc/tarap/github > /dev/null 2>&1
 fi
 
-#read -p " E-mail   : " EMAIL1
-if [ -z jambanbkn@gmail.com ]; then
+read -p " E-mail   : " EMAIL1
+if [ -z $EMAIL1 ]; then
 echo -e "$COLOR1 ${NC}   [INFO] Please Input Your Github Email Adress"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
@@ -37,8 +37,8 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
 
-#read -p " Username : " USERNAME1
-if [ -z jambanbkn ]; then
+read -p " Username : " USERNAME1
+if [ -z $USERNAME1 ]; then
 echo -e "$COLOR1 ${NC}   [INFO] Please Input Your Github Username"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
@@ -49,8 +49,8 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
 
-#read -p " API      : " API1
-if [ -z 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 ]; then
+read -p " API      : " API1
+if [ -z $API1 ]; then
 echo -e "$COLOR1 ${NC}  [INFO] Please Input Your Github API"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
@@ -62,9 +62,9 @@ menu-ip
 fi
 
 sleep 2
-echo "jambanbkn@gmail.com" > /etc/tarap/github/email
-echo "jambanbkn" > /etc/tarap/github/username
-echo "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" > /etc/tarap/github/api
+echo "$EMAIL1" > /etc/tarap/github/email
+echo "$USERNAME1" > /etc/tarap/github/username
+echo "$API1" > /etc/tarap/github/api
 echo "ON" > /etc/tarap/github/gitstat
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -116,7 +116,7 @@ read -p "   NEW IPVPS : " daftar
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  [INFO] Checking the IPVPS!"
 sleep 1
-REQIP=$(curl -sS https://raw.githubusercontent.com/jambanbkn/tarap/main/ipvps | awk '{print $4}' | grep $daftar)
+REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/tarap/main/ipvps | awk '{print $4}' | grep $daftar)
 if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1 ${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -183,9 +183,9 @@ done
 
 exp=$(date -d "$exp days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
-git config --global user.email "jambanbkn@gmail.com" &> /dev/null
-git config --global user.name "jambanbkn" &> /dev/null
-git clone https://github.com/jambanbkn/tarap.git &> /dev/null
+git config --global user.email "${EMAILGIT}" &> /dev/null
+git config --global user.name "${USERGIT}" &> /dev/null
+git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
 cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
@@ -199,8 +199,8 @@ echo "### $client $exp $daftar $isadmin" >>/root/tarap/ipvps
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/jambanbkn/tarap.git &> /dev/null
-git push -f https://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@github.com/jambanbkn/tarap.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
 sleep 1
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -227,9 +227,9 @@ menu-ip
 function delipvps(){
 clear
 rm -rf /root/tarap &> /dev/null
-git config --global user.email "jambanbkn@gmail.com" &> /dev/null
-git config --global user.name "jambanbkn" &> /dev/null
-git clone https://github.com/jambanbkn/tarap.git &> /dev/null
+git config --global user.email "${EMAILGIT}" &> /dev/null
+git config --global user.name "${USERGIT}" &> /dev/null
+git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
 cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
@@ -277,8 +277,8 @@ echo "${TEXTD}" >>/root/tarap/delete_log/$client  &> /dev/null
 git add . &> /dev/null
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/jambanbkn/tarap.git &> /dev/null
-git push -f https://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@github.com/jambanbkn/tarap.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/tarap.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -307,9 +307,9 @@ echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •      
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 rm -rf /root/tarap
-git config --global user.email "jambanbkn@gmail.com" &> /dev/null
-git config --global user.name "jambanbkn" &> /dev/null
-git clone https://github.com/jambanbkn/tarap.git
+git config --global user.email "${EMAILGIT}" &> /dev/null
+git config --global user.name "${USERGIT}" &> /dev/null
+git clone https://github.com/${USERGIT}/tarap.git
 cd /root/tarap/
 rm -rf .git
 git init
@@ -398,8 +398,8 @@ sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/tarap/ipvps
 git add .
 git commit -m renew
 git branch -M main
-git remote add origin https://github.com/jambanbkn/tarap.git
-git push -f https://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@github.com/jambanbkn/tarap.git
+git remote add origin https://github.com/${USERGIT}/tarap.git
+git push -f https://${APIGIT}@github.com/${USERGIT}/tarap.git
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
@@ -426,9 +426,9 @@ menu-ip
 function useripvps(){
 clear
 rm -rf /root/tarap
-git config --global user.email "jambanbkn@gmail.com"
-git config --global user.name "jambanbkn"
-git clone https://github.com/jambanbkn/tarap.git
+git config --global user.email "${EMAILGIT}"
+git config --global user.name "${USERGIT}"
+git clone https://github.com/${USERGIT}/tarap.git
 cd /root/tarap/
 rm -rf .git
 git init
