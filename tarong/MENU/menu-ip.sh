@@ -183,9 +183,9 @@ done
 
 exp=$(date -d "$exp days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
-git config --global user.email "${EMAILGIT}" &> /dev/null
-git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/tarap.git &> /dev/null
+git config --global user.email "jambanbkn@gmail.com" &> /dev/null
+git config --global user.name "jambanbkn" &> /dev/null
+git clone https://github.com/jambanbkn/tarap.git &> /dev/null
 cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
