@@ -143,7 +143,7 @@ Save_And_Exit () {
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/jambanbkn/userbackup.git
-    git push -f https://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@github.com/jambanbkn/userbackup.git &> /dev/null
+    git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -157,11 +157,11 @@ Input_Data_Append
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
-echo -e "$yellow COPY Username&Password GITHUB DI BAWAH INI$NC"
+echo -e "$yellow COPY Username GITHUB DI BAWAH INI$NC"
 echo -e""
 echo -e "$yellow Username :👉  jambanbkn  👈$NC"
 echo -e""
-echo -e "$yellow PASTEKAN Username&Password GITHUB DI BAWAH INI$NC"
+echo -e "$yellow PASTEKAN Username GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
