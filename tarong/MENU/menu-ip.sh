@@ -116,7 +116,7 @@ read -p "   NEW IPVPS : " daftar
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  [INFO] Checking the IPVPS!"
 sleep 1
-REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/tarap/main/ipmini | awk '{print $4}' | grep $daftar)
+REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/Profile/main/Profile/permission/ip | awk '{print $4}' | grep $daftar)
 if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1 ${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -469,7 +469,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/jambanbkn/tarap/main/ipmini | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
