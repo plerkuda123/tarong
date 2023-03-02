@@ -428,7 +428,7 @@ clear
 rm -rf /root/tarap
 git config --global user.email "${EMAILGIT}"
 git config --global user.name "${USERGIT}"
-git clone https://github.com/${USERGIT}/ip.git
+git clone https://github.com/${USERGIT}/tarap.git
 cd /root/tarap/
 rm -rf .git
 git init
