@@ -190,7 +190,7 @@ cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch ipvps &> /dev/null
-touch $client &> /dev/null
+#touch $client &> /dev/null
 TEXT="
 ### $client $daftar $exp
 " 
@@ -272,7 +272,7 @@ Name     : $name1
 IPVPS    : $ivps1  
 Status   : Deleted on  $hariini2
 " 
-echo "${TEXTD}" >>/root/tarap/delete_log/$client  &> /dev/null
+echo "${TEXTD}" >>/root/tarap/delete_log  &> /dev/null
 
 git add . &> /dev/null
 git commit -m remove &> /dev/null
