@@ -135,7 +135,7 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "merahjambo@gmail.com" &> /dev/null
+    git config --global user.email "merahjambo17@gmail.com" &> /dev/null
     git config --global user.name "Tarap-Kuhing" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
