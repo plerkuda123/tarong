@@ -62,9 +62,9 @@ menu-ip
 fi
 
 sleep 2
-echo "jambanbkn@gmail.com" > /etc/tarap/github/email
-echo "jambanbkn" > /etc/tarap/github/username
-echo "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" > /etc/tarap/github/api
+echo "$EMAIL1" > /etc/tarap/github/email
+echo "$USERNAME1" > /etc/tarap/github/username
+echo "$API1" > /etc/tarap/github/api
 echo "ON" > /etc/tarap/github/gitstat
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
