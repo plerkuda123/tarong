@@ -190,9 +190,9 @@ cd /root/tarap/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch ipvps &> /dev/null
-#touch $client &> /dev/null
+touch $client &> /dev/null
 TEXT="
-### $client $daftar $exp
+### $client $exp $daftar
 " 
 echo "${TEXT}" >>/root/tarap/$client 
 echo "### $client $exp $daftar $isadmin" >>/root/tarap/ipvps 
