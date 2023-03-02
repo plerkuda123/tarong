@@ -134,16 +134,16 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 }
 
 Save_And_Exit () {
-    cd /root/user-backup
     git config --global user.email "jambanbkn@gmail.com" &> /dev/null
     git config --global user.name "jambanbkn" &> /dev/null
+    cd /root/user-backup
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/jambanbkn/userbackup.git
-    git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
+    git push -f https://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@github.com/jambanbkn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
