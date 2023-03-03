@@ -62,7 +62,7 @@ rm -rf /home/email
 echo "Please enter your email"
 read -rp "Email : " -e email
 cat <<EOF>>/home/email
-$email
+merahjambo17@gmail.com
 EOF
 }
 function gantipengirim() {
@@ -80,9 +80,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user $email
-from $email
-password $pwdd
+user bingluhss@gmail.com
+from bingluhss@gmail.com
+password oivxujgslmgiuinu
 logfile ~/.msmtp.log
 EOF
 }
@@ -96,7 +96,7 @@ echo -e "
 Ini adalah isi email percobaaan kirim email dari vps
 IP VPS : $IP
 Tanggal : $date
-" | mail -s "Percobaan Pengiriman Email" $email
+" | mail -s "Percobaan Pengiriman Email" merahjambo17@gmail.com
 }
 clear
 echo -e "=============================="
