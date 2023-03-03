@@ -50,6 +50,7 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -74,13 +75,14 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf autobackup
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
 wget -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-vmess.sh" && chmod +x /usr/bin/menu-vmess
 wget -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-vless.sh" && chmod +x /usr/bin/menu-vless
 wget -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-trojan.sh" && chmod +x /usr/bin/menu-trojan
-#wget -O /usr/bin/menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-bot.sh" && chmod +x /usr/bin/menu-bot
+wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/autobackup.sh" && chmod +x /usr/bin/autobackup
 wget -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ssh.sh" && chmod +x /usr/bin/menu-ssh
 wget -O /usr/bin/menu-set "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-set.sh" && chmod +x /usr/bin/menu-set
 wget -O /usr/bin/menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-theme.sh" && chmod +x /usr/bin/menu-theme
@@ -103,7 +105,7 @@ chmod +x menu-ss
 chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x menu-trojan
-#chmod +x menu-bot
+chmod +x autobackup
 chmod +x menu-ssh
 chmod +x menu-set
 chmod +x menu-theme
