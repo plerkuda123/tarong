@@ -286,7 +286,7 @@ echo -e ""
 case $opt in
 01 | 1) clear ; backup ;;
 02 | 2) clear ; restore ;;
-#03 |3) clear ; autobackup ;;
+03 |3) clear ; autobackup ;;
 #04 |4) clear ; menu4 ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
