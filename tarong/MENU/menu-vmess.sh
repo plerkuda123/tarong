@@ -140,7 +140,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 	echo "Select the existing client you want to renew"
 	echo " Press CTRL+C to return"
 	echo -e "==============================="
-	grep -E "^#vms " "/usr/local/etc/xray/vmess.json" | cut -d ' ' -f 2-3 | nl -s ') '
+	grep -E "^#vms " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
 			read -rp "Select one client [1]: " CLIENT_NUMBER
@@ -148,7 +148,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-exp=$(grep -E "^### $user" "/etc/xray/vmess.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -E "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -156,7 +156,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
-asu=`cat>/usr/local/etc/xray/$user-tls.json<<EOF
+asu=`cat>/usr/local/etc/xray/config.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -526,7 +526,7 @@ sed -i '/#vmess$/a\### '"$user $exp"'\
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-asu=`cat>/usr/local/etc/xray/$user-tls.json<<EOF
+asu=`cat>/usr/local/etc/xray/config.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -541,7 +541,7 @@ asu=`cat>/usr/local/etc/xray/$user-tls.json<<EOF
       "tls": "tls"
 }
 EOF`
-ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
+ask=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -556,7 +556,7 @@ ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
       "tls": "none"
 }
 EOF`
-grpc=`cat>/usr/local/etc/xray/$user-grpc.json<<EOF
+grpc=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
