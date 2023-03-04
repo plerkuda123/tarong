@@ -265,13 +265,7 @@ cd
 echo
 read -n 1 -s -r -p "Press any key to menu"
 menu
-}
 
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ip
 }
 function delfile(){
 clear
@@ -308,7 +302,7 @@ echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}            
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ip
+menu-backup
 fi
 
 name1=$(grep -E "^### " "/root/user-backup" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
@@ -346,7 +340,7 @@ echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}            
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ip
+menu-backup
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
