@@ -251,7 +251,7 @@ cp -r /root/backup/.acme.sh /root/ &> /dev/null
 #cp -r /root/backup/trojan /etc/ &> /dev/null
 #cp -r /root/backup/vmess /etc/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
-#cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
+cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
 cp -r /root/backup/crontab /etc/ &> /dev/null
@@ -263,8 +263,8 @@ sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
 cd
 echo
-read -n 1 -s -r -p "Press any key to renew crtxray"
-crtxray
+read -n 1 -s -r -p "Press any key to menu"
+menu
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
