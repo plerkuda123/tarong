@@ -266,6 +266,88 @@ echo
 read -n 1 -s -r -p "Press any key to menu"
 menu
 }
+
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu-ip
+}
+function delfile(){
+clear
+rm -rf /root/backup &> /dev/null
+git config --global user.email "jambanbkn@gmail.com" &> /dev/null
+git config --global user.name "jambanbkn" &> /dev/null
+git clone https://github.com/jambanbkn/userbackup.git &> /dev/null
+cd /root/backup/ &> /dev/null
+rm -rf .git &> /dev/null
+git init &> /dev/null
+touch userbackup &> /dev/null
+clear
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}• DELETE IPVPS •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+grep -E "^### " "/root/tarap/userbackup" | cut -d ' ' -f 2-4 | nl -s '. '
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo ""
+read -rp "   Please Input Number : " nombor
+if [ -z $nombor ]; then
+cd
+clear
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}• DELETE IPVPS •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 ${NC}   [INFO] Please Input Correct Number"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu-ip
+fi
+
+name1=$(grep -E "^### " "/root/user-backup" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
+exp=$(grep -E "^### " "/root/user-backup" | cut -d ' ' -f 3 | sed -n "$nombor"p) #exp
+ivps1=$(grep -E "^### " "/root/user-backup" | cut -d ' ' -f 4 | sed -n "$nombor"p) #ip
+sed -i "s/### $name1 $exp $ivps1//g" /root/user-backup &> /dev/null
+hariini2=$(date -d "0 days" +"%Y-%m-%d")
+TEXTD="
+Name     : $userbackup
+IPVPS    : $ivps1  
+Status   : Deleted on  $hariini2
+" 
+echo "${TEXTD}" >>/root/backup/delete_log  &> /dev/null
+
+git add . &> /dev/null
+git commit -m remove &> /dev/null
+git branch -M main &> /dev/null
+git remote add origin https://github.com/jambanbkn/userbackup.git &> /dev/null
+git push -f https://github.com/jambanbkn/userbackup.git &> /dev/null
+clear
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• REGISTER IPVPS •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}  Client IP Deleted Successfully"
+echo -e "$COLOR1 ${NC}"
+echo -e "$COLOR1 ${NC}  Ip VPS       : $ivps1"
+echo -e "$COLOR1 ${NC}  Expired Date : $exp"
+echo -e "$COLOR1 ${NC}  Client Name  : $name1"
+cd
+rm -rf /root/backup
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu-ip
+}
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• BACKUP PANEL MENU •             ${NC} $COLOR1 $NC"
@@ -273,7 +355,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}BACKUP VPS  $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RESTORE VPS  $COLOR1 $NC"
-echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}AUTOBACKUP VPS$COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}DELETE FILE BACKUP $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
@@ -286,7 +368,7 @@ echo -e ""
 case $opt in
 01 | 1) clear ; backup ;;
 02 | 2) clear ; restore ;;
-03 |3) clear ; autobackup ;;
+03 |3) clear ; delfile ;;
 #04 |4) clear ; menu4 ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
