@@ -156,7 +156,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
-asu=`cat>/usr/local/etc/xray/config.json<<EOF
+asu=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -171,7 +171,7 @@ asu=`cat>/usr/local/etc/xray/config.json<<EOF
       "tls": "tls"
 }
 EOF`
-ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
+ask=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -186,7 +186,7 @@ ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
       "tls": "none"
 }
 EOF`
-grpc=`cat>/usr/local/etc/xray/$user-grpc.json<<EOF
+grpc=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -385,7 +385,7 @@ sed -i '/#vmess$/a\### '"$user $exp"'\
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-asu=`cat>/usr/local/etc/xray/$user-tls.json<<EOF
+asu=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -400,7 +400,7 @@ asu=`cat>/usr/local/etc/xray/$user-tls.json<<EOF
       "tls": "tls"
 }
 EOF`
-ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
+ask=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -415,7 +415,7 @@ ask=`cat>/usr/local/etc/xray/$user-none.json<<EOF
       "tls": "none"
 }
 EOF`
-grpc=`cat>/usr/local/etc/xray/$user-grpc.json<<EOF
+grpc=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -526,7 +526,7 @@ sed -i '/#vmess$/a\### '"$user $exp"'\
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-asu=`cat>/usr/local/etc/xray/config.json<<EOF
+asu=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
