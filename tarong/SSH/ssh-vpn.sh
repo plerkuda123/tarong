@@ -26,7 +26,7 @@ commonname=none
 email=none
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -133,8 +133,8 @@ install_ssl(){
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -142,7 +142,7 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/index.html1"
 /etc/init.d/nginx restart
 
 # install badvpn
@@ -315,7 +315,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/issue.net"
 
 install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
