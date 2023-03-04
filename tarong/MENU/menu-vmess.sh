@@ -501,7 +501,6 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 menu
 fi
 		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
-		CLIENT_EXISTS=$(grep -w $user /etc/xray/vmess.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
