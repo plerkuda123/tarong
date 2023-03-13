@@ -91,13 +91,24 @@ echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
-cp /etc/passwd backup/ &> /dev/null
-cp /etc/group backup/ &> /dev/null
-cp /etc/shadow backup/ &> /dev/null
-cp /etc/gshadow backup/ &> /dev/null
-cp -r /var/lib/ backup &> /dev/null
-cp -r /usr/local/etc/xray backup/xray &> /dev/null
-cp -r /home/vps/public_html backup/public_html &> /dev/null
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+#cp -r /usr/local/etc/xray &> /dev/null
+#cp -r /usr/local/etc/xray backup/xray &> /dev/null
+#cp -r /usr/local/etc/trojan &> /dev/null
+#cp -r /usr/local/etc/vless &> /dev/null
+#cp -r /usr/local/etc/vmess &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /usr/local/shadowsocksr/ /root/backup/shadowsocksr &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
 zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 
@@ -164,12 +175,17 @@ echo -e "[ ${red}INFO${NC} ] Generete Link Backup "
 echo
 sleep 2
 echo -e "The following is a link to your vps data backup file.
+
 "${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
 "${red}save the NameUser pliss!!!${NC}"
+
 "${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
 "${red}save the Password pliss!!!${NC}"
+
 "${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
+
 "${red}save the link pliss!!!!${NC}"
+
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
 
@@ -213,29 +229,33 @@ sleep 1
 cp -r /root/backup/group /etc/ &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring shadow data..."
 sleep 1
-#cp -r /root/backup/shadow /etc/ &> /dev/null
+cp -r /root/backup/shadow /etc/ &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring gshadow data..."
 sleep 1
 cp -r /root/backup/gshadow /etc/ &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring chap-secrets data..."
 sleep 1
-#cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
+cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd1 data..."
 sleep 1
 cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
 sleep 1
-#cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
+cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
 sleep 1
-cp passwd /etc/ &> /dev/null
-cp group /etc/ &> /dev/null
-cp shadow /etc/ &> /dev/null
-cp gshadow /etc/ &> /dev/null
-cp -r var/lib/ &> /dev/null
-cp -r xray /usr/local/etc/
-cp -r public_html /home/vps/ &> /dev/null
-cp crontab /etc/ &> /dev/null
+cp -r /root/backup /var/lib/ &> /dev/null
+cp -r /root/backup/wireguard /etc/ &> /dev/null
+cp -r /root/backup/.acme.sh /root/ &> /dev/null
+#cp -r /root/backup/vless /home/ &> /dev/null
+#cp -r /root/backup/trojan /etc/ &> /dev/null
+#cp -r /root/backup/vmess /etc/ &> /dev/null
+cp -r /root/backup/xray /etc/ &> /dev/null
+cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
+cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
+cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/crontab /etc/ &> /dev/null
+cp -r /root/backup/cron.d /etc/ &> /dev/null
 systemctl restart xray
 rm -fr /root/backup &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Done..."
@@ -265,8 +285,8 @@ echo -e ""
 case $opt in
 01 | 1) clear ; backup ;;
 02 | 2) clear ; restore ;;
-#03 | 3) clear ; autobackup ;;
-#04 | 4) clear ; menu4 ;;
+03 | 3) clear ; restore2 ;;
+04 | 4) clear ; backup2 ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
 x) exit ;;
