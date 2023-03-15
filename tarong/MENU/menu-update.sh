@@ -51,6 +51,7 @@ rm -rf restart
 rm -rf menu-update
 rm -rf update
 rm -rf autobackup
+rm -rf crt
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -76,6 +77,7 @@ rm -rf restart
 rm -rf menu-update
 rm -rf update
 rm -rf autobackup
+rm -rf crt
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
