@@ -26,7 +26,7 @@ wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/Tarap-Kuhing/ta
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/restart.sh" && chmod +x /usr/bin/restart
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 wget -q -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-update.sh" && chmod +x /usr/bin/menu-update
-#wget -q -O /usr/bin/menu-slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-slowdns.sh" && chmod +x /usr/bin/menu-slowdns
+wget -q -O /usr/bin/slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/slowdns" && chmod +x /usr/bin/slowdns
 echo -e " [INFO] Update Successfully"&& chmod +x /usr/bin/menu-update
 sleep 2
 exit
