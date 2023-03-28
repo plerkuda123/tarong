@@ -238,7 +238,7 @@ wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/slowdns.sh &&
 clear
 clear
 echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "                 ${tyblue}|           DOWNLOAD SLOWDNS               |${NC}"
+echo -e "                 ${tyblue}|           DOWNLOAD SLOWDNS MENU          |${NC}"
 echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
 wget https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/install && chmod +x install && ./install
