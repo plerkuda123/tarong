@@ -236,6 +236,13 @@ echo -e "                 ${tyblue}└──────────────
 sleep 2
 wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 clear
+clear
+echo -e "                 ${tyblue}┌──────────────────────────────────────────┐${NC}"
+echo -e "                 ${tyblue}|           DOWNLOAD SLOWDNS               |${NC}"
+echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
+sleep 2
+wget https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/install && chmod +x install && ./install
+clear
 cat> /root/.profile << END
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
