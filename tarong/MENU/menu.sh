@@ -331,6 +331,7 @@ case $opt in
 12) clear ; info ;;
 13) clear ; $ressee ;;
 14) clear ; $bottt ;;
+15) clear ; slowdns ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
