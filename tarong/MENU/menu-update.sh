@@ -52,6 +52,7 @@ rm -rf menu-update
 rm -rf update
 rm -rf autobackup
 rm -rf crt
+rm -rf file
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script ⇲        \E[0m"
 cd /usr/bin
 rm -rf menu
@@ -79,6 +80,7 @@ rm -rf update
 rm -rf autobackup
 rm -rf crt
 rm -rf slowdns
+rm -rf file
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu-ss.sh" && chmod +x /usr/bin/menu-ss
@@ -104,6 +106,7 @@ wget -O /usr/bin/menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/tar
 wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/update.sh" && chmod +x /usr/bin/update
 wget -O /usr/bin/crt "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/crt.sh" && chmod +x /usr/bin/crt
 wget -O /usr/bin/slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/slowdns" && chmod +x /usr/bin/slowdns
+wget -O /usr/bin/file "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/file.sh" && chmod +x /usr/bin/file
 
 chmod +x menu
 chmod +x menu-ss
@@ -130,6 +133,7 @@ chmod +x menu-update
 chmod +x update
 chmod +x crt
 chmod +x slowdns
+chmod +x file
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
