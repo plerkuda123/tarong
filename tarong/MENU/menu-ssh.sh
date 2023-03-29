@@ -72,8 +72,8 @@ fi
 function addssh(){
 clear
 domen=`cat /etc/xray/domain`
-nameserver1=`cat /etc/slowdns/infons`
-slkey1=`cat /root/server.pub`
+nameserver=`cat /root/nsdomain`
+slkey=`cat /etc/slowdns/server.pub`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
