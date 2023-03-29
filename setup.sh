@@ -155,11 +155,11 @@ echo -e  "               ${tyblue}└──────────────�
 echo " "
 read -rp "Masukan Domain Kamu OK Brooo : " -e dns
 echo "$dns" > /root/domain
-echo "$dns" > /root/scdomain
+#echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
-echo "$dns" > /etc/v2ray/scdomain
-echo "$dns" > /etc/xray/scdomain
+#echo "$dns" > /etc/v2ray/scdomain
+#echo "$dns" > /etc/xray/scdomain
 echo "IP=$dns" > /var/lib/ipvps.conf
 echo ""
 elif [[ $dns == "2" ]]; then
