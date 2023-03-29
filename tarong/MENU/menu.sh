@@ -174,23 +174,24 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• ADD VPS HOST •                ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-read -rp "  New Host Name : " -e host
+read -rp "  New Host Name : " -e dns
 echo ""
-if [ -z $host ]; then
+if [ -z $dns ]; then
 echo -e "  [INFO] Type Your Domain/sub domain"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 else
-echo "IP=$host" > /var/lib/ipvps.conf
+echo "IP=$dns" > /var/lib/ipvps.conf
+echo "$dns" > /etc/xray/domain)
 echo ""
 echo "  [INFO] Dont forget to renew cert"
 echo ""
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to Renew Cret"
-crtxray
+crt
 fi
 }
 function updatews(){
