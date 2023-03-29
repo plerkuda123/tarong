@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 clear
 echo start
 sleep 0.5
-source /var/lib/crot/ipvps.conf
+source /var/lib/ipvps.conf
 domain=$(cat /etc/xray/domain)
 sudo lsof -t -i tcp:89 -s tcp:listen | sudo xargs kill
 cd /root/
