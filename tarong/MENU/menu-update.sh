@@ -50,6 +50,8 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf restore2
+rm -rf backup2
 rm -rf autobackup
 rm -rf crt
 rm -rf file
@@ -77,9 +79,10 @@ rm -rf mbandwith
 rm -rf restart
 rm -rf menu-update
 rm -rf update
+rm -rf restore2
+rm -rf backup2
 rm -rf autobackup
 rm -rf crt
-rm -rf slowdns
 rm -rf file
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/MENU/menu.sh" && chmod +x /usr/bin/menu
@@ -107,6 +110,10 @@ wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/m
 wget -O /usr/bin/crt "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/crt.sh" && chmod +x /usr/bin/crt
 #wget -O /usr/bin/slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/slowdns" && chmod +x /usr/bin/slowdns
 wget -O /usr/bin/file "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/file.sh" && chmod +x /usr/bin/file
+wget -O /usr/bin/backup2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/backup2.sh" && chmod +x /usr/bin/backup2
+wget -O /usr/bin/restore2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/restore2.sh" && chmod +x /usr/bin/restore2
+wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/autobackup.sh" && chmod +x /usr/bin/autobackup
+
 
 chmod +x menu
 chmod +x menu-ss
@@ -132,8 +139,10 @@ chmod +x restart
 chmod +x menu-update
 chmod +x update
 chmod +x crt
-chmod +x slowdns
 chmod +x file
+chmod +x backup2
+chmod +x restore2
+chmod +x autobackup
 echo -e "\E[44;1;39m ⇱ [INFO] Downloading New File Script Succes ⇲        \E[0m"
 sleep 1
 cd
