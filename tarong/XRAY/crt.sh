@@ -69,19 +69,6 @@ else
 red "Permission Denied!"
 exit 0
 fi
-#!/bin/bash
-# ==========================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-# ==========================================
-# Getting
 clear
 echo start
 sleep 0.5
@@ -96,7 +83,7 @@ rm acme.sh
 cd .acme.sh
 echo "starting...., Port 89 Akan di Hentikan Saat Proses install Cert"
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server $acmeh
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --listen-v6
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 chmod 755 /etc/xray/xray.key;
