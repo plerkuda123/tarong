@@ -73,16 +73,16 @@ echo -e "\e[32mloading...\e[0m"
 clear
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
-domainlama=`cat /etc/xray/domain`
+domain=`cat /etc/xray/domain`
 else
-domainlama=`cat /etc/v2ray/domain`
+domain=`cat /etc/v2ray/domain`
 fi
 
 clear
 echo -e "[ ${green}INFO${NC} ] Start " 
 sleep 0.5
 systemctl stop nginx
-domain=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
+domen=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
 Cek=$(lsof -i:89 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
 if [[ ! -z "$Cek" ]]; then
 sleep 1
