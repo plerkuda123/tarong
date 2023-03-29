@@ -90,8 +90,7 @@ fi
 echo -e "[ ${green}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
-
-#cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
 cp -r /etc/passwd /root/backup/ &> /dev/null
 cp -r /etc/group /root/backup/ &> /dev/null
 cp -r /etc/shadow /root/backup/ &> /dev/null
@@ -99,6 +98,8 @@ cp -r /etc/gshadow /root/backup/ &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /root/nsdomain backup/nsdomain &> /dev/null
+cp -r /etc/slowdns backup/slowdns &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
@@ -240,8 +241,10 @@ sleep 1
 #sleep 1
 cp -r /root/backup /var/lib/ &> /dev/null
 #cp -r /root/backup/wireguard /etc/ &> /dev/null
-#cp -r /root/backup/.acme.sh /root/ &> /dev/null
+cp -r /root/backup/.acme.sh /root/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
+cp -r /root/backup/slowdns /etc/ &> /dev/null
+cp -r /root/backup/nsdomain/root/ &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 #cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
