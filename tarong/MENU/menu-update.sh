@@ -110,9 +110,9 @@ wget -O /usr/bin/update "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/m
 wget -O /usr/bin/crt "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/XRAY/crt.sh" && chmod +x /usr/bin/crt
 #wget -O /usr/bin/slowdns "https://raw.githubusercontent.com/Tarap-Kuhing/Slowdns/main/slowdns" && chmod +x /usr/bin/slowdns
 wget -O /usr/bin/file "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/file.sh" && chmod +x /usr/bin/file
-wget -O /usr/bin/backup2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/backup2.sh" && chmod +x /usr/bin/backup2
-wget -O /usr/bin/restore2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/restore2.sh" && chmod +x /usr/bin/restore2
-wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/autobackup.sh" && chmod +x /usr/bin/autobackup
+wget -O /usr/bin/backup2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/backup2.sh" && chmod +x /usr/bin/backup2
+wget -O /usr/bin/restore2 "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/restore2.sh" && chmod +x /usr/bin/restore2
+wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/autobackup.sh" && chmod +x /usr/bin/autobackup
 
 
 chmod +x menu
