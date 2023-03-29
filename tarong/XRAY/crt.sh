@@ -82,10 +82,9 @@ bash acme.sh --install
 rm acme.sh
 cd .acme.sh
 echo "starting...., Port 89 Akan di Hentikan Saat Proses install Cert"
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --listen-v6
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-chmod 755 /etc/xray/xray.key;
+bash acme.sh --register-account -m merahjambo@gmail.com
+bash acme.sh --issue --standalone -d $domain --force
+bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 systemctl restart nginx
+systemctl restart xray
 menu
