@@ -257,7 +257,7 @@ sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
 cd
 echo
-read -n 1 -s -r -p "Press any key to menu"
+read -n 1 -s -r -p "Press any key to certv2ray"
 crt
 }
 clear
