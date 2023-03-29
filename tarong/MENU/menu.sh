@@ -158,16 +158,6 @@ else
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-# TOTAL ACC CREATE VMESS WS
-vmess=$(grep -c -E "^#vmss " "/usr/local/etc/xray/vmess.json")
-# TOTAL ACC CREATE  VLESS WS
-vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
-# TOTAL ACC CREATE  VLESS TCP XTLS
-xtls=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
-# TOTAL ACC CREATE  TROJAN
-trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/trojan.json")
-# TOTAL ACC CREATE OVPN SSH
-total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 function add-host(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -184,7 +174,7 @@ read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 else
 echo "IP=$dns" > /var/lib/ipvps.conf
-echo "$dns" > /etc/xray/domain)
+echo "$dns" > /etc/xray/domain
 echo ""
 echo "  [INFO] Dont forget to renew cert"
 echo ""
