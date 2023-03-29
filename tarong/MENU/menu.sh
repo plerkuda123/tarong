@@ -326,7 +326,7 @@ case $opt in
 07 | 7) clear ; menu-theme ;;
 08 | 8) clear ; menu-backup ;;
 09 | 9) clear ; add-host ;;
-10) clear ; crtxray ;;
+10) clear ; crt ;;
 11) clear ; menu-set ;;
 12) clear ; info ;;
 13) clear ; $ressee ;;
