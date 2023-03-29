@@ -240,7 +240,7 @@ echo -e "                 ${tyblue}┌──────────────
 echo -e "                 ${tyblue}|           DOWNLOAD BACKUP MENU          |${NC}"
 echo -e "                 ${tyblue}└──────────────────────────────────────────┘${NC}"
 sleep 2
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/set-br.sh && chmod +x set-br && ./set-br
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 cat> /root/.profile << END
 if [ "$BASH" ]; then
