@@ -109,13 +109,13 @@ sleep 1
 systemctl stop nginx
 systemctl stop xray
 
-/root/.acme.sh
+mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server $acmeh
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --listen-v6
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /usr/local/etc/xray/xray.crt --keypath /usr/local/etc/xray/xray.key --ecc
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 #chmod 755 /etc/xray/xray.key;
 service squid start
 systemctl restart nginx
