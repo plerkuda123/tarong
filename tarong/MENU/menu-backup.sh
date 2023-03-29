@@ -258,7 +258,7 @@ rm -f /root/backup/backup.zip &> /dev/null
 cd
 echo
 read -n 1 -s -r -p "Press any key to menu"
-menu
+crt
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
