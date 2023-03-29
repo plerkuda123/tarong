@@ -71,55 +71,41 @@ exit 0
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-echo ""
-echo -e "   .-----------------------------------."
-echo -e "   |   \e[1;32mPlease select acme for domain\e[0m   |"
-echo -e "   '-----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m ZeroSSL.com"
-echo -e "     \e[1;32m2)\e[0m BuyPass.com"
-echo -e "     \e[1;32m3)\e[0m Letsencrypt.org"
-echo -e "   ------------------------------------"
-read -p "   Please select numbers 1-3(Any Button Default Letsencrypt.org) : " acmee
-acme1=zerossl
-acme2=https://api.buypass.com/acme/directory
-acme3=letsencrypt
-if [[ $acmee == "1" ]]; then
-echo -e "ZeroSSL.com acme is used"
-acmeh=$acme1
-echo ""
-elif [[ $acmee == "2" ]]; then
-echo -e "BuyPass.com acme is used"
-acmeh=$acme2
-elif [[ $acmee == "3" ]]; then
-echo -e "Letsencrypt.org acme is used"
-acmeh=$acme3
+cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
+if [ "$cekray" = "XRAY" ]; then
+domainlama=`cat /etc/xray/domain`
 else
-echo -e "Default acme(Letsencrypt.org) is used"
-acmeh=$acme3
-clear
+domainlama=`cat /etc/v2ray/domain`
 fi
+
 clear
-echo start
+echo -e "[ ${green}INFO${NC} ] Start " 
 sleep 0.5
-source /var/lib/ipvps.conf
-domain=$(cat /etc/xray/domain)
-
-echo -e "\e[0;32mStart renew your Certificate SSL\e[0m"
+systemctl stop nginx
+domain=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
+Cek=$(lsof -i:89 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
+if [[ ! -z "$Cek" ]]; then
 sleep 1
-
-sudo lsof -t -i tcp:89 -s tcp:listen | sudo xargs kill
-
-mkdir /root/.acme.sh
-curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
-chmod +x /root/.acme.sh/acme.sh
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server $acmeh
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --listen-v6
+echo -e "[ ${red}WARNING${NC} ] Detected port 80 used by $Cek " 
+systemctl stop $Cek
+sleep 2
+echo -e "[ ${green}INFO${NC} ] Processing to stop $Cek " 
+sleep 1
+fi
+echo -e "[ ${green}INFO${NC} ] Starting renew cert... " 
+sleep 2
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-chmod 755 /etc/xray/xray.key;
-service squid start
+echo -e "[ ${green}INFO${NC} ] Renew cert done... " 
+sleep 2
+echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
+sleep 2
+echo $domain > /etc/xray/domain
+systemctl restart $Cek
 systemctl restart nginx
-sleep 0.5;
-echo Done
-echo -e "[${GREEN}Done${NC}]"
-sleep 1
+echo -e "[ ${green}INFO${NC} ] All finished... " 
+sleep 0.5
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
