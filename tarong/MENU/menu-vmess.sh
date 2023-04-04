@@ -518,7 +518,8 @@ menu
 		fi
 	done
 read -p "   Bug SNI/Host : " sni
-read -p "   Bug SNI/Host : " uuid
+echo""
+read -p "   masukan uuid : " uuid
 #uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
