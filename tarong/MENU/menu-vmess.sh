@@ -517,10 +517,10 @@ echo -e "$COLOR1└────────────────────�
 menu
 		fi
 	done
-read -p "   Bug SNI/Host : " sni
+read -p "   Isi Bug/Enter Kosongin Aja : " sni
 echo""
-read -p "   masukan uuid : " uuid
-#uuid=$(cat /proc/sys/kernel/random/uuid)
+#read -p "   masukan uuid : " uuid
+uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "   Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
