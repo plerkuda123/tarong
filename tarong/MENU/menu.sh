@@ -150,12 +150,21 @@ Info="${Green_font_prefix}(Registered)${Font_color_suffix}"
 Error="${Green_font_prefix}${Font_color_suffix}${Red_font_prefix}[EXPIRED]${Font_color_suffix}"
 
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp1=$(curl https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/jambanbkn/tarap/main/ipvps | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
     sts="${Info}"
 else
     sts="${Error}"
 fi
+# TOTAL ACC CREATE VMESS WS
+vmess=$(grep -c -E "^#vms " "/usr/local/etc/xray/config.json")
+# TOTAL ACC CREATE  VLESS WS
+vless=$(grep -c -E "^#vless " "/usr/local/etc/xray/vless.json")
+# TOTAL ACC CREATE  TROJAN
+trtls=$(grep -c -E "^#trojan " "/usr/local/etc/xray/trojan.json")
+# TOTAL ACC CREATE OVPN SSH
+total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+
 echo -e "\e[32mloading...\e[0m"
 clear
 function add-host(){
@@ -254,11 +263,11 @@ echo -e "$COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yesterd
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1 $NC                                                ${NC} $COLOR1 $NC"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSHWS   ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}THEME    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSHWS   ${WH}[${COLOR1}${status_ws}${WH}] ${WH}[${COLOR1}${total_ssh}${WH}]  ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}THEME    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}BACKUP   ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS   ${WH}[${COLOR1}${status_xray}${WH}] ${WH}[${COLOR1}${vmess}${WH}]  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}BACKUP   ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}ADD HOST/DOMAIN  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS   ${WH}[${COLOR1}${status_xray}${WH}] ${WH}[${COLOR1}${vless}${WH}] ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}ADD HOST/DOMAIN  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN  ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}RENEW CERT       $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
