@@ -159,9 +159,9 @@ fi
 # TOTAL ACC CREATE VMESS WS
 vmess=$(grep -c -E "^#vms " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE  VLESS WS
-vless=$(grep -c -E "^#vless " "/usr/local/etc/xray/vless.json")
+vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE  TROJAN
-trtls=$(grep -c -E "^#trojan " "/usr/local/etc/xray/trojan.json")
+trtls=$(grep -c -E "^#tr " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE OVPN SSH
 total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 
