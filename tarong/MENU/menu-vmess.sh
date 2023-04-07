@@ -537,7 +537,7 @@ asu=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/v2ray",
       "type": "none",
       "host": "${sni}",
       "tls": "tls"
@@ -552,7 +552,7 @@ ask=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess",
+      "path": "/v2ray",
       "type": "none",
       "host": "${sni}",
       "tls": "none"
